@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주혜진 - 콘텐츠 크리에이터 & 마케터</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 120px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 300;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #666;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .intro {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #444;
+            max-width: 700px;
+        }
+
+        .contact {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .contact a {
+            color: #1a1a1a;
+            text-decoration: none;
+            margin-right: 20px;
+            transition: opacity 0.3s;
+        }
+
+        .contact a:hover {
+            opacity: 0.6;
+        }
+
+        /* Career Overview */
+        .career-overview {
+            margin-bottom: 100px;
+            padding: 40px;
+            background: #fafafa;
+            border-radius: 4px;
+        }
+
+        .career-overview h3 {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+            margin-bottom: 20px;
+        }
+
+        .career-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .career-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .career-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .career-period {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .career-desc {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Section Headers */
+        .section-header {
+            margin-bottom: 60px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #1a1a1a;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+        }
+
+        .section-header .section-subtitle {
+            font-size: 15px;
+            color: #666;
+            font-weight: 300;
+        }
+
+        /* Projects */
+        .project {
+            margin-bottom: 80px;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-meta .category {
+            padding: 4px 12px;
+            background: #f0f0f0;
+            border-radius: 3px;
+            color: #666;
+        }
+
+        .project h3 {
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .project-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 25px;
+        }
+
+        .project-links {
+            margin-top: 20px;
+        }
+
+        .project-links a {
+            display: inline-block;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 0;
+            margin-right: 20px;
+            border-bottom: 1px solid #1a1a1a;
+            transition: opacity 0.3s;
+        }
+
+        .project-links a:hover {
+            opacity: 0.6;
+        }
+
+        .highlights {
+            margin-top: 15px;
+            padding-left: 20px;
+            color: #666;
+            font-size: 15px;
+        }
+
+        .highlights li {
+            margin-bottom: 8px;
+        }
+
+        /* Project Images */
+        .project-images {
+            margin: 30px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-image {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #f5f5f5;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .project-image:hover {
+            transform: scale(1.02);
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            height: 100%;
+        }
+
+        /* Project Files */
+        .project-files {
+            margin-top: 25px;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 4px;
+        }
+
+        .project-files h4 {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .file-item {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 20px;
+            margin-bottom: 10px;
+            padding: 8px 16px;
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .file-item:hover {
+            border-color: #1a1a1a;
+            background: #f5f5f5;
+        }
+
+        .file-item::before {
+            content: "📎";
+            margin-right: 8px;
+        }
+
+        /* Spacer */
+        .section-spacer {
+            margin: 120px 0;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 150px;
+            padding-top: 50px;
+            border-top: 1px solid #e5e5e5;
+            text-align: center;
+            font-size: 14px;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 60px 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+
+            .project h3 {
+                font-size: 24px;
+            }
+
+            .project-meta {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .career-overview {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>주혜진</h1>
+            <div class="subtitle">콘텐츠 크리에이터 & 마케터</div>
+            <p class="intro">
+                미술 전문 기자 출신 콘텐츠 마케터로 15년간 콘텐츠 기획·제작, 국내 최초 전시 라이브커머스 기획, 
+                작가 인터뷰 300여 건, 검색 최적화 블로그·인스타그램 운영 등을 수행했습니다. 
+                트렌드를 읽고 콘텐츠로 구현해 마케팅 성과를 창출하는 데 강점이 있습니다.
+            </p>
+            <div class="contact">
+                <a href="mailto:kiwi733@naver.com">kiwi733@naver.com</a>
+                <a href="tel:010-9905-2046">010-9905-2046</a>
+                <a href="https://www.facebook.com/hyejin.joo/" target="_blank">Facebook</a>
+                <a href="https://medium.com/@hyejinjoo" target="_blank">Medium</a>
+                <a href="https://kr.linkedin.com/in/hye-jin-joo-003332219" target="_blank">LinkedIn</a>
+            </div>
+        </header>
+
+        <!-- Career Overview -->
+        <div class="career-overview">
+            <h3>Career</h3>
+            <div class="career-item">
+                <div class="career-title">인터파크</div>
+                <div class="career-period">2015 - 2023</div>
+                <div class="career-desc">도서(북DB), 투어, 티켓 부문에서 콘텐츠 기획·제작 및 마케팅 업무. 라이브커머스, 유튜브, 블로그, 웹진 등 다양한 포맷의 콘텐츠를 기획하고 제작하며 퍼포먼스 마케팅을 실현했습니다.</div>
+            </div>
+            <div class="career-item">
+                <div class="career-title">미술 전문 기자</div>
+                <div class="career-period">2008 - 2014</div>
+                <div class="career-desc">미술 전문지 [미술세계], [경향 아티클]에서 6년간 취재, 기사 작성, 편집 업무를 수행하며 미술 속에 숨은 다양한 이야기를 발굴하기 위해 노력했습니다.</div>
+            </div>
+        </div>
+
+        <main>
+            <!-- Live Commerce Section -->
+            <section>
+                <div class="section-header">
+                    <h2>라이브커머스 기획</h2>
+                    <div class="section-subtitle">국내 최초 전시 라이브커머스부터 MBTI 여행까지</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">티켓</span>
+                        <span>2020–2022</span>
+                    </div>
+                    <h3>수요아트살롱</h3>
+                    <p class="project-description">
+                        국내 최초로 도슨트가 직접 전시 해설을 하며 티켓을 판매하는 라이브커머스 방송을 기획했습니다. 
+                        경쟁사인 네이버보다 앞선 시도로 기획전 페이지 제작, 대본 집필, 기획사·도슨트와의 소통, 현장 촬영까지 
+                        A to Z 전 과정을 담당했습니다.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>담당 업무:</strong> 기획 / 기획전 페이지 제작 / 대본 작성 / 출연자 섭외 / 방송 송출 / 현장 총괄
+                    </p>
+                    
+                    <div class="project-images">
+                        <div class="project-image">
+                            <div class="image-placeholder">방송 현장 이미지</div>
+                            <!-- <img src="images/art-salon-1.jpg" alt="수요아트살롱 방송 현장"> -->
+                        </div>
+                        <div class="project-image">
+                            <div class="image-placeholder">기획전 페이지</div>
+                            <!-- <img src="images/art-salon-2.jpg" alt="기획전 페이지"> -->
+                        </div>
+                        <div class="project-image">
+                            <div class="image-placeholder">전시장 스크린샷</div>
+                            <!-- <img src="images/art-salon-3.jpg" alt="전시장"> -->
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://youtu.be/N9RQfU-vHK8" target="_blank">앙리 마티스 특별전 →</a>
+                        <a href="https://youtu.be/OUHqG_JVBgQ" target="_blank">필립 콜버트 →</a>
+                        <a href="https://youtu.be/f7vUcfKkHPA" target="_blank">맥스 달튼 →</a>
+                        <a href="https://youtu.be/6GJ9dDI7pLE" target="_blank">무민 특별원화전 →</a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">투어</span>
+                        <span>2022</span>
+                    </div>
+                    <h3>MBTI 연구소</h3>
+                    <p class="project-description">
+                        2020년대 한국의 가장 뜨거운 관심사 MBTI를 라이브커머스와 결합했습니다. 
+                        MBTI 유형별 성격을 설명하고 각 유형에 맞는 여행 상품을 큐레이션해 판매하는 
+                        독창적인 콘셉트의 라이브커머스 방송을 기획·진행했습니다.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>담당 업무:</strong> 기획 / 기획전 페이지 제작 / 대본 작성 / 출연자 섭외 / 방송 송출 / 현장 총괄
+                    </p>
+
+                    <div class="project-images">
+                        <div class="project-image">
+                            <div class="image-placeholder">MBTI 방송 화면</div>
+                            <!-- <img src="images/mbti-broadcast.jpg" alt="MBTI 연구소 방송"> -->
+                        </div>
+                        <div class="project-image">
+                            <div class="image-placeholder">기획안 이미지</div>
+                            <!-- <img src="images/mbti-plan.jpg" alt="기획안"> -->
+                        </div>
+                    </div>
+
+                    <ul class="highlights">
+                        <li>조선일보, 매일경제 등 주요 언론 보도</li>
+                        <li>"이제 여행도 MBTI로 간다" (경향신문)</li>
+                    </ul>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">투어</span>
+                        <span>2021</span>
+                    </div>
+                    <h3>현지 LIVE 투어</h3>
+                    <p class="project-description">
+                        코로나로 해외여행이 중단된 상황에서 새로운 돌파구를 만들었습니다. 
+                        전 세계 주요 관광지를 실시간 라이브로 연결해 전문 가이드가 현지를 해설하며 
+                        여행 상품을 판매하는 혁신적인 포맷을 기획했습니다 (총 13회 진행).
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>담당 업무:</strong> 기획 / 기획전 페이지 제작 / 대본 작성 / 출연자 섭외 / 방송 송출 / 현장 총괄
+                    </p>
+
+                    <div class="project-images">
+                        <div class="project-image">
+                            <div class="image-placeholder">파리 LIVE 투어</div>
+                            <!-- <img src="images/live-paris.jpg" alt="파리 라이브 투어"> -->
+                        </div>
+                        <div class="project-image">
+                            <div class="image-placeholder">스위스 LIVE 투어</div>
+                            <!-- <img src="images/live-swiss.jpg" alt="스위스 라이브 투어"> -->
+                        </div>
+                    </div>
+
+                    <ul class="highlights">
+                        <li>조선일보 IT, 헤럴드경제 등 주요 매체 보도</li>
+                        <li>"사랑의 불시착 스위스 패러글라이딩 랜선투어" 화제</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="section-spacer"></div>
+
+            <!-- Video Content Section -->
+            <section>
+                <div class="section-header">
+                    <h2>유튜브 콘텐츠</h2>
+                    <div class="section-subtitle">기획부터 제작까지, 스토리가 있는 영상 콘텐츠</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">투어</span>
+                        <span>2022-2023</span>
+                    </div>
+                    <h3>로친소 (로컬 친구가 소개합니다)</h3>
+                    <p class="project-description">
+                        "여행할 때 현지 로컬 친구가 직접 안내해준다면?"이라는 아이디어를 유튜브 콘텐츠로 구현했습니다. 
+                        코로나 시기, 비대면으로 현지인을 섭외하고 콘텐츠를 조율하며 촬영부터 편집 요청까지 
+                        전 과정을 기획·제작했습니다.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>담당 업무:</strong> 기획 / 대본 작성 / 출연자 섭외 / 영상 편집 요청
+                    </p>
+
+                    <div class="project-images">
+                        <div class="project-image">
+                            <div class="image-placeholder">터키 편 썸네일</div>
+                            <!-- <img src="images/rochinson-turkey.jpg" alt="로친소 터키편"> -->
+                        </div>
+                        <div class="project-image">
+                            <div class="image-placeholder">대만 편 썸네일</div>
+                            <!-- <img src="images/rochinson-taiwan.jpg" alt="로친소 대만편"> -->
+                        </div>
+                        <div class="project-image">
+                            <div class="image-placeholder">촬영 비하인드</div>
+                            <!-- <img src="images/rochinson-behind.jpg" alt="촬영 비하인드"> -->
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://youtu.be/EK_9VetmTfs" target="_blank">터키 편 1화 →</a>
+                        <a href="https://youtu.be/2r1_ti4l4ZQ" target="_blank">터키 편 2화 →</a>
+                        <a href="https://youtu.be/6PBGDOp8-go" target="_blank">대만 편 →</a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">투어</span>
+                        <span>2022</span>
+                    </div>
+                    <h3>5 vs 50</h3>
+                    <p class="project-description">
+                        5만원을 가지고 떠나는 여행과 50만원을 가지고 떠나는 여행은 어떻게 다를까? 
+                        뽑기를 통해 여행 예산이 결정되는 독특한 콘셉트로 여행 상품을 소개하는 유튜브 영상을 기획·촬영했습니다.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>담당 업무:</strong> 기획 / 대본 작성 / 촬영 / 영상 편집 요청
+                    </p>
+
+                    <div class="project-links">
+                        <a href="https://youtu.be/yQgGplT5uuI" target="_blank">강원도 강릉 편 →</a>
+                        <a href="https://youtu.be/y9YZdSZGL4o" target="_blank">경주 봄꽃여행 편 →</a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">도서</span>
+                        <span>2019-2023</span>
+                    </div>
+                    <h3>공원생활 (저자 인터뷰 영상)</h3>
+                    <p class="project-description">
+                        유튜브 채널 '공원생활'에서 신간 출간 작가들의 영상 인터뷰를 기획·진행했습니다. 
+                        책의 메시지를 영상으로 전달하며 독자와 작가를 연결하는 다리 역할을 했습니다.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>담당 업무:</strong> 인터뷰 진행 / 영상 편집 요청
+                    </p>
+
+                    <div class="project-links">
+                        <a href="https://youtu.be/WMHM3uT4Brc" target="_blank">천인우 인터뷰 →</a>
+                        <a href="https://youtu.be/sRTH6KUTCNA" target="_blank">설민석 인터뷰 →</a>
+                        <a href="https://youtu.be/Jr7SqjzpOus" target="_blank">정종철 인터뷰 →</a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-spacer"></div>
+
+            <!-- Interview & Editorial Section -->
+            <section>
+                <div class="section-header">
+                    <h2>인터뷰 & 에디토리얼</h2>
+                    <div class="section-subtitle">300여 명의 작가를 만나 깊이 있는 이야기를 전하다</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">도서</span>
+                        <span>2015–2021</span>
+                    </div>
+                    <h3>북DB 작가 인터뷰</h3>
+                    <p class="project-description">
+                        6년간 각계 각 분야의 명사 300여 명을 인터뷰하고 기사로 작성했습니다. 
+                        김연수, 김영하, 알랭 드 보통, 리처드 도킨스, 박막례 등 국내외 저명 작가들과의 깊이 있는 대화를 통해 
+                        독자들에게 작가의 생각과 책의 가치를 전달했습니다.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>담당 업무:</strong> 인터뷰이 섭외 / 질문지 작성 / 인터뷰 진행 / 기사 작성
+                    </p>
+
+                    <div class="project-images">
+                        <div class="project-image">
+                            <div class="image-placeholder">인터뷰 현장</div>
+                            <!-- <img src="images/interview-1.jpg" alt="작가 인터뷰"> -->
+                        </div>
+                        <div class="project-image">
+                            <div class="image-placeholder">기사 스크린샷</div>
+                            <!-- <img src="images/interview-2.jpg" alt="인터뷰 기사"> -->
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="http://bookdb.interpark.com/bdb/Interview.do?_method=InterviewDetailM&swParam=1&sc.mreviewNo=90089" target="_blank">소설가 김연수 →</a>
+                        <a href="http://bookdb.interpark.com/bdb/Interview.do?_method=InterviewDetailM&swParam=1&sc.mreviewNo=66162" target="_blank">알랭 드 보통 →</a>
+                        <a href="http://bookdb.interpark.com/bdb/Interview.do?_method=InterviewDetailM&swParam=1&sc.mreviewNo=75605" target="_blank">리처드 도킨스 →</a>
+                        <a href="http://bookdb.interpark.com/bdb/Interview.do?_method=InterviewDetailM&swParam=1&sc.mreviewNo=88008" target="_blank">박막례 할머니 →</a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">도서</span>
+                        <span>2015–2021</span>
+                    </div>
+                    <h3>이슈앤스토리 - 트렌드 기획 기사</h3>
+                    <p class="project-description">
+                        "사람들은 어디에 관심이 있을까?" 6년간 이 질문을 붙들고 대중의 관심사에 맞춰 
+                        책을 소개하는 기획 기사를 작성했습니다. BTS RM의 독서 목록, 빌 게이츠 추천 도서, 
+                        MBTI별 책 추천, 영화 보헤미안 랩소디 숨은 이야기 등 트렌드를 읽고 콘텐츠로 만드는 일을 했습니다.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>담당 업무:</strong> 주제 선정 / 기사 작성
+                    </p>
+
+                    <div class="project-images">
+                        <div class="project-image">
+                            <div class="image-placeholder">기사 썸네일</div>
+                            <!-- <img src="images/issue-1.jpg" alt="이슈앤스토리"> -->
+                        </div>
+                        <div class="project-image">
+                            <div class="image-placeholder">트렌드 기획</div>
+                            <!-- <img src="images/issue-2.jpg" alt="트렌드 기획"> -->
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="http://bookdb.interpark.com/bdb/IssueStory.do?_method=detailM&sc.webzNo=40912" target="_blank">MBTI 유형별 책 추천 →</a>
+                        <a href="http://bookdb.interpark.com/bdb/IssueStory.do?_method=detailM&sc.webzNo=37550" target="_blank">BTS RM 독서 목록 →</a>
+                        <a href="http://bookdb.interpark.com/bdb/IssueStory.do?_method=detailM&sc.webzNo=40712" target="_blank">빌 게이츠 추천 도서 →</a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-spacer"></div>
+
+            <!-- Blog & SEO Section -->
+            <section>
+                <div class="section-header">
+                    <h2>블로그 & SEO 마케팅</h2>
+                    <div class="section-subtitle">검색 최적화로 퍼포먼스를 만들어내다</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">투어</span>
+                        <span>2022-2023</span>
+                    </div>
+                    <h3>인터파크투어 네이버 공식 블로그</h3>
+                    <p class="project-description">
+                        검색 최적화 키워드를 선정하고 콘텐츠 방향을 수립해 네이버에서 최대 유입을 달성하는 
+                        블로그 콘텐츠를 기획·작성했습니다. 트래픽 증대와 상품 판매를 직접 연결하는 
+                        퍼포먼스 마케팅을 실현했습니다.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>담당 업무:</strong> 콘텐츠 제작 및 발행
+                    </p>
+
+                    <div class="project-images">
+                        <div class="project-image">
+                            <div class="image-placeholder">블로그 포스팅</div>
+                            <!-- <img src="images/blog-1.jpg" alt="블로그 포스팅"> -->
+                        </div>
+                        <div class="project-image">
+                            <div class="image-placeholder">통계 리포트</div>
+                            <!-- <img src="images/blog-stats.jpg" alt="통계"> -->
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="http://blog.naver.com/interpark_tour" target="_blank">블로그 방문하기 →</a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-spacer"></div>
+
+            <!-- Magazine Section -->
+            <section>
+                <div class="section-header">
+                    <h2>미술 전문지 기자</h2>
+                    <div class="section-subtitle">미술 현장을 취재하고 기록하다</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">Magazine</span>
+                        <span>2013.1–2014.9</span>
+                    </div>
+                    <h3>경향 아티클</h3>
+                    <p class="project-description">
+                        미술 전문 월간지 [경향 아티클] 기자로 미술 현장을 취재하고 기사를 작성하며 편집 업무를 담당했습니다. 
+                        전시 리뷰, 작가 인터뷰, 미술 시장 동향 등을 다루며 미술계의 흐름을 기록했습니다.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>담당 업무:</strong> 취재 및 기사 작성 / 외고 편집 / 교정 교열
+                    </p>
+
+                    <div class="project-images">
+                        <div class="project-image">
+                            <div class="image-placeholder">잡지 표지</div>
+                            <!-- <img src="images/article-cover.jpg" alt="경향 아티클"> -->
+                        </div>
+                        <div class="project-image">
+                            <div class="image-placeholder">기사 지면</div>
+                            <!-- <img src="images/article-page.jpg" alt="기사"> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">Magazine</span>
+                        <span>2008.9–2012.10</span>
+                    </div>
+                    <h3>미술세계</h3>
+                    <p class="project-description">
+                        미술 전문 월간지 [미술세계] 기자로 미술 현장을 취재하고 기사를 작성하며 편집 업무를 담당했습니다. 
+                        전시회 현장 취재, 미술가 인터뷰, 특집 기획 등을 통해 한국 현대미술의 흐름을 전달했습니다.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>담당 업무:</strong> 취재 및 기사 작성 / 외고 편집 / 교정 교열
+                    </p>
+
+                    <div class="project-images">
+                        <div class="project-image">
+                            <div class="image-placeholder">잡지 표지</div>
+                            <!-- <img src="images/misulsegye-cover.jpg" alt="미술세계"> -->
+                        </div>
+                        <div class="project-image">
+                            <div class="image-placeholder">기사 지면</div>
+                            <!-- <img src="images/misulsegye-page.jpg" alt="기사"> -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>© 2025 Hyejin Joo. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
