@@ -88,4 +88,353 @@
         /* Career 요약 섹션 */
         .career-overview {
             margin-bottom: 100px;
-            padding
+            padding: 40px;
+            background: #fafafa;
+            border-radius: 8px;
+        }
+
+        .career-overview h3 {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #bbb;
+            margin-bottom: 30px;
+        }
+
+        .career-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .career-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .career-title {
+            font-size: 17px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .career-period {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .career-desc {
+            font-size: 15px;
+            color: #666;
+        }
+
+        /* 섹션 공통 헤더 */
+        .section-header {
+            margin-bottom: 50px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #1a1a1a;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .section-header .section-subtitle {
+            font-size: 15px;
+            color: #888;
+        }
+
+        /* 프로젝트 레이아웃 */
+        .project {
+            margin-bottom: 100px;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-size: 11px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-meta .category {
+            padding: 2px 8px;
+            background: #eee;
+            border-radius: 3px;
+            color: #777;
+        }
+
+        .project h3 {
+            font-size: 26px;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .project-description {
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .project-info-list {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        /* ✨ 영상 임베드 스타일 개선 */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .video-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* 은은한 그림자 */
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 비율 */
+            height: 0;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ✨ Shorts (세로형) 스타일 */
+        .shorts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            max-width: 600px;
+            margin: 30px 0;
+        }
+
+        .shorts-wrapper {
+            position: relative;
+            padding-bottom: 177.78%; /* 9:16 비율 */
+            height: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .shorts-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%; border: 0;
+        }
+
+        /* 프로젝트 하단 링크 및 강조 */
+        .project-links a {
+            display: inline-block;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 14px;
+            margin-right: 20px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid #1a1a1a;
+            transition: opacity 0.3s;
+        }
+
+        .project-links a:hover { opacity: 0.5; }
+
+        .highlights {
+            margin-top: 20px;
+            padding-left: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* 푸터 */
+        footer {
+            margin-top: 150px;
+            padding: 60px 0;
+            border-top: 1px solid #eee;
+            text-align: center;
+            font-size: 13px;
+            color: #bbb;
+            letter-spacing: 1px;
+        }
+
+        /* 반응형 설정 */
+        @media (max-width: 768px) {
+            .container { padding: 40px 20px; }
+            .profile-section { flex-direction: column; align-items: center; text-align: center; gap: 30px; }
+            .intro { margin: 0 auto; }
+            h1 { font-size: 32px; }
+            .section-header h2 { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-section">
+                <img src="https://raw.githubusercontent.com/kiwi-content/portfolio/image/profile.png" alt="주혜진 프로필" class="profile-img">
+                <div>
+                    <h1>주혜진</h1>
+                    <div class="subtitle">콘텐츠 크리에이터 & 마케터</div>
+                    <p class="intro">
+                        미술 전문 기자 출신 콘텐츠 마케터로 15년간 콘텐츠 기획·제작, 국내 최초 전시 라이브커머스 기획, 작가 인터뷰 300여 건을 수행했습니다. 트렌드를 읽고 퍼포먼스를 창출하는 데 강점이 있습니다.
+                    </p>
+                    <div class="contact">
+                        <a href="mailto:kiwi733@naver.com">kiwi733@naver.com</a>
+                        <a href="https://www.facebook.com/hyejin.joo/" target="_blank">Facebook</a>
+                        <a href="https://kr.linkedin.com/in/hye-jin-joo-003332219" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="career-overview">
+            <h3>Career</h3>
+            <div class="career-item">
+                <div class="career-title">인터파크</div>
+                <div class="career-period">2015 - 2023</div>
+                <div class="career-desc">도서, 투어, 티켓 부문 콘텐츠 기획·제작. 라이브커머스, 유튜브, 블로그 등 멀티 채널 콘텐츠 마케팅 총괄.</div>
+            </div>
+            <div class="career-item">
+                <div class="career-title">미술 전문 기자</div>
+                <div class="career-period">2008 - 2014</div>
+                <div class="career-desc">[미술세계], [경향 아티클] 취재 및 편집 기자. 6년간 미술계 현장 및 작가 심층 취재.</div>
+            </div>
+        </div>
+
+        <main>
+            <section id="live-commerce">
+                <div class="section-header">
+                    <h2>라이브커머스 기획</h2>
+                    <div class="section-subtitle">전시 도슨트 라이브부터 여행 큐레이션까지</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">티켓</span>
+                        <span>2020–2022</span>
+                    </div>
+                    <h3>수요아트살롱</h3>
+                    <p class="project-description">국내 최초 도슨트 전시 해설 결합 라이브커머스. 기획부터 대본, 송출까지 A to Z 전 과정 총괄.</p>
+                    <div class="project-info-list">
+                        <strong>담당 업무:</strong> 기획 / 대본 작성 / 출연자 섭외 / 현장 총괄
+                    </div>
+                    
+                    <div class="shorts-grid">
+                        <div class="shorts-wrapper">
+                            <iframe src="https://www.youtube.com/embed/nQVB-jrCs7E" allowfullscreen></iframe>
+                        </div>
+                        <div class="shorts-wrapper">
+                            <iframe src="https://www.youtube.com/embed/jd3ZBYlmlVg" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div class="project-links" style="margin-top: 20px;">
+                        <a href="https://youtu.be/N9RQfU-vHK8" target="_blank">앙리 마티스전 →</a>
+                        <a href="https://youtu.be/OUHqG_JVBgQ" target="_blank">필립 콜버트 →</a>
+                        <a href="https://youtu.be/f7vUcfKkHPA" target="_blank">맥스 달튼 →</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="youtube-content">
+                <div class="section-header">
+                    <h2>유튜브 콘텐츠</h2>
+                    <div class="section-subtitle">기획부터 제작까지, 스토리가 있는 영상</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">투어</span>
+                        <span>2022-2023</span>
+                    </div>
+                    <h3>로친소 (로컬 친구 소개)</h3>
+                    <p class="project-description">현지 로컬 가이드와 연계한 여행지 소개 콘텐츠 기획 및 제작 요청 총괄.</p>
+                    
+                    <div class="video-grid">
+                        <div class="video-card">
+                            <div class="video-wrapper">
+                                <iframe src="https://www.youtube.com/embed/EK_9VetmTfs" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-wrapper">
+                                <iframe src="https://www.youtube.com/embed/2r1_ti4l4ZQ" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">도서</span>
+                        <span>2019-2023</span>
+                    </div>
+                    <h3>공원생활 (저자 인터뷰)</h3>
+                    <p class="project-description">신간 작가들과의 심층 대화 콘텐츠. 책의 메시지를 영상 언어로 재해석.</p>
+                    
+                    <div class="video-grid">
+                        <div class="video-card">
+                            <div class="video-wrapper">
+                                <iframe src="https://www.youtube.com/embed/WMHM3uT4Brc" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-wrapper">
+                                <iframe src="https://www.youtube.com/embed/sRTH6KUTCNA" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="editorial">
+                <div class="section-header">
+                    <h2>인터뷰 & 에디토리얼</h2>
+                    <div class="section-subtitle">300여 명의 작가를 만나 기록한 깊이 있는 이야기</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">도서</span>
+                        <span>2015–2021</span>
+                    </div>
+                    <h3>북DB 작가 인터뷰</h3>
+                    <p class="project-description">알랭 드 보통, 리처드 도킨스 등 국내외 명사 인터뷰 및 기사 작성.</p>
+                    <div class="project-links">
+                        <a href="http://bookdb.interpark.com/bdb/Interview.do?_method=InterviewDetailM&swParam=1&sc.mreviewNo=90089" target="_blank">소설가 김연수 →</a>
+                        <a href="http://bookdb.interpark.com/bdb/Interview.do?_method=InterviewDetailM&swParam=1&sc.mreviewNo=66162" target="_blank">알랭 드 보통 →</a>
+                        <a href="http://bookdb.interpark.com/bdb/Interview.do?_method=InterviewDetailM&swParam=1&sc.mreviewNo=88008" target="_blank">박막례 할머니 →</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 Hyejin Joo. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
