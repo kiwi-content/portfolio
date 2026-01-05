@@ -3,602 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>주혜진 - 콘텐츠 크리에이터 & 마케터</title>
+    <title>주혜진 포트폴리오 | 콘텐츠 디렉터 & 마케터</title>
     <style>
-        /* --- 기본 스타일 리셋 및 폰트 설정 --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #666;
+            --accent: #0047FF; /* 포인트 컬러 */
+            --bg-gray: #f8f9fa;
+            --border: #ececec;
         }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
             line-height: 1.7;
-            color: #1a1a1a;
-            background: #ffffff;
-            word-break: keep-all;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 80px 40px;
-        }
-
-        /* --- 헤더 스타일 --- */
-        header {
-            margin-bottom: 100px;
-            padding-bottom: 60px;
-            border-bottom: 1px solid #e5e5e5;
-        }
-
-        .profile-flex {
-            display: flex;
-            align-items: flex-start;
-            gap: 50px;
-            margin-bottom: 40px;
-        }
-
-        .profile-img {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            object-fit: cover;
-            background: #f5f5f5;
-            flex-shrink: 0;
-        }
-
-        h1 {
-            font-size: 48px;
-            font-weight: 300;
-            letter-spacing: -1px;
-            margin-bottom: 12px;
-        }
-
-        .subtitle {
-            font-size: 20px;
-            color: #666;
-            font-weight: 300;
-            margin-bottom: 40px;
-        }
-
-        .intro {
-            font-size: 16px;
-            color: #444;
-            max-width: 700px;
-        }
-
-        .contact {
-            margin-top: 30px;
-            font-size: 14px;
-            color: #666;
-        }
-
-        .contact a {
-            color: #1a1a1a;
-            text-decoration: none;
-            margin-right: 20px;
-            border-bottom: 1px solid transparent;
-            transition: all 0.3s;
-        }
-
-        .contact a:hover {
-            border-bottom: 1px solid #1a1a1a;
-            opacity: 0.6;
-        }
-
-        /* --- 커리어 요약 섹션 --- */
-        .career-overview {
-            margin-bottom: 100px;
-            padding: 40px;
-            background: #fafafa;
-            border-radius: 12px;
-        }
-
-        .career-overview h3 {
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #999;
-            margin-bottom: 25px;
-        }
-
-        .career-item {
-            margin-bottom: 25px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .career-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .career-title {
-            font-size: 18px;
-            font-weight: 500;
-            margin-bottom: 5px;
-        }
-
-        .career-period {
-            font-size: 14px;
-            color: #999;
-            margin-bottom: 10px;
-        }
-
-        .career-desc {
-            font-size: 15px;
-            color: #666;
-        }
-
-        /* --- 공통 섹션 헤더 --- */
-        .section-header {
-            margin-bottom: 60px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #1a1a1a;
-        }
-
-        .section-header h2 {
-            font-size: 36px;
-            font-weight: 400;
-            letter-spacing: -0.5px;
-            margin-bottom: 10px;
-        }
-
-        .section-header .section-subtitle {
-            font-size: 15px;
-            color: #666;
-            font-weight: 300;
-        }
-
-        /* --- 프로젝트 공통 레이아웃 --- */
-        .project {
-            margin-bottom: 100px;
-        }
-
-        .project-meta {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 15px;
-            font-size: 11px;
-            color: #999;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .project-meta .category {
-            padding: 2px 8px;
-            background: #f0f0f0;
-            border-radius: 3px;
-            color: #666;
-        }
-
-        .project h3 {
-            font-size: 28px;
-            font-weight: 400;
-            margin-bottom: 15px;
-            letter-spacing: -0.5px;
-        }
-
-        .project-description {
-            font-size: 16px;
-            color: #444;
-            margin-bottom: 25px;
-        }
-
-        .project-links {
-            margin-top: 25px;
-        }
-
-        .project-links a {
-            display: inline-block;
-            color: #1a1a1a;
-            text-decoration: none;
-            font-size: 14px;
-            margin-right: 25px;
-            padding-bottom: 2px;
-            border-bottom: 1px solid #1a1a1a;
-            transition: opacity 0.3s;
-        }
-
-        .project-links a:hover {
-            opacity: 0.5;
-        }
-
-        /* --- 미디어(영상/이미지) 카드 스타일 --- */
-        .media-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-
-        .media-card {
+            color: var(--primary);
             background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .media-card:hover {
-            transform: translateY(-5px);
-        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 100px 40px; }
 
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 비율 */
-            height: 0;
-            background: #000;
-        }
+        /* Header & Intro */
+        header { margin-bottom: 120px; }
+        .name { font-size: 56px; font-weight: 700; letter-spacing: -2px; margin-bottom: 10px; }
+        .job-title { font-size: 20px; color: var(--secondary); font-weight: 300; margin-bottom: 40px; }
+        .intro-text { font-size: 18px; line-height: 1.8; max-width: 750px; color: #333; }
 
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* Shorts 전용 (세로형) */
-        .shorts-grid {
+        /* Core Expertise Section (역량 강조) */
+        .expertise-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            max-width: 600px;
-            margin: 30px 0;
+            margin: 60px 0 100px 0;
         }
-
-        .shorts-wrapper {
-            position: relative;
-            padding-bottom: 177.78%; /* 9:16 비율 */
-            height: 0;
+        .exp-card {
+            padding: 30px;
+            background: var(--bg-gray);
             border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
         }
+        .exp-card h4 { font-size: 15px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; color: var(--accent); }
+        .exp-card p { font-size: 14px; color: #555; }
 
-        .shorts-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
+        /* Section Global */
+        section { margin-bottom: 120px; }
+        .section-label { font-size: 13px; font-weight: 600; text-transform: uppercase; color: var(--secondary); margin-bottom: 20px; display: block; letter-spacing: 2px; }
+        h2 { font-size: 32px; font-weight: 600; margin-bottom: 50px; border-bottom: 2px solid #000; padding-bottom: 15px; }
+
+        /* Career Timeline Style */
+        .career-row {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
         }
+        .career-period { font-size: 16px; color: var(--secondary); font-weight: 500; }
+        .career-content h3 { font-size: 24px; margin-bottom: 10px; }
+        .career-content .role { font-size: 15px; color: var(--accent); font-weight: 600; margin-bottom: 15px; display: block; }
+        .career-content ul { list-style: none; padding-left: 0; }
+        .career-content li { font-size: 15px; margin-bottom: 8px; position: relative; padding-left: 15px; color: #444; }
+        .career-content li::before { content: "•"; position: absolute; left: 0; color: var(--accent); }
 
-        /* 이미지 박스 및 플레이스홀더 */
-        .image-box {
-            width: 100%;
-            aspect-ratio: 16/9;
-            background: #f9f9f9;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-        }
+        /* Media / Video Grid */
+        .media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
+        .video-card { background: #000; border-radius: 12px; overflow: hidden; position: relative; padding-bottom: 56.25%; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .video-card iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        
+        .shorts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; max-width: 600px; margin-top: 30px; }
+        .shorts-card { background: #000; border-radius: 12px; overflow: hidden; position: relative; padding-bottom: 177.78%; }
+        .shorts-card iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        .image-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        /* Contact Footer */
+        footer { padding: 100px 0; border-top: 1px solid var(--border); text-align: center; }
+        .footer-links { margin-bottom: 30px; }
+        .footer-links a { margin: 0 15px; text-decoration: none; color: #000; font-size: 14px; font-weight: 500; }
 
-        .image-box .placeholder-icon {
-            font-size: 24px;
-            margin-bottom: 10px;
-            opacity: 0.3;
-        }
-
-        .image-box .placeholder-text {
-            font-size: 13px;
-            color: #aaa;
-            font-weight: 300;
-        }
-
-        .highlights {
-            margin-top: 20px;
-            padding-left: 20px;
-            color: #666;
-            font-size: 15px;
-        }
-
-        .highlights li {
-            margin-bottom: 8px;
-        }
-
-        /* --- 섹션 간격 및 푸터 --- */
-        .section-spacer {
-            margin: 120px 0;
-        }
-
-        footer {
-            margin-top: 150px;
-            padding: 60px 0;
-            border-top: 1px solid #eee;
-            text-align: center;
-            font-size: 14px;
-            color: #bbb;
-        }
-
-        /* --- 반응형 설정 --- */
         @media (max-width: 768px) {
-            .container {
-                padding: 40px 20px;
-            }
-
-            .profile-flex {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                gap: 30px;
-            }
-
-            h1 {
-                font-size: 36px;
-            }
-
-            .section-header h2 {
-                font-size: 28px;
-            }
-
-            .project h3 {
-                font-size: 24px;
-            }
+            .container { padding: 60px 20px; }
+            .name { font-size: 40px; }
+            .expertise-grid { grid-template-columns: 1fr; }
+            .career-row { grid-template-columns: 1fr; gap: 10px; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <div class="profile-flex">
-                <img src="https://raw.githubusercontent.com/kiwi-content/portfolio/image/profile.png" 
-                     alt="주혜진 프로필" class="profile-img">
-                <div>
-                    <h1>주혜진</h1>
-                    <div class="subtitle">콘텐츠 크리에이터 & 마케터</div>
-                    <p class="intro">
-                        미술 전문 기자 출신 콘텐츠 마케터로 15년간 콘텐츠 기획·제작, 국내 최초 전시 라이브커머스 기획, 
-                        작가 인터뷰 300여 건, 검색 최적화 블로그·인스타그램 운영 등을 수행했습니다. 
-                        트렌드를 읽고 콘텐츠로 구현해 마케팅 성과를 창출하는 데 강점이 있습니다.
-                    </p>
-                </div>
-            </div>
-            <div class="contact">
-                <a href="mailto:kiwi733@naver.com">kiwi733@naver.com</a>
-                <a href="https://www.facebook.com/hyejin.joo/" target="_blank">Facebook</a>
-                <a href="https://medium.com/@hyejinjoo" target="_blank">Medium</a>
-                <a href="https://kr.linkedin.com/in/hye-jin-joo-003332219" target="_blank">LinkedIn</a>
-            </div>
-        </header>
 
-        <!-- Career Overview -->
-        <div class="career-overview">
-            <h3>Career</h3>
-            <div class="career-item">
-                <div class="career-title">인터파크</div>
-                <div class="career-period">2015 - 2023</div>
-                <div class="career-desc">도서(북DB), 투어, 티켓 부문에서 콘텐츠 기획·제작 및 마케팅 업무 총괄.</div>
+<div class="container">
+    <header>
+        <span class="section-label">Content Director Portfolio</span>
+        <h1 class="name">주혜진</h1>
+        <p class="job-title">콘텐츠 디렉터 & 커머스 마케터</p>
+        <p class="intro-text">
+            15년 경력의 콘텐츠 전문가로서 <b>미술 전문 기자의 통찰력</b>과 <b>이커머스 마케터의 퍼포먼스</b>를 동시에 보유하고 있습니다. 국내 최초 전시 라이브커머스 기획을 비롯하여 300여 명의 글로벌 작가 인터뷰, SEO 최적화 마케팅을 통해 비즈니스의 가치를 콘텐츠로 전환합니다.
+        </p>
+
+        <div class="expertise-grid">
+            <div class="exp-card">
+                <h4>Strategic Planning</h4>
+                <p>라이브커머스, 유튜브 시리즈 등 신규 포맷 기획 및 비즈니스 모델 구축</p>
             </div>
-            <div class="career-item">
-                <div class="career-title">미술 전문 기자</div>
-                <div class="career-period">2008 - 2014</div>
-                <div class="career-desc">[미술세계], [경향 아티클]에서 6년간 취재 및 기자 기획 기사 집필.</div>
+            <div class="exp-card">
+                <h4>Editorial Mastery</h4>
+                <p>심층 인터뷰, 기획 기사 작성, 브랜드 저널리즘 기반의 고퀄리티 콘텐츠 제작</p>
+            </div>
+            <div class="exp-card">
+                <h4>Growth Marketing</h4>
+                <p>검색 최적화(SEO) 기반 블로그 운영 및 타겟 지향적 SNS 콘텐츠 마케팅</p>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <span class="section-label">Career History</span>
+        <h2>주요 경력 사항</h2>
+
+        <div class="career-row">
+            <div class="career-period">2015. 11 — 2023. 10</div>
+            <div class="career-content">
+                <h3>인터파크 (Interpark)</h3>
+                <span class="role">콘텐츠 팀장 / 시니어 마케터</span>
+                <ul>
+                    <li><b>라이브커머스 혁신:</b> 국내 최초 전시 해설 결합형 '수요아트살롱' 기획 및 운영</li>
+                    <li><b>유튜브 브랜딩:</b> '로친소', '5 vs 50' 등 여행 예능 시리즈 기획 (누적 조회수 및 유입 증대)</li>
+                    <li><b>작가 인터뷰:</b> '북DB' 운영, 알랭 드 보통 등 글로벌 저자 포함 300인 인터뷰 기록</li>
+                    <li><b>SEO 마케팅:</b> 인터파크투어 공식 블로그 전략 수립 및 검색 유입량 극대화 달성</li>
+                </ul>
             </div>
         </div>
 
-        <main>
-            <!-- 1. Live Commerce Section -->
-            <section>
-                <div class="section-header">
-                    <h2>라이브커머스 기획</h2>
-                    <div class="section-subtitle">국내 최초 전시 도슨트 라이브부터 MBTI 여행까지</div>
+        <div class="career-row">
+            <div class="career-period">2008. 09 — 2014. 09</div>
+            <div class="career-content">
+                <h3>경향 아티클 / 미술세계</h3>
+                <span class="role">미술 전문지 취재기자</span>
+                <ul>
+                    <li>현대 미술 현장 취재 및 월간 기획 기사 집필 (전시 리뷰, 작가 심층 분석)</li>
+                    <li>미술계 트렌드 분석 및 주요 미술인 네트워크 구축</li>
+                    <li>지면 편집 총괄 및 교정·교열을 통한 콘텐츠 품질 관리</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <span class="section-label">Selected Projects</span>
+        <h2>시각화된 성과물</h2>
+
+        <div class="project">
+            <h3 style="margin-bottom:20px;">Live Commerce & Video Content</h3>
+            <div class="media-grid">
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/EK_9VetmTfs" allowfullscreen></iframe>
                 </div>
-
-                <!-- 프로젝트: 수요아트살롱 -->
-                <div class="project">
-                    <div class="project-meta"><span class="category">티켓</span><span>2020–2022</span></div>
-                    <h3>수요아트살롱</h3>
-                    <p class="project-description">
-                        국내 최초 도슨트 전시 해설 라이브커머스. 기획전 페이지 제작, 대본 집필, 현장 총괄까지 전 과정을 담당했습니다.
-                    </p>
-                    
-                    <div class="shorts-grid">
-                        <div class="media-card"><div class="shorts-wrapper"><iframe src="https://www.youtube.com/embed/nQVB-jrCs7E" allowfullscreen></iframe></div></div>
-                        <div class="media-card"><div class="shorts-wrapper"><iframe src="https://www.youtube.com/embed/jd3ZBYlmlVg" allowfullscreen></iframe></div></div>
-                    </div>
-
-                    <div class="project-links">
-                        <a href="https://youtu.be/N9RQfU-vHK8" target="_blank">앙리 마티스전 →</a>
-                        <a href="https://youtu.be/f7vUcfKkHPA" target="_blank">맥스 달튼 →</a>
-                    </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/WMHM3uT4Brc" allowfullscreen></iframe>
                 </div>
+            </div>
 
-                <!-- 프로젝트: MBTI & 현지 LIVE -->
-                <div class="project">
-                    <div class="project-meta"><span class="category">투어</span><span>2021-2022</span></div>
-                    <h3>MBTI 연구소 & 현지 LIVE 투어</h3>
-                    <p class="project-description">
-                        트렌드를 접목한 큐레이션 방송과 실시간 해외 연결 랜선 투어로 화제를 모았습니다.
-                    </p>
-                    <div class="media-grid">
-                        <div class="media-card"><div class="image-box"><img src="https://raw.githubusercontent.com/kiwi-content/portfolio/image/mbti.jpg" alt="MBTI 연구소"></div></div>
-                        <div class="media-card"><div class="image-box"><img src="https://raw.githubusercontent.com/kiwi-content/portfolio/image/wifi1.JPG" alt="현지 라이브 투어"></div></div>
-                    </div>
+            <div class="shorts-grid">
+                <div class="shorts-card">
+                    <iframe src="https://www.youtube.com/embed/nQVB-jrCs7E" allowfullscreen></iframe>
                 </div>
-            </section>
-
-            <div class="section-spacer"></div>
-
-            <!-- 2. YouTube Content Section -->
-            <section>
-                <div class="section-header">
-                    <h2>유튜브 콘텐츠</h2>
-                    <div class="section-subtitle">기획부터 제작까지, 스토리가 있는 영상 콘텐츠</div>
+                <div class="shorts-card">
+                    <iframe src="https://www.youtube.com/embed/jd3ZBYlmlVg" allowfullscreen></iframe>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="project">
-                    <div class="project-meta"><span class="category">투어/도서</span><span>2019-2023</span></div>
-                    <h3>로친소 & 5 vs 50 & 공원생활</h3>
-                    <p class="project-description">로컬 가이드 협업 및 예산 여행 배틀, 작가 인터뷰 등 다양한 포맷의 영상을 기획했습니다.</p>
-                    
-                    <div class="media-grid">
-                        <div class="media-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/EK_9VetmTfs" allowfullscreen></iframe></div></div>
-                        <div class="media-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/yQgGplT5uuI" allowfullscreen></iframe></div></div>
-                        <div class="media-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/WMHM3uT4Brc" allowfullscreen></iframe></div></div>
-                    </div>
-                </div>
-            </section>
+    <footer>
+        <div class="footer-links">
+            <a href="mailto:kiwi733@naver.com">Email</a>
+            <a href="https://kr.linkedin.com/in/hye-jin-joo-003332219" target="_blank">LinkedIn</a>
+            <a href="https://medium.com/@hyejinjoo" target="_blank">Medium</a>
+        </div>
+        <p style="color:#999; font-size:12px;">© 2026 Hyejin Joo. Designed for Impact.</p>
+    </footer>
+</div>
 
-            <div class="section-spacer"></div>
-
-            <!-- 3. Interview & Editorial Section (자연스러운 연결 구간) -->
-            <section>
-                <div class="section-header">
-                    <h2>인터뷰 & 에디토리얼</h2>
-                    <div class="section-subtitle">300여 명의 작가를 만나 깊이 있는 이야기를 기록하다</div>
-                </div>
-
-                <!-- 프로젝트: 북DB 작가 인터뷰 -->
-                <div class="project">
-                    <div class="project-meta"><span class="category">도서</span><span>2015–2021</span></div>
-                    <h3>북DB 작가 인터뷰</h3>
-                    <p class="project-description">
-                        6년간 김연수, 김영하, 알랭 드 보통 등 300여 명의 명사를 인터뷰했습니다. 
-                        단순한 정보를 넘어 작가의 철학을 독자에게 전달하는 브릿지 역할을 수행했습니다.
-                    </p>
-
-                    <div class="media-grid">
-                        <!-- 이미지 카드: 인터뷰 현장 -->
-                        <div class="media-card">
-                            <div class="image-box">
-                                <div class="placeholder-icon">✍️</div>
-                                <div class="placeholder-text">인터뷰 현장 및 보도 자료 이미지</div>
-                            </div>
-                        </div>
-                        <!-- 이미지 카드: 기사 스크린샷 -->
-                        <div class="media-card">
-                            <div class="image-box">
-                                <div class="placeholder-icon">📄</div>
-                                <div class="placeholder-text">실제 게재 기사 스크린샷</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-links">
-                        <a href="http://bookdb.interpark.com/bdb/Interview.do?_method=InterviewDetailM&swParam=1&sc.mreviewNo=90089" target="_blank">소설가 김연수 인터뷰 →</a>
-                        <a href="http://bookdb.interpark.com/bdb/Interview.do?_method=InterviewDetailM&swParam=1&sc.mreviewNo=66162" target="_blank">알랭 드 보통 인터뷰 →</a>
-                        <a href="http://bookdb.interpark.com/bdb/Interview.do?_method=InterviewDetailM&swParam=1&sc.mreviewNo=88008" target="_blank">박막례 할머니 인터뷰 →</a>
-                    </div>
-                </div>
-
-                <!-- 프로젝트: 이슈앤스토리 -->
-                <div class="project">
-                    <div class="project-meta"><span class="category">도서</span><span>2015–2021</span></div>
-                    <h3>이슈앤스토리 - 트렌드 기획 기사</h3>
-                    <p class="project-description">
-                        대중의 관심사와 책을 연결하는 트렌드 기획. BTS RM의 독서 목록 등 
-                        바이럴 성과가 높은 콘텐츠를 통해 플랫폼 유입을 극대화했습니다.
-                    </p>
-
-                    <div class="media-grid">
-                        <div class="media-card">
-                            <div class="image-box">
-                                <div class="placeholder-icon">📈</div>
-                                <div class="placeholder-text">트렌드 기획 기사 썸네일 모음</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-links">
-                        <a href="http://bookdb.interpark.com/bdb/IssueStory.do?_method=detailM&sc.webzNo=40912" target="_blank">MBTI 유형별 책 추천 →</a>
-                        <a href="http://bookdb.interpark.com/bdb/IssueStory.do?_method=detailM&sc.webzNo=37550" target="_blank">BTS RM 독서 목록 →</a>
-                    </div>
-                </div>
-            </section>
-
-            <div class="section-spacer"></div>
-
-            <!-- 4. Blog & SEO Section -->
-            <section>
-                <div class="section-header">
-                    <h2>블로그 & SEO 마케팅</h2>
-                    <div class="section-subtitle">검색 최적화로 가시적인 퍼포먼스를 도출하다</div>
-                </div>
-
-                <div class="project">
-                    <div class="project-meta"><span class="category">투어</span><span>2022-2023</span></div>
-                    <h3>인터파크투어 네이버 공식 블로그</h3>
-                    <p class="project-description">
-                        키워드 선점과 콘텐츠 고도화를 통해 네이버 공식 블로그 트래픽 증대 및 상품 판매 전환을 실현했습니다.
-                    </p>
-
-                    <div class="media-grid">
-                        <div class="media-card">
-                            <div class="image-box">
-                                <div class="placeholder-icon">💻</div>
-                                <div class="placeholder-text">블로그 주요 포스팅 사례</div>
-                            </div>
-                        </div>
-                        <div class="media-card">
-                            <div class="image-box">
-                                <div class="placeholder-icon">📊</div>
-                                <div class="placeholder-text">유입 통계 및 퍼포먼스 리포트</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-links">
-                        <a href="http://blog.naver.com/interpark_tour" target="_blank">블로그 방문하기 →</a>
-                    </div>
-                </div>
-            </section>
-
-            <div class="section-spacer"></div>
-
-            <!-- 5. Magazine Section (미술 기자 경력) -->
-            <section>
-                <div class="section-header">
-                    <h2>미술 전문지 기자</h2>
-                    <div class="section-subtitle">현장 취재와 전문적 식견으로 미술계를 기록하다</div>
-                </div>
-
-                <div class="project">
-                    <div class="project-meta"><span class="category">Magazine</span><span>2008–2014</span></div>
-                    <h3>경향 아티클 & 미술세계</h3>
-                    <p class="project-description">
-                        [경향 아티클]과 [미술세계]에서 6년간 활동하며, 미술 현장을 발로 뛰어 전시 리뷰 및 
-                        작가 심층 취재 기사를 작성했습니다. 교정 교열 및 외고 편집 등 전문 에디팅 역량을 쌓았습니다.
-                    </p>
-
-                    <div class="media-grid">
-                        <div class="media-card">
-                            <div class="image-box">
-                                <div class="placeholder-icon">📚</div>
-                                <div class="placeholder-text">잡지 표지 및 기사 지면 이미지</div>
-                            </div>
-                        </div>
-                        <div class="media-card">
-                            <div class="image-box">
-                                <div class="placeholder-icon">🎨</div>
-                                <div class="placeholder-text">전시 취재 현장 이미지</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <p>© 2026 Hyejin Joo. All rights reserved.</p>
-        </footer>
-    </div>
 </body>
 </html>
