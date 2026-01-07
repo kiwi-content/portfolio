@@ -46,7 +46,7 @@
         .exp-card h4 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; color: var(--accent); }
         .exp-card p { font-size: 14px; color: #555; }
 
-        /* Career Section */
+        /* Section Global */
         section { margin-bottom: 120px; }
         .section-label { font-size: 12px; font-weight: 600; text-transform: uppercase; color: var(--secondary); margin-bottom: 15px; display: block; letter-spacing: 2px; }
         h2 { font-size: 30px; font-weight: 600; margin-bottom: 50px; border-bottom: 2px solid #000; padding-bottom: 15px; }
@@ -64,44 +64,29 @@
         .career-content li { font-size: 15px; margin-bottom: 10px; position: relative; padding-left: 15px; color: #444; }
         .career-content li::before { content: "•"; position: absolute; left: 0; color: var(--accent); }
 
-        /* Project Groups */
+        /* Project Group Layout */
         .project-group { margin-bottom: 80px; }
-        .project-group h3 { font-size: 20px; margin-bottom: 25px; color: #1a1a1a; display: flex; align-items: center; }
-        .project-group h3::before { content: ""; width: 4px; height: 20px; background: var(--accent); margin-right: 12px; border-radius: 2px; }
+        .project-group h3 { font-size: 22px; margin-bottom: 30px; color: #1a1a1a; display: flex; align-items: center; }
+        .project-group h3::before { content: ""; width: 4px; height: 22px; background: var(--accent); margin-right: 12px; border-radius: 2px; }
 
-        .project-detail { margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid #f0f0f0; }
-        .project-detail:last-child { border-bottom: none; }
-        .project-title { font-size: 18px; font-weight: 600; margin-bottom: 10px; color: #222; }
-        .project-desc { font-size: 15px; color: #666; margin-bottom: 20px; line-height: 1.6; }
+        /* Sub-category Layout */
+        .sub-category { margin-bottom: 40px; padding: 25px; background: #fafafa; border-radius: 10px; }
+        .sub-title { font-size: 18px; font-weight: 600; margin-bottom: 12px; color: var(--accent); }
+        .sub-desc { font-size: 15px; color: #666; margin-bottom: 20px; }
 
-        /* Archive Note Style */
-        .archive-note {
-            background: #fdfdfd; 
-            padding: 20px; 
-            border-left: 4px solid #ddd; 
-            margin-bottom: 25px; 
-            font-style: normal;
-            font-size: 14px;
-            color: #555;
-            line-height: 1.7;
-        }
+        /* Link & Media */
+        .link-list { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+        .link-item { text-decoration: none; color: #1a1a1a; font-size: 13px; font-weight: 500; padding: 7px 15px; border: 1px solid #ddd; border-radius: 20px; background: #fff; transition: 0.2s; }
+        .link-item:hover { background: var(--primary); color: #fff; }
 
-        /* Media Grids */
-        .media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
-        .video-card { background: #000; border-radius: 8px; overflow: hidden; position: relative; padding-bottom: 56.25%; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .video-card { background: #000; border-radius: 8px; overflow: hidden; position: relative; padding-bottom: 56.25%; }
         .video-card iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        
-        .shorts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; max-width: 700px; margin-top: 20px; }
-        .shorts-card { background: #000; border-radius: 8px; overflow: hidden; position: relative; padding-bottom: 177.78%; }
-        .shorts-card iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        .image-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; }
-        .img-card { background: #f5f5f5; border-radius: 8px; overflow: hidden; aspect-ratio: 16/9; }
-        .img-card img { width: 100%; height: 100%; object-fit: cover; }
+        .image-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px; }
+        .img-placeholder { background: #eee; border-radius: 8px; aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center; color: #999; font-size: 13px; text-align: center; padding: 20px; border: 1px dashed #ccc; }
 
-        .link-list { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 15px; }
-        .link-item { text-decoration: none; color: #1a1a1a; font-size: 13px; font-weight: 500; padding: 8px 16px; border: 1px solid #ddd; border-radius: 20px; transition: all 0.2s; background: #fff; }
-        .link-item:hover { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+        .archive-notice { font-size: 13px; color: #888; margin-bottom: 25px; padding: 15px; background: #fff; border: 1px dashed #ccc; border-radius: 5px; }
 
         /* Footer */
         footer { padding: 80px 0; border-top: 1px solid var(--border); text-align: center; }
@@ -111,7 +96,6 @@
         @media (max-width: 768px) {
             .container { padding: 50px 20px; }
             .name { font-size: 38px; }
-            .expertise-grid { grid-template-columns: 1fr; }
             .career-row { grid-template-columns: 1fr; gap: 10px; }
         }
     </style>
@@ -124,7 +108,7 @@
         <h1 class="name">주혜진</h1>
         <p class="job-title">콘텐츠 디렉터 & 시니어 마케터</p>
         <p class="intro-text">
-            15년차 콘텐츠 전문가로서 <b>미술 전문 기자의 기획력</b>과 <b>이커머스 마케터의 실행력</b>을 갖추고 있습니다. 국내 최초 전시 라이브커머스 기획부터 300여 건의 명사 인터뷰, 검색 최적화 기반 마케팅까지 비즈니스의 성장을 이끄는 매력적인 콘텐츠를 만듭니다.
+            15년차 콘텐츠 전문가로서 <b>미술 전문 기자의 안목</b>과 <b>이커머스 마케터의 데이터 감각</b>을 결합했습니다. 두 곳의 미술 전문지를 거치며 다져진 취재 역량을 바탕으로, 브랜드의 진정성을 전달하는 고품격 콘텐츠를 설계합니다.
         </p>
 
         <div class="expertise-grid">
@@ -146,31 +130,42 @@
     <section>
         <span class="section-label">Career Journey</span>
         <h2>주요 경력</h2>
-
+        
         <div class="career-row">
             <div class="career-period">2015. 11 — 2023. 10</div>
             <div class="career-content">
                 <h3>인터파크 (Interpark)</h3>
                 <span class="role">시니어 콘텐츠 마케터</span>
                 <ul>
-                    <li>도서(북DB), 투어, 티켓 전 부문 통합 콘텐츠 마케팅 전략 수립</li>
-                    <li>전시 도슨트 결합형 라이브커머스 '수요아트살롱' 런칭 및 총괄</li>
-                    <li>여행 특화 유튜브 예능 '로친소', '5 vs 50' 시리즈 기획 및 현장 디렉팅</li>
-                    <li>검색 최적화(SEO) 전략을 통한 공식 블로그 유입량 극대화</li>
-                    <li>300여 명의 국내외 명사 인터뷰 및 기획 기사 발행</li>
+                    <li>도서·투어·티켓 전 부문 통합 콘텐츠 마케팅 기획 및 운영</li>
+                    <li>전시 도슨트 라이브커머스 '수요아트살롱' 등 뉴미디어 포맷 런칭</li>
+                    <li>검색 최적화(SEO) 전략 수립 및 공식 채널 성장 주도</li>
                 </ul>
             </div>
         </div>
 
         <div class="career-row">
-            <div class="career-period">2008. 09 — 2014. 09</div>
+            <div class="career-period">2013. 01 — 2014. 09</div>
             <div class="career-content">
-                <h3>경향 아티클 / 미술세계</h3>
+                <h3>경향 아티클 (Kyunghyang Article)</h3>
                 <span class="role">미술 전문 취재기자</span>
                 <ul>
-                    <li>미술 현장 심층 취재 및 전시 리뷰, 작가 인터뷰 전문 에디팅</li>
-                    <li>월간 미술 전문지 지면 기획 및 교정·교열 총괄</li>
-                    <li>미술 시장 동향 분석 및 전문가 네트워크 구축</li>
+                    <li>현대 미술 현장 밀착 취재 및 전시 비평 기사 집필</li>
+                    <li>국내외 주요 작가 인터뷰 및 월간 특집 지면 기획</li>
+                    <li>매거진 에디팅 및 최종 원고 품질 관리(교정·교열)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="career-row">
+            <div class="career-period">2008. 09 — 2012. 10</div>
+            <div class="career-content">
+                <h3>미술세계 (Misulsegye)</h3>
+                <span class="role">미술 전문 취재기자</span>
+                <ul>
+                    <li>미술계 전반의 트렌드 분석 및 전시 현장 취재</li>
+                    <li>원로 및 신진 작가 발굴 인터뷰 시리즈 연재</li>
+                    <li>미술 전문지 지면 구성 및 외부 필진 관리</li>
                 </ul>
             </div>
         </div>
@@ -181,74 +176,48 @@
         <h2>시각화된 성과물</h2>
 
         <div class="project-group">
-            <h3>라이브커머스 & 숏폼 기획</h3>
-            <div class="project-detail">
-                <p class="project-title">국내 최초 전시 도슨트 라이브 '수요아트살롱'</p>
-                <p class="project-desc">도슨트의 전문 해설과 티켓 판매를 결합한 새로운 포맷을 구축했습니다. 현장 총괄 및 대본 기획을 담당했습니다.</p>
-                <div class="shorts-grid">
-                    <div class="shorts-card"><iframe src="https://www.youtube.com/embed/nQVB-jrCs7E" allowfullscreen></iframe></div>
-                    <div class="shorts-card"><iframe src="https://www.youtube.com/embed/jd3ZBYlmlVg" allowfullscreen></iframe></div>
-                </div>
-                <div class="link-list">
-                    <a href="https://youtu.be/N9RQfU-vHK8" class="link-item" target="_blank">앙리 마티스전 다시보기</a>
-                    <a href="https://youtu.be/OUHqG_JVBgQ" class="link-item" target="_blank">필립 콜버트전 다시보기</a>
-                </div>
+            <h3>에디토리얼 & 저널리즘 아카이브</h3>
+            
+            <div class="archive-notice">
+                인터파크 북DB 서비스 종료(2023)에 따라, 지난 8년간 기록한 300여 건의 인터뷰 기록을 브런치에 백업하여 아카이브하고 있습니다.
             </div>
-        </div>
 
-        <div class="project-group">
-            <h3>인터뷰 & 에디토리얼 아카이브</h3>
-            <div class="project-detail">
-                <p class="project-title">북DB 명사 인터뷰 및 트렌드 기획 기사</p>
-                
-                <div class="archive-note">
-                    <strong>[Note]</strong> 인터파크 북DB 서비스는 2023년 종료되었으나, 8년간 수행한 300여 건의 인터뷰 기록 중 주요 콘텐츠를 브런치 채널에 백업하여 기록의 영속성을 유지하고 있습니다. 사라진 플랫폼 위에서도 변하지 않는 콘텐츠의 가치를 증명합니다.
-                </div>
-
-                <p class="project-desc">
-                    알랭 드 보통, 리처드 도킨스, 김영하 등 국내외 저명 작가들과의 심층 대화를 통해 책의 가치를 전달했습니다. 작가의 철학을 끄집어내는 질문지 기획과 세련된 문체로 높은 독자 반응을 이끌어냈습니다.
-                </p>
-
+            <div class="sub-category">
+                <p class="sub-title">01. 저자 인터뷰 & 트렌드 기획기사</p>
                 <div class="link-list">
-                    <a href="https://brunch.co.kr/@heartiste" class="link-item" target="_blank">✍️ 개인 아카이브 (Heartiste) →</a>
-                    <a href="https://brunch.co.kr/@bookdb" class="link-item" target="_blank">📚 북DB 공식 브런치 백업 →</a>
+                    <a href="https://brunch.co.kr/@heartiste" class="link-item" target="_blank">개인 아카이브 (Heartiste)</a>
+                    <a href="https://brunch.co.kr/@bookdb" class="link-item" target="_blank">북DB 공식 백업 브런치</a>
                 </div>
-
-                <div class="media-grid" style="margin-top: 30px;">
-                    <div class="video-card">
-                        <iframe src="https://www.youtube.com/embed/WMHM3uT4Brc" title="천인우 인터뷰" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-card">
-                        <iframe src="https://www.youtube.com/embed/sRTH6KUTCNA" title="설민석 인터뷰" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-group">
-            <h3>유튜브 오리지널 콘텐츠</h3>
-            <div class="project-detail">
-                <p class="project-title">여행 예능 시리즈 '로친소' & '5 vs 50'</p>
-                <p class="project-desc">현지인 섭외 및 예산 기반 비교 여행이라는 명확한 컨셉으로 채널 성장을 견인했습니다.</p>
                 <div class="media-grid">
-                    <div class="video-card"><iframe src="https://www.youtube.com/embed/EK_9VetmTfs" allowfullscreen></iframe></div>
-                    <div class="video-card"><iframe src="https://www.youtube.com/embed/yQgGplT5uuI" allowfullscreen></iframe></div>
+                    <div class="video-card"><iframe src="https://www.youtube.com/embed/WMHM3uT4Brc" allowfullscreen></iframe></div>
+                    <div class="video-card"><iframe src="https://www.youtube.com/embed/sRTH6KUTCNA" allowfullscreen></iframe></div>
+                </div>
+            </div>
+
+            <div class="sub-category">
+                <p class="sub-title">02. 미술 전문지 취재 기록</p>
+                <p class="sub-desc">전시 비평부터 작가 인터뷰까지, 미술계 현장을 기록한 두 잡지사의 아카이브입니다.</p>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <p style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">[경향 아티클]</p>
+                        <div class="img-placeholder">경향 아티클<br>취재 지면 및 비평 기사</div>
+                    </div>
+                    <div>
+                        <p style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">[미술세계]</p>
+                        <div class="img-placeholder">미술세계<br>전시 리뷰 및 인터뷰 지면</div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="project-group">
-            <h3>마케팅 성과 & 미술 기자 아카이브</h3>
-            <div class="project-detail">
-                <p class="project-title">SEO 퍼포먼스 및 전문지 취재 기록</p>
-                <p class="project-desc">네이버 블로그 유입 최적화 성과와 미술 전문지 [경향 아티클], [미술세계] 시절의 취재 지면 아카이브입니다.</p>
-                <div class="image-grid">
-                    <div class="img-card">
-                        <img src="https://raw.githubusercontent.com/kiwi-content/portfolio/image/mbti.jpg" alt="SEO 마케팅 성과">
-                    </div>
-                    <div class="img-card">
-                        <img src="https://raw.githubusercontent.com/kiwi-content/portfolio/image/wifi1.JPG" alt="미술 기자 취재 기록">
-                    </div>
+            <h3>뉴미디어 & 커머스 콘텐츠</h3>
+            <div class="sub-category">
+                <p class="sub-title">Live Commerce & Travel YouTube</p>
+                <div class="media-grid">
+                    <div class="video-card"><iframe src="https://www.youtube.com/embed/nQVB-jrCs7E" allowfullscreen></iframe></div>
+                    <div class="video-card"><iframe src="https://www.youtube.com/embed/EK_9VetmTfs" allowfullscreen></iframe></div>
                 </div>
             </div>
         </div>
