@@ -30,54 +30,107 @@
         .job-title { font-size: 20px; color: var(--secondary); font-weight: 300; margin-bottom: 40px; }
         .intro-text { font-size: 17px; line-height: 1.8; max-width: 800px; color: #333; }
 
-        /* Core Pillars Section (혜진님이 제안하신 3가지 축) */
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 80px 0;
-        }
-        .pillar-card {
-            padding: 40px 30px;
-            background: var(--bg-gray);
-            border-radius: 15px;
-            border: 1px solid var(--border);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        .pillar-card:hover { transform: translateY(-10px); border-color: var(--accent); }
-        .pillar-icon { font-size: 30px; margin-bottom: 20px; display: block; }
-        .pillar-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 15px; color: var(--primary); letter-spacing: 0.5px; }
-        .pillar-card p { font-size: 14px; color: #555; line-height: 1.6; }
-
         /* Section Global */
-        section { margin-bottom: 120px; }
+        section { margin-bottom: 100px; }
         .section-label { font-size: 12px; font-weight: 600; text-transform: uppercase; color: var(--secondary); margin-bottom: 15px; display: block; letter-spacing: 2px; }
         h2 { font-size: 32px; font-weight: 600; margin-bottom: 60px; border-bottom: 2px solid #000; padding-bottom: 15px; }
 
-        /* Detailed Project Group */
-        .project-group { margin-bottom: 100px; }
-        .group-header { display: flex; align-items: center; margin-bottom: 40px; }
-        .group-header h4 { font-size: 24px; font-weight: 600; margin-right: 15px; }
-        .group-header .line { flex-grow: 1; height: 1px; background: #eee; }
+        /* ✨ 전문성 기반 3대 핵심 섹션 스타일 ✨ */
+        .pillar-section {
+            margin-bottom: 120px;
+            padding: 40px;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+        
+        .pillar-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .pillar-number {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-right: 15px;
+            padding: 4px 10px;
+            background: #ebf1ff;
+            border-radius: 4px;
+        }
+        
+        .pillar-title {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
 
-        .sub-category { margin-bottom: 60px; }
-        .sub-title { font-size: 19px; font-weight: 600; margin-bottom: 15px; color: var(--accent); }
-        .sub-desc { font-size: 16px; color: #444; margin-bottom: 25px; line-height: 1.7; }
+        .pillar-desc {
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 35px;
+            line-height: 1.8;
+            max-width: 850px;
+        }
 
         /* Media & Links */
-        .media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
-        .video-card { background: #000; border-radius: 12px; overflow: hidden; position: relative; padding-bottom: 56.25%; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .video-card iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .media-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 25px; 
+            margin-top: 25px; 
+        }
         
-        .link-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-        .link-item { text-decoration: none; color: #1a1a1a; font-size: 14px; font-weight: 500; padding: 8px 18px; border: 1px solid #ddd; border-radius: 25px; background: #fff; transition: 0.2s; }
-        .link-item:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+        .video-card { 
+            background: #000; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            position: relative; 
+            padding-bottom: 56.25%; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+        }
+        
+        .video-card iframe { 
+            position: absolute; 
+            top: 0; left: 0; width: 100%; height: 100%; border: 0; 
+        }
+        
+        .link-list { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 12px; 
+            margin-top: 25px; 
+        }
+        
+        .link-item { 
+            text-decoration: none; 
+            color: #1a1a1a; 
+            font-size: 14px; 
+            font-weight: 500; 
+            padding: 10px 20px; 
+            border: 1px solid #ddd; 
+            border-radius: 30px; 
+            background: #fff; 
+            transition: 0.3s; 
+        }
+        
+        .link-item:hover { 
+            background: var(--primary); 
+            color: #fff; 
+            border-color: var(--primary); 
+        }
 
-        .archive-box { background: #fcfcfc; border: 1px solid #eee; padding: 25px; border-radius: 10px; font-size: 14px; color: #666; margin-top: 20px; }
-
-        /* Career Minimal Summary */
-        .career-summary { margin-top: 50px; font-size: 14px; color: #999; display: flex; gap: 30px; }
+        .archive-info-box {
+            margin-top: 30px;
+            padding: 25px;
+            background: var(--bg-gray);
+            border-radius: 12px;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.7;
+        }
 
         footer { padding: 100px 0; border-top: 1px solid var(--border); text-align: center; }
         .footer-links a { margin: 0 15px; text-decoration: none; color: var(--secondary); font-size: 14px; }
@@ -85,7 +138,7 @@
         @media (max-width: 768px) {
             .container { padding: 50px 20px; }
             .name { font-size: 40px; }
-            .pillars-grid { grid-template-columns: 1fr; }
+            .pillar-section { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -97,80 +150,76 @@
         <h1 class="name">주혜진</h1>
         <p class="job-title">콘텐츠 디렉터 & 시니어 마케터</p>
         <p class="intro-text">
-            15년간 미술 전문 기자의 <b>에디토리얼 역량</b>과 이커머스 기업의 <b>퍼포먼스 마케팅</b>을 융합해왔습니다. 
-            단순히 콘텐츠를 만드는 것을 넘어, 비즈니스의 목적에 맞는 최적의 포맷을 설계하고 데이터로 성과를 증명합니다.
+            15년간 <b>미술 전문 기자의 에디토리얼 통찰</b>과 <b>이커머스 기업의 퍼포먼스 전략</b>을 융합해왔습니다. 
+            콘텐츠의 형태를 넘어 비즈니스 목적에 최적화된 포맷을 설계하고, 데이터와 서사로 브랜드의 성장을 증명합니다.
         </p>
-
-        <div class="pillars-grid">
-            <div class="pillar-card">
-                <span class="pillar-icon">🎯</span>
-                <h3>Format Strategy</h3>
-                <p>라이브커머스, 유튜브 예능 등 비즈니스 성장에 최적화된 콘텐츠 포맷 설계 및 총괄</p>
-            </div>
-            <div class="pillar-card">
-                <span class="pillar-icon">📈</span>
-                <h3>Growth & SEO</h3>
-                <p>검색 엔진 최적화와 트래픽 데이터 분석을 기반으로 유입과 전환을 극대화하는 마케팅</p>
-            </div>
-            <div class="pillar-card">
-                <span class="pillar-icon">🖋️</span>
-                <h3>Narrative & Editorial</h3>
-                <p>심층 인터뷰와 전문지 취재를 통해 쌓아온 깊이 있는 서사 구축 및 에디팅 역량</p>
-            </div>
-        </div>
     </header>
 
     <section>
-        <span class="section-label">Selected Case Studies</span>
-        <h2>주요 성과 및 프로젝트</h2>
+        <span class="section-label">Core Expertise</span>
+        <h2>핵심 역량 및 프로젝트 성과</h2>
 
-        <div class="project-group">
-            <div class="group-header">
-                <h4>01. Format Strategy</h4>
-                <div class="line"></div>
+        <div class="pillar-section">
+            <div class="pillar-header">
+                <span class="pillar-number">01</span>
+                <h3 class="pillar-title">Format Strategy</h3>
             </div>
-            <div class="sub-category">
-                <p class="sub-desc">국내 최초 전시 도슨트 라이브 '수요아트살롱'과 MBTI 기반 여행 큐레이션 등 시장에 없던 새로운 콘텐츠 포맷을 기획하고 비즈니스 모델로 정착시켰습니다.</p>
-                <div class="media-grid">
-                    <div class="video-card"><iframe src="https://www.youtube.com/embed/nQVB-jrCs7E" allowfullscreen></iframe></div>
-                    <div class="video-card"><iframe src="https://www.youtube.com/embed/EK_9VetmTfs" allowfullscreen></iframe></div>
-                </div>
+            <p class="pillar-desc">
+                시장에 없던 새로운 콘텐츠 포맷을 기획하고 비즈니스 모델로 안착시키는 데 강점이 있습니다. 
+                국내 최초 전시 도슨트 라이브 '수요아트살롱'과 트렌드를 접목한 'MBTI 여행 연구소' 등 
+                커머스와 엔터테인먼트가 결합된 최적의 고객 경험을 설계했습니다.
+            </p>
+            <div class="media-grid">
+                <div class="video-card"><iframe src="https://www.youtube.com/embed/nQVB-jrCs7E" allowfullscreen></iframe></div>
+                <div class="video-card"><iframe src="https://www.youtube.com/embed/EK_9VetmTfs" allowfullscreen></iframe></div>
+            </div>
+            <div class="link-list">
+                <a href="https://youtu.be/N9RQfU-vHK8" class="link-item" target="_blank">전시 라이브커머스 사례 보기 →</a>
             </div>
         </div>
 
-        <div class="project-group">
-            <div class="group-header">
-                <h4>02. Growth & SEO</h4>
-                <div class="line"></div>
+        <div class="pillar-section">
+            <div class="pillar-header">
+                <span class="pillar-number">02</span>
+                <h3 class="pillar-title">Growth & SEO</h3>
             </div>
-            <div class="sub-category">
-                <p class="sub-desc">인터파크 투어 공식 블로그의 SEO 전략을 총괄하며 타겟 키워드 점유율을 극대화했습니다. '이슈앤스토리' 기획을 통해 대중의 관심사를 데이터로 파악하고 화제성 있는 콘텐츠를 생산했습니다.</p>
-                <div class="link-list">
-                    <a href="https://blog.naver.com/interpark_tour" class="link-item" target="_blank">네이버 공식 블로그 성과 확인 →</a>
-                    <a href="https://brunch.co.kr/@bookdb" class="link-item" target="_blank">트렌드 기획 기사 아카이브 →</a>
-                </div>
+            <p class="pillar-desc">
+                데이터와 트래픽 분석을 기반으로 유입을 극대화하는 퍼포먼스 마케팅을 실현합니다. 
+                인터파크 투어 공식 채널의 SEO 전략을 총괄하며 타겟 키워드 점유율을 높였으며, 
+                대중의 관심사를 분석한 '이슈앤스토리' 기획을 통해 화제성과 전환율을 동시에 확보했습니다.
+            </p>
+            <div class="link-list">
+                <a href="https://blog.naver.com/interpark_tour" class="link-item" target="_blank">네이버 공식 블로그 성과 →</a>
+                <a href="https://brunch.co.kr/@bookdb" class="link-item" target="_blank">트렌드 기획 기사 아카이브 (Brunch) →</a>
+            </div>
+            <div class="archive-info-box">
+                <strong>[SEO & Trend Planning Note]</strong><br>
+                단순 발행을 넘어 'BTS RM 독서 목록', '빌 게이츠 추천 도서' 등 화제성 있는 키워드를 선점하여 
+                검색 엔진 유입 최적화와 브랜드 인지도 상승을 동시에 달성했습니다.
             </div>
         </div>
 
-        <div class="project-group">
-            <div class="group-header">
-                <h4>03. Narrative & Editorial</h4>
-                <div class="line"></div>
+        <div class="pillar-section">
+            <div class="pillar-header">
+                <span class="pillar-number">03</span>
+                <h3 class="pillar-title">Narrative & Editorial</h3>
             </div>
-            <div class="sub-category">
-                <p class="sub-desc">국내외 거장 300인과의 심층 인터뷰를 진행하며 텍스트와 영상 언어로 작가의 철학을 복원했습니다. 경향 아티클과 미술세계에서의 정통 미술 비평 및 취재 경력은 콘텐츠의 깊이를 더하는 뿌리입니다.</p>
-                <div class="media-grid" style="margin-bottom: 30px;">
-                    <div class="video-card"><iframe src="https://www.youtube.com/embed/WMHM3uT4Brc" allowfullscreen></iframe></div>
-                    <div class="video-card"><iframe src="https://www.youtube.com/embed/sRTH6KUTCNA" allowfullscreen></iframe></div>
-                </div>
-                <div class="archive-box">
-                    <strong>미술 전문지 아카이브:</strong> <br>
-                    • <b>경향 아티클(Kyunghyang Article):</b> 취재기자 / 현대 미술 비평 및 특집 지면 기획 (2013-2014)<br>
-                    • <b>미술세계(Misulsegye):</b> 취재기자 / 원로 및 신진 작가 발굴 인터뷰 시리즈 (2008-2012)
-                </div>
-                <div class="link-list">
-                    <a href="https://brunch.co.kr/@heartiste" class="link-item" target="_blank">개인 인터뷰 아카이브 (Heartiste)</a>
-                </div>
+            <p class="pillar-desc">
+                300여 명의 글로벌 명사를 인터뷰하며 다져진 깊이 있는 서사 구축 능력입니다. 
+                텍스트와 영상 언어 모두에 능숙하며, [경향 아티클]과 [미술세계] 취재기자로서 쌓아온 
+                전문적인 비평 역량은 어떤 콘텐츠든 품격과 진정성을 더하는 근간이 됩니다.
+            </p>
+            <div class="media-grid">
+                <div class="video-card"><iframe src="https://www.youtube.com/embed/WMHM3uT4Brc" allowfullscreen></iframe></div>
+                <div class="video-card"><iframe src="https://www.youtube.com/embed/sRTH6KUTCNA" allowfullscreen></iframe></div>
+            </div>
+            <div class="link-list">
+                <a href="https://brunch.co.kr/@heartiste" class="link-item" target="_blank">개인 인터뷰 아카이브 (Heartiste) →</a>
+            </div>
+            <div class="archive-info-box">
+                <strong>[Journalism Background]</strong><br>
+                • <b>경향 아티클 (2013-2014):</b> 현대 미술 비평 및 특집 지면 기획 총괄<br>
+                • <b>미술세계 (2008-2012):</b> 전시 취재 및 작가 발굴 인터뷰 시리즈 연재
             </div>
         </div>
     </section>
@@ -181,8 +230,8 @@
             <a href="https://kr.linkedin.com/in/hye-jin-joo-003332219" target="_blank">LinkedIn</a>
             <a href="https://medium.com/@hyejinjoo" target="_blank">Medium</a>
         </div>
-        <p style="color:#999; font-size:12px; margin-top:40px;">© 2026 Hyejin Joo. Architecting Experience through Content.</p>
-    </header>
+        <p style="color:#999; font-size:12px; margin-top:40px;">© 2026 Hyejin Joo. Professional Portfolio.</p>
+    </footer>
 </div>
 
 </body>
