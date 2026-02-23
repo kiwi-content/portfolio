@@ -191,6 +191,24 @@
             opacity: 0.6;
         }
 
+        .related-articles {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #999;
+        }
+
+        .related-articles a {
+            color: #999;
+            text-decoration: none;
+            margin-right: 15px;
+            border-bottom: 1px solid #ccc;
+            transition: opacity 0.3s;
+        }
+
+        .related-articles a:hover {
+            opacity: 0.6;
+        }
+
         /* Project Stats */
         .project-stats {
             display: flex;
@@ -311,6 +329,18 @@
         .project-mini-press {
             font-size: 13px;
             color: #999;
+        }
+
+        .project-mini-press a {
+            color: #999;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+            margin-right: 10px;
+            transition: opacity 0.3s;
+        }
+
+        .project-mini-press a:hover {
+            opacity: 0.6;
         }
 
         /* Spacer */
@@ -454,7 +484,6 @@
                         <strong>담당 업무:</strong> 기획 / 기획전 페이지 제작 / 대본 작성 / 출연자 섭외 / 방송 송출 / 현장 총괄
                     </p>
 
-                    <!-- 방송 현장 이미지 3장 -->
                     <div class="project-images">
                         <div class="project-image">
                             <img src="https://raw.githubusercontent.com/kiwi-content/portfolio/image/suyo1.jpg" alt="수요아트살롱 방송 현장" loading="lazy">
@@ -467,7 +496,6 @@
                         </div>
                     </div>
 
-                    <!-- 대표 방송 영상 1개 -->
                     <div class="video-embed">
                         <iframe
                             src="https://www.youtube.com/embed/f7vUcfKkHPA"
@@ -485,9 +513,15 @@
                         <a href="https://youtube.com/shorts/nQVB-jrCs7E" target="_blank" rel="noopener noreferrer">Shorts 1 →</a>
                         <a href="https://youtube.com/shorts/jd3ZBYlmlVg" target="_blank" rel="noopener noreferrer">Shorts 2 →</a>
                     </div>
+
+                    <div class="related-articles">
+                        관련 기사:
+                        <a href="https://zdnet.co.kr/view/?no=20210825164545" target="_blank" rel="noopener noreferrer">ZDNet →</a>
+                        <a href="https://news.mt.co.kr/mtview.php?no=2021052609333033118" target="_blank" rel="noopener noreferrer">머니투데이 →</a>
+                    </div>
                 </div>
 
-                <!-- MBTI 연구소 + 현지 LIVE 투어: 간략 병기 -->
+                <!-- MBTI 연구소 + 현지 LIVE 투어 -->
                 <div class="projects-mini-grid">
                     <div>
                         <div class="project-meta">
@@ -498,7 +532,10 @@
                         <p class="project-mini-desc">
                             한국 사회의 MBTI 열풍을 여행 상품 판매와 연결했습니다. 유형별 여행 스타일을 분석하고 맞춤 상품을 큐레이션하는 라이브커머스를 기획·진행했습니다.
                         </p>
-                        <p class="project-mini-press">조선일보, 매일경제, 경향신문 등 보도</p>
+                        <p class="project-mini-press">
+                            <a href="https://www.khan.co.kr/life/life-general/article/202201121133001" target="_blank" rel="noopener noreferrer">경향신문 →</a>
+                            <a href="https://www.mk.co.kr/news/culture/10181989" target="_blank" rel="noopener noreferrer">매일경제 →</a>
+                        </p>
                     </div>
                     <div>
                         <div class="project-meta">
@@ -509,7 +546,10 @@
                         <p class="project-mini-desc">
                             해외여행이 막힌 2021년, 전 세계 현지 가이드와 실시간으로 연결해 '랜선 여행'을 판매하는 포맷을 만들었습니다. 총 13회 진행했습니다.
                         </p>
-                        <p class="project-mini-press">조선일보 IT, 헤럴드경제 보도</p>
+                        <p class="project-mini-press">
+                            <a href="http://it.chosun.com/site/data/html_dir/2021/10/08/2021100801915.html" target="_blank" rel="noopener noreferrer">조선일보 IT →</a>
+                            <a href="http://mbiz.heraldcorp.com/view.php?ud=20211005000711" target="_blank" rel="noopener noreferrer">헤럴드경제 →</a>
+                        </p>
                     </div>
                 </div>
             </section>
@@ -538,7 +578,6 @@
                         <strong>담당 업무:</strong> 기획 / 대본 작성 / 출연자 섭외 / 영상 편집 요청
                     </p>
 
-                    <!-- 썸네일 2장: 터키편, 대만편 -->
                     <div class="project-images">
                         <div class="project-image">
                             <div class="image-placeholder">터키 편 썸네일</div>
@@ -606,6 +645,31 @@
                         <a href="https://youtu.be/Jr7SqjzpOus" target="_blank" rel="noopener noreferrer">정종철 인터뷰 →</a>
                     </div>
                 </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">도서</span>
+                        <span>2017-2018</span>
+                    </div>
+                    <h3>북토크 (BookDB YouTube)</h3>
+                    <p class="project-description">
+                        책을 재미있게 소개하는 방법이 없을까 — 이 질문에서 북토크가 시작됐습니다.
+                        책을 친근하게 소개하는 유튜브 시리즈를 기획·제작하고 직접 출연했습니다.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>담당 업무:</strong> 기획 / 출연 / 영상 제작
+                    </p>
+
+                    <div class="project-links">
+                        <a href="https://youtu.be/yWvMQx4rFaU" target="_blank" rel="noopener noreferrer">1화: 새 옷 입은 책들 →</a>
+                        <a href="https://youtu.be/xelgHhd815Y" target="_blank" rel="noopener noreferrer">2화: 꿈에서도 만나기 싫은 악당들 →</a>
+                        <a href="https://youtu.be/DBzA2QE7PKo" target="_blank" rel="noopener noreferrer">3화: 긴 연휴 →</a>
+                        <a href="https://youtu.be/Prs8Ao6xias" target="_blank" rel="noopener noreferrer">4화: 시로 위로하기 →</a>
+                        <a href="https://youtu.be/MPpsQYVCR1M" target="_blank" rel="noopener noreferrer">5화: 가계부 특집 →</a>
+                        <a href="https://www.youtube.com/watch?v=u5xAT0niH5k" target="_blank" rel="noopener noreferrer">6화: 문학상 →</a>
+                    </div>
+                </div>
             </section>
 
             <div class="section-spacer"></div>
@@ -625,14 +689,14 @@
                     <h3>북DB 작가 인터뷰</h3>
                     <p class="project-description">
                         6년간 300여 명을 인터뷰했습니다.
-                        김연수, 김영하, 알랭 드 보통, 리처드 도킨스, 박막례까지 — 작가의 생각을 독자의 언어로 옮기는 일을 했습니다.
+                        김연수, 김영하, 알랭 드 보통, 리처드 도킨스, 강신주, 김미경, 박막례까지 — 작가의 생각을 독자의 언어로 옮기는 일을 했습니다.
+                        (인터파크 도서 사업 철수로 북DB 사이트 폐쇄)
                     </p>
 
                     <p style="margin-top: 15px; font-size: 15px; color: #666;">
                         <strong>담당 업무:</strong> 인터뷰이 섭외 / 질문지 작성 / 인터뷰 진행 / 기사 작성
                     </p>
 
-                    <!-- 인터뷰 현장 사진 1장 -->
                     <div class="project-images">
                         <div class="project-image">
                             <div class="image-placeholder">인터뷰 현장</div>
@@ -640,13 +704,6 @@
                         <div class="project-image">
                             <div class="image-placeholder">기사 스크린샷</div>
                         </div>
-                    </div>
-
-                    <div class="project-links">
-                        <a href="http://bookdb.interpark.com/bdb/Interview.do?_method=InterviewDetailM&swParam=1&sc.mreviewNo=90089" target="_blank" rel="noopener noreferrer">소설가 김연수 →</a>
-                        <a href="http://bookdb.interpark.com/bdb/Interview.do?_method=InterviewDetailM&swParam=1&sc.mreviewNo=66162" target="_blank" rel="noopener noreferrer">알랭 드 보통 →</a>
-                        <a href="http://bookdb.interpark.com/bdb/Interview.do?_method=InterviewDetailM&swParam=1&sc.mreviewNo=75605" target="_blank" rel="noopener noreferrer">리처드 도킨스 →</a>
-                        <a href="http://bookdb.interpark.com/bdb/Interview.do?_method=InterviewDetailM&swParam=1&sc.mreviewNo=88008" target="_blank" rel="noopener noreferrer">박막례 할머니 →</a>
                     </div>
                 </div>
 
@@ -658,35 +715,45 @@
                     <h3>이슈앤스토리 — 트렌드 기획 기사</h3>
                     <p class="project-description">
                         "사람들은 지금 무엇에 관심이 있을까?" 6년간 이 질문으로 콘텐츠를 만들었습니다.
-                        BTS RM의 독서 목록, 빌 게이츠 추천 도서, MBTI별 책 추천까지 — 트렌드를 읽어 책과 연결하는 기획 기사를 썼습니다.
+                        BTS RM의 독서 목록, 빌 게이츠 추천 도서, MBTI별 책 추천, 유아인의 책장, 보헤미안 랩소디 숨은 이야기까지 — 트렌드를 읽어 책과 연결하는 기획 기사를 썼습니다.
+                        (인터파크 도서 사업 철수로 북DB 사이트 폐쇄)
                     </p>
 
                     <p style="margin-top: 15px; font-size: 15px; color: #666;">
                         <strong>담당 업무:</strong> 주제 선정 / 기사 작성
                     </p>
 
-                    <!-- 기사 스크린샷 1장 -->
                     <div class="project-images">
                         <div class="project-image">
                             <div class="image-placeholder">기사 스크린샷</div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="project-links">
-                        <a href="http://bookdb.interpark.com/bdb/IssueStory.do?_method=detailM&sc.webzNo=40912" target="_blank" rel="noopener noreferrer">MBTI 유형별 책 추천 →</a>
-                        <a href="http://bookdb.interpark.com/bdb/IssueStory.do?_method=detailM&sc.webzNo=37550" target="_blank" rel="noopener noreferrer">BTS RM 독서 목록 →</a>
-                        <a href="http://bookdb.interpark.com/bdb/IssueStory.do?_method=detailM&sc.webzNo=40712" target="_blank" rel="noopener noreferrer">빌 게이츠 추천 도서 →</a>
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">도서</span>
+                        <span>2016–2021</span>
                     </div>
+                    <h3>장르문학의 밤 — 섹션 기획 & 원고 편집</h3>
+                    <p class="project-description">
+                        필자 섭외와 콘셉트 정의부터 원고 다듬기, 교열, 발행까지 섹션 전체를 5년간 담당했습니다.
+                        장르소설 전문 칼럼니스트 Djuna의 필진을 발굴하고 연재를 관리했습니다.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>담당 업무:</strong> 필자 섭외 / 콘셉트 기획 / 원고 편집 / 교정 교열 / 발행
+                    </p>
                 </div>
             </section>
 
             <div class="section-spacer"></div>
 
-            <!-- Blog & SEO Section -->
+            <!-- Blog & SNS Section -->
             <section>
                 <div class="section-header">
-                    <h2>블로그 & SEO 마케팅</h2>
-                    <div class="section-subtitle">검색 최적화로 퍼포먼스를 만들어내다</div>
+                    <h2>블로그 & SNS 마케팅</h2>
+                    <div class="section-subtitle">검색 최적화와 캠페인으로 퍼포먼스를 만들어내다</div>
                 </div>
 
                 <div class="project">
@@ -704,7 +771,6 @@
                         <strong>담당 업무:</strong> 콘텐츠 제작 및 발행
                     </p>
 
-                    <!-- 블로그 포스팅 스크린샷 2장 -->
                     <div class="project-images">
                         <div class="project-image">
                             <div class="image-placeholder">블로그 포스팅 스크린샷</div>
@@ -716,6 +782,45 @@
 
                     <div class="project-links">
                         <a href="http://blog.naver.com/interpark_tour" target="_blank" rel="noopener noreferrer">블로그 방문하기 →</a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">SNS</span>
+                        <span>2023</span>
+                    </div>
+                    <h3>인터파크다 챌린지 — 리브랜딩 인스타그램 이벤트</h3>
+
+                    <div class="project-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">653 / 660</span>
+                            <span class="stat-label">라운드1 좋아요 / 댓글</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">886 / 905</span>
+                            <span class="stat-label">라운드2 좋아요 / 댓글</span>
+                        </div>
+                    </div>
+
+                    <p class="project-description">
+                        인터파크투어와 야놀자 합병 이후, 인터파크의 새 정체성을 알리는 인스타그램 이벤트를 기획했습니다.
+                        '인터파크다 챌린지'는 "크다"는 의미를 인터파크의 '파크'와 연결한 캠페인으로, 브랜드 메시지를 참여형 콘텐츠로 풀어냈습니다.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>담당 업무:</strong> 이벤트 기획 / 인스타그램 포스팅 제작 / 이벤트 운영 / 당첨자 선정 및 발표
+                    </p>
+
+                    <div class="project-images">
+                        <div class="project-image">
+                            <div class="image-placeholder">인스타그램 포스팅</div>
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://www.instagram.com/p/CtvuoL5J6bh/" target="_blank" rel="noopener noreferrer">챌린지 1 →</a>
+                        <a href="https://www.instagram.com/p/CuBgKuwJaw8/" target="_blank" rel="noopener noreferrer">챌린지 2 →</a>
                     </div>
                 </div>
             </section>
@@ -744,7 +849,6 @@
                         <strong>담당 업무:</strong> 취재 및 기사 작성 / 외고 편집 / 교정 교열
                     </p>
 
-                    <!-- 잡지 표지 1장 -->
                     <div class="project-images">
                         <div class="project-image">
                             <div class="image-placeholder">잡지 표지</div>
@@ -767,7 +871,6 @@
                         <strong>담당 업무:</strong> 취재 및 기사 작성 / 외고 편집 / 교정 교열
                     </p>
 
-                    <!-- 잡지 표지 1장 -->
                     <div class="project-images">
                         <div class="project-image">
                             <div class="image-placeholder">잡지 표지</div>
