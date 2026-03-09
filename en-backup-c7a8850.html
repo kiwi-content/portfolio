@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyejin Joo | Portfolio</title>
+    <link rel="alternate" hreflang="ko" href="./index.html">
+    <link rel="alternate" hreflang="en" href="./en.html">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', sans-serif;
+            line-height: 1.6;
+            color: #1f1d1a;
+            background:
+                linear-gradient(180deg, #f4f0e8 0, #fbfaf7 260px, #ffffff 620px);
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 64px 40px 88px;
+        }
+
+        header {
+            margin-bottom: 28px;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .page-tools {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 16px;
+        }
+
+        .lang-switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.84);
+            border: 1px solid #e6dccf;
+            box-shadow: 0 10px 24px rgba(58, 44, 24, 0.06);
+        }
+
+        .lang-switch a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 46px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            color: #6a5c47;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            transition: background 0.25s, color 0.25s;
+        }
+
+        .lang-switch a:hover {
+            background: #f2ebe1;
+            color: #1f1d1a;
+        }
+
+        .lang-switch a.active {
+            background: #1f1d1a;
+            color: #fff;
+        }
+
+        .hero-panel {
+            padding: 42px 44px 34px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #e9e1d4;
+            border-radius: 32px;
+            box-shadow: 0 18px 50px rgba(58, 44, 24, 0.08);
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-lead {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+            font-size: 12px;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            color: #8d7a5d;
+        }
+
+        .hero-lead::before {
+            content: "";
+            width: 30px;
+            height: 1px;
+            background: currentColor;
+        }
+
+        .hero-shell {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 168px;
+            gap: 44px;
+            align-items: start;
+        }
+
+        .hero-copy {
+            min-width: 0;
+        }
+
+        .hero-photo {
+            width: 168px;
+            justify-self: end;
+            padding: 8px;
+            background: linear-gradient(180deg, #f6f1e8 0, #ffffff 100%);
+            border: 1px solid #eee4d6;
+            border-radius: 30px;
+            box-shadow: 0 12px 36px rgba(63, 48, 26, 0.08);
+        }
+
+        .hero-photo img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border-radius: 24px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 300;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 22px;
+            color: #5e574c;
+            font-weight: 300;
+            margin-bottom: 26px;
+            max-width: 720px;
+        }
+
+        .intro {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #444;
+            max-width: 760px;
+        }
+
+        .contact {
+            margin-top: 22px;
+            font-size: 14px;
+            color: #6e685f;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 18px;
+        }
+
+        .contact a {
+            color: #1f1d1a;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            border-bottom: 1px solid rgba(31, 29, 26, 0.18);
+        }
+
+        .contact a:hover {
+            opacity: 0.6;
+        }
+
+        .hero-kpis {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .hero-kpi {
+            padding: 16px 18px;
+            border-radius: 20px;
+            background: #f8f4ee;
+            border: 1px solid #eee4d6;
+        }
+
+        .hero-kpi strong {
+            display: block;
+            font-size: 22px;
+            font-weight: 500;
+            color: #1f1d1a;
+            margin-bottom: 4px;
+        }
+
+        .hero-kpi span {
+            font-size: 13px;
+            color: #756e64;
+        }
+
+        .jump-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .jump-nav a {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid #eadfce;
+            color: #4f4639;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .jump-nav a:hover {
+            background: #fff;
+        }
+
+        .career-overview {
+            margin-bottom: 80px;
+            padding: 34px 36px;
+            background: #fffdf9;
+            border: 1px solid #eee4d6;
+            border-radius: 28px;
+            box-shadow: 0 12px 34px rgba(72, 55, 31, 0.04);
+        }
+
+        .career-overview h3 {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+            margin-bottom: 18px;
+        }
+
+        .career-item {
+            margin-bottom: 22px;
+            padding-bottom: 22px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .career-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .career-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .career-period {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .career-desc {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .section-header {
+            margin-bottom: 48px;
+            padding-bottom: 18px;
+            border-bottom: 2px solid #1a1a1a;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+        }
+
+        .section-header .section-subtitle {
+            font-size: 15px;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .project {
+            margin-bottom: 72px;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-meta .category {
+            padding: 4px 12px;
+            background: #f0f0f0;
+            border-radius: 3px;
+            color: #666;
+        }
+
+        .project h3 {
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .project-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 22px;
+        }
+
+        .project-links {
+            margin-top: 16px;
+        }
+
+        .project-links a {
+            display: inline-block;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 0;
+            margin-right: 20px;
+            border-bottom: 1px solid #1a1a1a;
+            transition: opacity 0.3s;
+        }
+
+        .project-links a:hover {
+            opacity: 0.6;
+        }
+
+        .related-articles {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #999;
+        }
+
+        .related-articles a {
+            color: #999;
+            text-decoration: none;
+            margin-right: 15px;
+            border-bottom: 1px solid #ccc;
+            transition: opacity 0.3s;
+        }
+
+        .related-articles a:hover {
+            opacity: 0.6;
+        }
+
+        .project-stats {
+            display: flex;
+            margin: 22px 0 28px;
+            padding: 26px;
+            background: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        .stat-item {
+            flex: 1;
+            text-align: center;
+            padding: 0 20px;
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 22px;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 6px;
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-images {
+            margin: 26px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 18px;
+        }
+
+        .project-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #f5f5f5;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .project-image:hover {
+            transform: scale(1.02);
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-images.project-images-contain .project-image {
+            aspect-ratio: 4 / 3;
+            background: #fff;
+        }
+
+        .project-images.project-images-contain .project-image img {
+            object-fit: contain;
+            background: #fff;
+        }
+
+        .project-images.project-images-compact {
+            grid-template-columns: minmax(0, 360px);
+            justify-content: start;
+        }
+
+        .project-images.project-images-article-trio {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .project-images.project-images-article-trio .project-image {
+            aspect-ratio: 2 / 3;
+            background: #fff;
+        }
+
+        .project-images.project-images-article-trio .project-image img {
+            object-fit: contain;
+            background: #fff;
+        }
+
+        .project-images.project-images-square .project-image {
+            aspect-ratio: 1 / 1;
+            background: #fff;
+        }
+
+        .project-images.project-images-square .project-image img {
+            object-fit: contain;
+            background: #fff;
+        }
+
+        .project-images.project-images-cover-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .project-images.project-images-cover-grid .project-image {
+            aspect-ratio: 3 / 4;
+            background: #fff;
+        }
+
+        .project-images.project-images-cover-grid .project-image img {
+            object-fit: contain;
+            background: #fff;
+        }
+
+        .video-embed {
+            margin: 30px 0;
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 6px;
+            background: #000;
+        }
+
+        .video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .projects-mini-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 26px;
+            margin-top: 42px;
+            padding-top: 32px;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .project-mini-title {
+            font-size: 20px;
+            font-weight: 400;
+            margin: 10px 0 12px;
+            letter-spacing: -0.3px;
+        }
+
+        .project-mini-desc {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .project-mini-press {
+            font-size: 13px;
+            color: #999;
+        }
+
+        .project-mini-press a {
+            color: #999;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+            margin-right: 10px;
+            transition: opacity 0.3s;
+        }
+
+        .project-mini-press a:hover {
+            opacity: 0.6;
+        }
+
+        .sub-work {
+            margin: 30px 0 8px;
+            padding: 24px 26px;
+            background: #f8f8f8;
+            border-left: 3px solid #1a1a1a;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .sub-work-title {
+            font-size: 17px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            letter-spacing: -0.3px;
+        }
+
+        .sub-work-desc {
+            font-size: 14px;
+            line-height: 1.75;
+            color: #555;
+            margin-bottom: 18px;
+        }
+
+        .sub-work .project-images {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .sub-work .project-image {
+            aspect-ratio: 9 / 16;
+            background: #fff;
+        }
+
+        .sub-work .project-image img {
+            object-fit: contain;
+            object-position: top center;
+            background: #fff;
+        }
+
+        .section-spacer {
+            margin: 96px 0;
+        }
+
+        footer {
+            margin-top: 120px;
+            padding-top: 40px;
+            border-top: 1px solid #e5e5e5;
+            text-align: center;
+            font-size: 14px;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 56px 20px;
+            }
+
+            .hero-panel {
+                padding: 30px 22px 26px;
+                border-radius: 24px;
+            }
+
+            .page-tools {
+                justify-content: flex-start;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+            }
+
+            .hero-kpis {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+
+            .project h3 {
+                font-size: 24px;
+            }
+
+            .project-meta {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .career-overview {
+                margin-bottom: 72px;
+                padding: 28px 20px;
+            }
+
+            .hero-shell {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .hero-photo {
+                width: 132px;
+                justify-self: start;
+            }
+
+            .jump-nav {
+                margin-bottom: 32px;
+            }
+
+            .projects-mini-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header {
+                margin-bottom: 40px;
+            }
+
+            .project {
+                margin-bottom: 56px;
+            }
+
+            .project-stats {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
+                padding: 15px 0;
+                text-align: left;
+            }
+
+            .stat-item:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+
+            .project-images.project-images-article-trio {
+                grid-template-columns: 1fr;
+            }
+
+            .project-images.project-images-cover-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .project-images.project-images-compact {
+                grid-template-columns: 1fr;
+            }
+
+            .section-spacer {
+                margin: 72px 0;
+            }
+
+            footer {
+                margin-top: 96px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="page-tools">
+                <nav class="lang-switch" aria-label="Language selection">
+                    <a href="./index.html">KR</a>
+                    <a href="./en.html" class="active" aria-current="page">EN</a>
+                </nav>
+            </div>
+            <div class="hero-panel">
+                <div class="hero-lead">Portfolio</div>
+                <div class="hero-shell">
+                    <div class="hero-copy">
+                        <h1>Hyejin Joo</h1>
+                        <div class="subtitle">Content Strategist Who Drives Results Through Interviews, Editorial, and Live Commerce</div>
+                        <p class="intro">
+                            From art journalist to live commerce producer to YouTube creator - 15 years of hands-on experience learning what moves people through content.
+                            I bring two core strengths: a sharp eye for uncovering stories, honed through 300+ interviews with artists and authors; and the strategic vision to turn ideas into results - including Korea's first art exhibition live commerce broadcast, which generated ₩120M in a single show.
+                        </p>
+                        <div class="contact">
+                            <a href="mailto:kiwi733@naver.com">kiwi733@naver.com</a>
+                            <a href="https://www.facebook.com/hyejin.joo/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                            <a href="https://medium.com/@hyejinjoo" target="_blank" rel="noopener noreferrer">Medium</a>
+                            <a href="https://kr.linkedin.com/in/hye-jin-joo-003332219" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        </div>
+
+                        <div class="hero-kpis">
+                            <div class="hero-kpi">
+                                <strong>300+</strong>
+                                <span>Artist &amp; Author Interviews</span>
+                            </div>
+                            <div class="hero-kpi">
+                                <strong>₩120M</strong>
+                                <span>Single Broadcast Revenue (Live Commerce)</span>
+                            </div>
+                            <div class="hero-kpi">
+                                <strong>70</strong>
+                                <span>Magazine Issues Contributed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-photo">
+                        <img src="./IMG_3822.JPG" alt="Portrait of Hyejin Joo" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="jump-nav" aria-label="Portfolio sections">
+            <a href="#career">Career</a>
+            <a href="#live-commerce">Live Commerce</a>
+            <a href="#video">YouTube</a>
+            <a href="#editorial">Interviews</a>
+            <a href="#blog-sns">Blog / SNS</a>
+            <a href="#magazines">Magazines</a>
+        </nav>
+
+        <div class="career-overview" id="career">
+            <h3>Career</h3>
+            <div class="career-item">
+                <div class="career-title">Interpark</div>
+                <div class="career-period">2015&ndash;2023</div>
+                <div class="career-desc">Across book, tour, and ticket divisions, I planned and produced content across formats - live commerce, YouTube, blogs, and web magazines. Eight years of hands-on experience turning content into sales.</div>
+            </div>
+            <div class="career-item">
+                <div class="career-title">Art Journalist</div>
+                <div class="career-period">2008&ndash;2014</div>
+                <div class="career-desc">Spent six years as a staff reporter for Art World and Kyunghyang Article, two leading Korean art publications. Covered exhibitions on-site and interviewed artists - the observational instincts and interviewing skills I built here became the foundation for everything that followed in content marketing.</div>
+            </div>
+        </div>
+
+        <main>
+            <section id="live-commerce">
+                <div class="section-header">
+                    <h2>Live Commerce Planning</h2>
+                    <div class="section-subtitle">From Korea's First Art Exhibition Live Commerce to MBTI Travel</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">Ticket</span>
+                        <span>2020&ndash;2022</span>
+                    </div>
+                    <h3>Wednesday Art Salon</h3>
+
+                    <div class="project-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">Korea's First</span>
+                            <span class="stat-label">Art Exhibition Live Commerce</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">30,000</span>
+                            <span class="stat-label">Peak Concurrent Viewers</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">₩120M</span>
+                            <span class="stat-label">Single Broadcast Revenue</span>
+                        </div>
+                    </div>
+
+                    <p class="project-description">
+                        Could a live commerce show where a docent explains artworks - and sells tickets - actually work? That question was the starting point for Wednesday Art Salon.
+                        Launched ahead of Naver, this was Korea's first live commerce broadcast tied to an art exhibition. I handled everything: creating the campaign landing page, writing the script, casting the docent, and overseeing the live production on-site.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>Role:</strong> Planning / Campaign page production / Script writing / Talent casting / Broadcast operations / On-site direction
+                    </p>
+
+                    <div class="project-images">
+                        <div class="project-image">
+                            <img src="https://raw.githubusercontent.com/kiwi-content/portfolio/image/suyo1.jpg" alt="Wednesday Art Salon live broadcast" loading="lazy">
+                        </div>
+                        <div class="project-image">
+                            <img src="https://raw.githubusercontent.com/kiwi-content/portfolio/image/suyo2.jpg" alt="Wednesday Art Salon campaign page" loading="lazy">
+                        </div>
+                        <div class="project-image">
+                            <img src="https://raw.githubusercontent.com/kiwi-content/portfolio/image/suyo3.jpg" alt="Art exhibition venue for Wednesday Art Salon" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="sub-work">
+                        <h4 class="sub-work-title">Campaign Page Production</h4>
+                        <p class="sub-work-desc">
+                            I designed and produced the exhibition campaign pages that integrated directly with the live broadcasts.
+                            Each page wove together artwork commentary, artist introductions, and purchase rationale into a single seamless narrative - applying the editorial sensibility I developed as an art journalist to content marketing.
+                        </p>
+                        <div class="project-images">
+                            <div class="project-image">
+                                <img src="./kihwaek1.JPG" alt="Campaign page featuring Raoul Dufy" loading="lazy">
+                            </div>
+                            <div class="project-image">
+                                <img src="./kihwaek.jpg" alt="Campaign page featuring Picasso" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-embed">
+                        <iframe
+                            src="https://www.youtube.com/embed/f7vUcfKkHPA"
+                            title="Wednesday Art Salon - Max Dalton"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://youtu.be/N9RQfU-vHK8" target="_blank" rel="noopener noreferrer">Henri Matisse Special Exhibition &rarr;</a>
+                        <a href="https://youtu.be/OUHqG_JVBgQ" target="_blank" rel="noopener noreferrer">Philip Colbert &rarr;</a>
+                        <a href="https://youtu.be/6GJ9dDI7pLE" target="_blank" rel="noopener noreferrer">Moomin Original Art Exhibition &rarr;</a>
+                        <a href="https://youtube.com/shorts/nQVB-jrCs7E" target="_blank" rel="noopener noreferrer">Shorts 1 &rarr;</a>
+                        <a href="https://youtube.com/shorts/jd3ZBYlmlVg" target="_blank" rel="noopener noreferrer">Shorts 2 &rarr;</a>
+                    </div>
+
+                    <div class="related-articles">
+                        Press:
+                        <a href="https://zdnet.co.kr/view/?no=20210825164545" target="_blank" rel="noopener noreferrer">ZDNet Korea &rarr;</a>
+                        <a href="https://news.mt.co.kr/mtview.php?no=2021052609333033118" target="_blank" rel="noopener noreferrer">Money Today &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="projects-mini-grid">
+                    <div>
+                        <div class="project-meta">
+                            <span class="category">Tour</span>
+                            <span>2022</span>
+                        </div>
+                        <h4 class="project-mini-title">MBTI Lab</h4>
+                        <p class="project-mini-desc">
+                            Tapping into Korea's MBTI craze, I created a live commerce format that matched each personality type to a curated travel style - and sold the products to match.
+                        </p>
+                        <p class="project-mini-press">
+                            <a href="https://www.khan.co.kr/life/life-general/article/202201121133001" target="_blank" rel="noopener noreferrer">Kyunghyang Shinmun &rarr;</a>
+                            <a href="https://www.mk.co.kr/news/culture/10181989" target="_blank" rel="noopener noreferrer">Maeil Business Newspaper &rarr;</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div class="project-meta">
+                            <span class="category">Tour</span>
+                            <span>2021</span>
+                        </div>
+                        <h4 class="project-mini-title">Local LIVE Tours</h4>
+                        <p class="project-mini-desc">
+                            With international travel shut down in 2021, I developed a format connecting viewers in real time with local guides around the world - selling "armchair travel" experiences live. Ran 13 episodes in total.
+                        </p>
+                        <p class="project-mini-press">
+                            <a href="http://it.chosun.com/site/data/html_dir/2021/10/08/2021100801915.html" target="_blank" rel="noopener noreferrer">Chosun Ilbo &rarr;</a>
+                            <a href="http://mbiz.heraldcorp.com/view.php?ud=20211005000711" target="_blank" rel="noopener noreferrer">Herald Economy &rarr;</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-spacer"></div>
+
+            <section id="video">
+                <div class="section-header">
+                    <h2>YouTube Content</h2>
+                    <div class="section-subtitle">Story-driven video, from concept to completion</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">Tour</span>
+                        <span>2022&ndash;2023</span>
+                    </div>
+                    <h3>Rochinso (Local Friends' Guide)</h3>
+                    <p class="project-description">
+                        "What if a local friend showed you around?" - I turned that idea into a video series.
+                        During the pandemic, I remotely recruited locals in Turkey and Taiwan, and coordinated the entire production process - from scripting to editing direction - without ever meeting on-site.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>Role:</strong> Concept development / Scripting / Talent sourcing / Editing direction
+                    </p>
+
+                    <div class="project-images">
+                        <div class="project-image">
+                            <img src="./lochinso 03.jpg" alt="Rochinso Turkey episode thumbnail" loading="lazy">
+                        </div>
+                        <div class="project-image">
+                            <img src="./lochinso 02.jpg" alt="Rochinso Taiwan episode thumbnail" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://youtu.be/EK_9VetmTfs" target="_blank" rel="noopener noreferrer">Turkey Ep. 1 &rarr;</a>
+                        <a href="https://youtu.be/2r1_ti4l4ZQ" target="_blank" rel="noopener noreferrer">Turkey Ep. 2 &rarr;</a>
+                        <a href="https://youtu.be/6PBGDOp8-go" target="_blank" rel="noopener noreferrer">Taiwan Ep. &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">Tour</span>
+                        <span>2022</span>
+                    </div>
+                    <h3>5 vs 50</h3>
+                    <p class="project-description">
+                        A travel series where a single draw determines your budget: ₩50,000 or ₩500,000.
+                        I conceived the format to show how radically different a trip can be depending on what you have to spend - and shot it myself.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>Role:</strong> Concept development / Scripting / Filming / Editing direction
+                    </p>
+
+                    <div class="project-images">
+                        <div class="project-image">
+                            <img src="./5 vs 50 - 01.jpg" alt="5 vs 50 Gangneung episode thumbnail" loading="lazy">
+                        </div>
+                        <div class="project-image">
+                            <img src="./5 vs 50 - 02.jpg" alt="5 vs 50 Gyeongju episode thumbnail" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://youtu.be/yQgGplT5uuI" target="_blank" rel="noopener noreferrer">Gangneung Episode &rarr;</a>
+                        <a href="https://youtu.be/y9YZdSZGL4o" target="_blank" rel="noopener noreferrer">Gyeongju Spring Flowers Episode &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">Books</span>
+                        <span>2019&ndash;2023</span>
+                    </div>
+                    <h3>Author Interview Series</h3>
+                    <p class="project-description">
+                        Produced and hosted video interviews with debut and established authors for Interpark's YouTube channel.
+                        The goal: let readers meet the author before they ever open the book - translating the story inside into the language of video.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>Role:</strong> Interview host / Editing direction
+                    </p>
+
+                    <div class="project-images">
+                        <div class="project-image">
+                            <img src="./interview.jpg" alt="Author interview series thumbnail" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://youtu.be/WMHM3uT4Brc" target="_blank" rel="noopener noreferrer">Cheon In-woo Interview &rarr;</a>
+                        <a href="https://youtu.be/sRTH6KUTCNA" target="_blank" rel="noopener noreferrer">Seol Min-seok Interview &rarr;</a>
+                        <a href="https://youtu.be/Jr7SqjzpOus" target="_blank" rel="noopener noreferrer">Jung Jong-cheol Interview &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">Books</span>
+                        <span>2017&ndash;2018</span>
+                    </div>
+                    <h3>Book Chatter</h3>
+                    <p class="project-description">
+                        How do you make books genuinely fun to talk about? That question launched Book Chatter - a YouTube series I conceived, hosted, and produced to introduce books in a warm, approachable way.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>Role:</strong> Concept / On-camera host / Production
+                    </p>
+
+                    <div class="project-images project-images-contain project-images-compact">
+                        <div class="project-image">
+                            <img src="./booksuda.png" alt="Book Chatter thumbnail" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://youtu.be/yWvMQx4rFaU" target="_blank" rel="noopener noreferrer">Episode 1: Books in New Jackets &rarr;</a>
+                        <a href="https://youtu.be/xelgHhd815Y" target="_blank" rel="noopener noreferrer">Episode 2: Villains I Never Want to Meet, Even in Dreams &rarr;</a>
+                        <a href="https://youtu.be/DBzA2QE7PKo" target="_blank" rel="noopener noreferrer">Episode 3: Long Holiday &rarr;</a>
+                        <a href="https://youtu.be/Prs8Ao6xias" target="_blank" rel="noopener noreferrer">Episode 4: Comfort Through Poetry &rarr;</a>
+                        <a href="https://youtu.be/MPpsQYVCR1M" target="_blank" rel="noopener noreferrer">Episode 5: Budget Planner Special &rarr;</a>
+                        <a href="https://www.youtube.com/watch?v=u5xAT0niH5k" target="_blank" rel="noopener noreferrer">Episode 6: Literary Prizes &rarr;</a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-spacer"></div>
+
+            <section id="editorial">
+                <div class="section-header">
+                    <h2>Interviews &amp; Editorial</h2>
+                    <div class="section-subtitle">300+ conversations. Stories that go deeper.</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">Books</span>
+                        <span>2015&ndash;2021</span>
+                    </div>
+                    <h3>BookDB Author Interviews</h3>
+                    <p class="project-description">
+                        Over six years, I interviewed more than 300 authors - from celebrated Korean novelists Kim Yeon-su and Kim Young-ha to international figures like Alain de Botton, Richard Dawkins, and popular culture icons.
+                        My job was to translate a writer's inner world into language that speaks to readers.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>Role:</strong> Interviewee sourcing / Question development / Interview / Article writing
+                    </p>
+
+                    <div class="project-images">
+                        <div class="project-image">
+                            <img src="./bookdb-interview-1.jpeg" alt="BookDB author interview session" loading="lazy">
+                        </div>
+                        <div class="project-image">
+                            <img src="./bookdb-interview-2.jpeg" alt="Richard Dawkins BookDB interview" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://brunch.co.kr/@heartiste" target="_blank" rel="noopener noreferrer">Brunch Archive &rarr;</a>
+                    </div>
+
+                    <p style="margin-top: 10px; font-size: 13px; color: #8a8a8a;">
+                        Following the closure of Interpark's BookDB platform, I have been archiving select interviews and articles on Brunch.
+                    </p>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">Books</span>
+                        <span>2015&ndash;2021</span>
+                    </div>
+                    <h3>Issue &amp; Story - Trend Features</h3>
+                    <p class="project-description">
+                        "What are people paying attention to right now?" For six years, that question drove every piece I wrote.
+                        I connected trending cultural moments to books: BTS RM's reading list, Bill Gates' book picks, MBTI-based book recommendations, actor Yoo Ah-in's bookshelf, the hidden story behind Bohemian Rhapsody - always finding the bridge between cultural conversation and the written word.
+                        The BookDB platform has since closed following Interpark's exit from the book business.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>Role:</strong> Topic selection / Article writing
+                    </p>
+
+                    <div class="project-images project-images-article-trio">
+                        <div class="project-image">
+                            <img src="./issue-story-1.jpg" alt="Issue and Story article example 1" loading="lazy">
+                        </div>
+                        <div class="project-image">
+                            <img src="./issue-story-2.jpg" alt="Issue and Story article example 2" loading="lazy">
+                        </div>
+                        <div class="project-image">
+                            <img src="./issue-story-3.jpg" alt="Issue and Story article example 3" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">Books</span>
+                        <span>2016&ndash;2021</span>
+                    </div>
+                    <h3>Duna's Genre Fiction Nights - Section Editor</h3>
+                    <p class="project-description">
+                        For five years, I ran this section end-to-end: defining the concept, sourcing writers, editing manuscripts, proofreading, and publishing.
+                        I recruited the contributors around genre fiction columnist Duna and managed the ongoing series throughout its run.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>Role:</strong> Writer sourcing / Concept development / Manuscript editing / Proofreading / Publishing
+                    </p>
+
+                    <div class="project-images project-images-contain">
+                        <div class="project-image">
+                            <img src="./djuna.png" alt="Duna's Genre Fiction Nights section example" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-spacer"></div>
+
+            <section id="blog-sns">
+                <div class="section-header">
+                    <h2>Blog &amp; SNS Marketing</h2>
+                    <div class="section-subtitle">Search-optimized content and campaigns that perform</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">Tour</span>
+                        <span>2022&ndash;2023</span>
+                    </div>
+                    <h3>Interpark Tour Official Naver Blog</h3>
+                    <p class="project-description">
+                        Planned and operated keyword-driven blog content designed to naturally guide travelers from search to product pages.
+                        I analyzed search intent to select topics, then structured each post to maximize Naver search visibility.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>Role:</strong> Content production and publishing
+                    </p>
+
+                    <div class="project-images project-images-contain">
+                        <div class="project-image">
+                            <img src="./blog.png" alt="Interpark Tour official Naver blog example screen" loading="lazy">
+                        </div>
+                        <div class="project-image">
+                            <img src="./blog 02.png" alt="Interpark Tour official Naver blog example screen 2" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="http://blog.naver.com/interpark_tour" target="_blank" rel="noopener noreferrer">Visit Blog &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">SNS</span>
+                        <span>2023</span>
+                    </div>
+                    <h3>"It's Interpark" Challenge - Rebranding Instagram Campaign</h3>
+
+                    <div class="project-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">653 / 660</span>
+                            <span class="stat-label">Round 1 Likes / Comments</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">886 / 905</span>
+                            <span class="stat-label">Round 2 Likes / Comments</span>
+                        </div>
+                    </div>
+
+                    <p class="project-description">
+                        Following the merger of Interpark Tour and Yanolja, I designed an Instagram campaign to introduce Interpark's new identity.
+                        The "It's Interpark" Challenge played on the Korean word park, which means both "park" as in a large open space and the brand name, translating the brand message into participatory content.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>Role:</strong> Event planning / Instagram post production / Campaign management / Winner selection and announcement
+                    </p>
+
+                    <div class="project-images project-images-square">
+                        <div class="project-image">
+                            <img src="./instagram 01.png" alt="It's Interpark Challenge Instagram post 1" loading="lazy">
+                        </div>
+                        <div class="project-image">
+                            <img src="./instagram 02.png" alt="It's Interpark Challenge Instagram post 2" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://www.instagram.com/p/CtvuoL5J6bh/" target="_blank" rel="noopener noreferrer">Challenge 1 &rarr;</a>
+                        <a href="https://www.instagram.com/p/CuBgKuwJaw8/" target="_blank" rel="noopener noreferrer">Challenge 2 &rarr;</a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-spacer"></div>
+
+            <section id="magazines">
+                <div class="section-header">
+                    <h2>Art Journalism</h2>
+                    <div class="section-subtitle">Covering and documenting the contemporary art scene</div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">Magazine</span>
+                        <span>Feb 2013 - Sep 2014</span>
+                    </div>
+                    <h3>Kyunghyang Article</h3>
+                    <p class="project-description">
+                        Staff reporter at Kyunghyang Article, a monthly Korean art magazine. Covered exhibitions, conducted artist interviews, and handled editing.
+                        Contributed to 20 issues from the February 2013 to September 2014 editions, translating the pulse of the contemporary art world into language for a general readership.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>Role:</strong> Reporting / Article writing / Manuscript editing / Proofreading
+                    </p>
+
+                    <div class="project-images project-images-cover-grid">
+                        <div class="project-image">
+                            <img src="./article 00.png" alt="Kyunghyang Article cover 1" loading="lazy">
+                        </div>
+                        <div class="project-image">
+                            <img src="./article 01.jpg" alt="Kyunghyang Article cover 2" loading="lazy">
+                        </div>
+                        <div class="project-image">
+                            <img src="./article 02.jpg" alt="Kyunghyang Article cover 3" loading="lazy">
+                        </div>
+                        <div class="project-image">
+                            <img src="./article 03.jpg" alt="Kyunghyang Article cover 4" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-meta">
+                        <span class="category">Magazine</span>
+                        <span>Oct 2008 - Nov 2012</span>
+                    </div>
+                    <h3>Art World (미술세계)</h3>
+                    <p class="project-description">
+                        Began my career at Art World, Korea's leading monthly art publication. Developed core skills in reporting, writing, and editing across 50 issues - from the October 2008 to November 2012 editions.
+                        This is where I first started documenting Korea's contemporary art scene.
+                    </p>
+
+                    <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                        <strong>Role:</strong> Reporting / Article writing / Manuscript editing / Proofreading
+                    </p>
+
+                    <div class="project-images project-images-cover-grid">
+                        <div class="project-image">
+                            <img src="./misulsegye 00.jpg" alt="Art World cover 1" loading="lazy">
+                        </div>
+                        <div class="project-image">
+                            <img src="./misulsegye 01.jpg" alt="Art World cover 2" loading="lazy">
+                        </div>
+                        <div class="project-image">
+                            <img src="./misulsegye 02.jpg" alt="Art World cover 3" loading="lazy">
+                        </div>
+                        <div class="project-image">
+                            <img src="./misulsegye 03.jpg" alt="Art World cover 4" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Hyejin Joo. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
