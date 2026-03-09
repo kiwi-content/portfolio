@@ -284,6 +284,11 @@
             background: #fff;
         }
 
+        .project-images.project-images-compact {
+            grid-template-columns: minmax(0, 360px);
+            justify-content: start;
+        }
+
         .project-images.project-images-article-trio {
             grid-template-columns: repeat(3, minmax(0, 1fr));
         }
@@ -502,6 +507,10 @@
 
             .project-images.project-images-cover-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .project-images.project-images-compact {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -779,7 +788,7 @@
                         <strong>담당 업무:</strong> 기획 / 출연 / 영상 제작
                     </p>
 
-                    <div class="project-images project-images-contain">
+                    <div class="project-images project-images-contain project-images-compact">
                         <div class="project-image">
                             <img src="./booksuda.png" alt="책 잡히는 수다 썸네일" loading="lazy">
                         </div>
