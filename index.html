@@ -247,6 +247,15 @@
     .card-images.img-1 img { aspect-ratio: 16 / 10; }
     .card-images.img-3 img { aspect-ratio: 9 / 16; object-position: center top; }
     .card-links { display: flex; flex-wrap: wrap; gap: 8px; }
+    .card-links-grouped { display: flex; flex-direction: column; gap: 8px; }
+    .card-link-group { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+    .card-link-group-label {
+      min-width: 62px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--ink-muted);
+      letter-spacing: 0.04em;
+    }
     .card-link {
       font-size: 12px; color: var(--ink-soft); text-decoration: none;
       border-bottom: 1px solid var(--border); padding-bottom: 1px; transition: color 0.2s, border-color 0.2s;
@@ -426,6 +435,28 @@
       h1 { font-size: 40px; }
       .hero-subtitle { font-size: 16px; }
       .hero-links { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 390px) {
+      .hero { padding: 72px 16px 40px; }
+      .hero-name-row { gap: 12px; }
+      .hero-avatar { width: 60px; height: 60px; }
+      h1 { font-size: 34px; }
+      .hero-subtitle { font-size: 15px; }
+      .hero-desc { font-size: 14px; line-height: 1.75; margin-bottom: 28px; }
+      .hero-stats { flex-wrap: wrap; }
+      .stat { min-width: 50%; padding: 12px 8px; }
+      .nav-inner { padding: 0 14px; gap: 12px; }
+      nav a { font-size: 11px; }
+      section { padding: 44px 16px; }
+      .section-divider { padding: 0 16px; }
+      .work-card { padding: 24px 18px; gap: 12px; }
+      .featured-content, .wide-card-content { padding: 22px 18px; }
+      .card-title { font-size: 18px; }
+      .card-desc { font-size: 13px; line-height: 1.7; }
+      .card-link-group { gap: 6px 8px; }
+      .card-link-group-label { min-width: 52px; font-size: 10px; }
+      .contact-inner { padding: 40px 16px; }
+      footer { padding: 20px 16px; }
     }
   </style>
 </head>
@@ -612,12 +643,18 @@
             <div class="fstat"><span class="fstat-num">1.2억</span><span class="fstat-label">단일 방송 최대 매출</span></div>
           </div>
           <div class="card-roles"><strong>담당:</strong> 기획 / 기획전 페이지 제작 / 대본 작성 / 출연자 섭외 / 방송 송출 / 현장 총괄</div>
-          <div class="card-links">
-            <a href="https://youtu.be/N9RQfU-vHK8" target="_blank" class="card-link">앙리 마티스 →</a>
-            <a href="https://youtu.be/OUHqG_JVBgQ" target="_blank" class="card-link">필립 콜버트 →</a>
-            <a href="https://youtu.be/6GJ9dDI7pLE" target="_blank" class="card-link">무민 원화전 →</a>
-            <a href="https://zdnet.co.kr/view/?no=20210825164545" target="_blank" class="card-link">ZDNet →</a>
-            <a href="https://news.mt.co.kr/mtview.php?no=2021052609333033118" target="_blank" class="card-link">머니투데이 →</a>
+          <div class="card-links card-links-grouped">
+            <div class="card-link-group">
+              <span class="card-link-group-label">콘텐츠</span>
+              <a href="https://youtu.be/N9RQfU-vHK8" target="_blank" class="card-link">앙리 마티스 →</a>
+              <a href="https://youtu.be/OUHqG_JVBgQ" target="_blank" class="card-link">필립 콜버트 →</a>
+              <a href="https://youtu.be/6GJ9dDI7pLE" target="_blank" class="card-link">무민 원화전 →</a>
+            </div>
+            <div class="card-link-group">
+              <span class="card-link-group-label">언론보도</span>
+              <a href="https://zdnet.co.kr/view/?no=20210825164545" target="_blank" class="card-link">ZDNet →</a>
+              <a href="https://news.mt.co.kr/mtview.php?no=2021052609333033118" target="_blank" class="card-link">머니투데이 →</a>
+            </div>
           </div>
         </div>
       </div>
@@ -710,9 +747,9 @@
         </div>
         <div class="card-roles"><strong>담당:</strong> 인터뷰 진행 / 편집 요청</div>
         <div class="card-links">
-          <a href="https://youtu.be/WMHM3uT4Brc" target="_blank" class="card-link">천인우 →</a>
           <a href="https://youtu.be/sRTH6KUTCNA" target="_blank" class="card-link">설민석 →</a>
           <a href="https://youtu.be/Jr7SqjzpOus" target="_blank" class="card-link">정종철 →</a>
+          <a href="https://youtu.be/WMHM3uT4Brc" target="_blank" class="card-link">천인우 →</a>
         </div>
       </div>
 
@@ -755,8 +792,9 @@
           <img src="./bookdb-interview-2.jpeg" alt="리처드 도킨스 인터뷰" />
         </div>
         <div class="card-roles"><strong>담당:</strong> 인터뷰이 섭외 / 질문지 작성 / 인터뷰 진행 / 기사 작성</div>
+        <div class="card-roles"><strong>아카이브:</strong> 북DB 서비스 종료 후 주요 인터뷰를 브런치에 재정리해 보관했습니다.</div>
         <div class="card-links">
-          <a href="https://brunch.co.kr/@heartiste" target="_blank" class="card-link">브런치 아카이브 →</a>
+          <a href="https://brunch.co.kr/@heartiste" target="_blank" class="card-link">브런치 아카이브 (북DB 종료 이후 이전본) →</a>
         </div>
       </div>
 
