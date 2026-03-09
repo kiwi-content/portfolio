@@ -274,6 +274,30 @@
             object-fit: cover;
         }
 
+        .project-images.project-images-contain .project-image {
+            aspect-ratio: 4 / 3;
+            background: #fff;
+        }
+
+        .project-images.project-images-contain .project-image img {
+            object-fit: contain;
+            background: #fff;
+        }
+
+        .project-images.project-images-article-trio {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .project-images.project-images-article-trio .project-image {
+            aspect-ratio: 2 / 3;
+            background: #fff;
+        }
+
+        .project-images.project-images-article-trio .project-image img {
+            object-fit: contain;
+            background: #fff;
+        }
+
         .image-placeholder {
             display: flex;
             align-items: center;
@@ -446,6 +470,10 @@
             .stat-item:last-child {
                 border-bottom: none;
                 padding-bottom: 0;
+            }
+
+            .project-images.project-images-article-trio {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -687,7 +715,7 @@
                     </div>
                     <h3>작가 유튜브 영상 인터뷰</h3>
                     <p class="project-description">
-                        채널 '공원생활'에서 신간 작가들의 영상 인터뷰를 기획·진행했습니다.
+                        인터파크 유튜브 채널에서 신간 작가들의 영상 인터뷰를 기획·진행했습니다.
                         책에 담긴 이야기를 영상 언어로 옮겨, 독자가 책을 펼치기 전부터 작가를 만날 수 있도록 했습니다.
                     </p>
 
@@ -722,6 +750,12 @@
                     <p style="margin-top: 15px; font-size: 15px; color: #666;">
                         <strong>담당 업무:</strong> 기획 / 출연 / 영상 제작
                     </p>
+
+                    <div class="project-images project-images-contain">
+                        <div class="project-image">
+                            <img src="./booksuda.png" alt="책 잡히는 수다 썸네일" loading="lazy">
+                        </div>
+                    </div>
 
                     <div class="project-links">
                         <a href="https://youtu.be/yWvMQx4rFaU" target="_blank" rel="noopener noreferrer">1화: 새 옷 입은 책들 →</a>
@@ -792,9 +826,15 @@
                         <strong>담당 업무:</strong> 주제 선정 / 기사 작성
                     </p>
 
-                    <div class="project-images">
+                    <div class="project-images project-images-article-trio">
                         <div class="project-image">
-                            <div class="image-placeholder">기사 스크린샷</div>
+                            <img src="./이슈앤스토리 1.jpg" alt="이슈앤스토리 기사 예시 1" loading="lazy">
+                        </div>
+                        <div class="project-image">
+                            <img src="./이슈앤스토리 2.jpg" alt="이슈앤스토리 기사 예시 2" loading="lazy">
+                        </div>
+                        <div class="project-image">
+                            <img src="./이슈앤스토리 3.jpg" alt="이슈앤스토리 기사 예시 3" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -840,12 +880,9 @@
                         <strong>담당 업무:</strong> 콘텐츠 제작 및 발행
                     </p>
 
-                    <div class="project-images">
+                    <div class="project-images project-images-contain">
                         <div class="project-image">
-                            <div class="image-placeholder">블로그 포스팅 스크린샷</div>
-                        </div>
-                        <div class="project-image">
-                            <div class="image-placeholder">검색 노출 스크린샷</div>
+                            <img src="./blog.png" alt="인터파크투어 네이버 공식 블로그 예시 화면" loading="lazy">
                         </div>
                     </div>
 
