@@ -234,16 +234,18 @@
       background: var(--paper-warm); border-left: 3px solid var(--accent);
       padding: 12px 16px; font-size: 13px; font-weight: 500;
     }
-    .card-images { display: grid; gap: 4px; margin: 4px 0; }
+    .card-images { display: grid; gap: 8px; margin: 8px 0 4px; }
     .card-images.img-1 { grid-template-columns: 1fr; }
-    .card-images.img-2 { grid-template-columns: 1fr 1fr; }
-    .card-images.img-3 { grid-template-columns: repeat(3, 1fr); }
+    .card-images.img-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card-images.img-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .card-images img {
-      width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; display: block;
-      background: var(--paper-warm);
-      filter: grayscale(10%); transition: filter 0.3s;
+      width: 100%; height: auto;
+      aspect-ratio: 4 / 3; object-fit: contain; object-position: center;
+      display: block; border: 1px solid var(--border);
+      padding: 4px; background: white;
     }
-    .card-images img:hover { filter: grayscale(0%); }
+    .card-images.img-1 img { aspect-ratio: 16 / 10; }
+    .card-images.img-3 img { aspect-ratio: 9 / 16; object-position: center top; }
     .card-links { display: flex; flex-wrap: wrap; gap: 8px; }
     .card-link {
       font-size: 12px; color: var(--ink-soft); text-decoration: none;
@@ -265,33 +267,47 @@
     .wide-card:hover { background: white; }
     .wide-card-images {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
       overflow: hidden;
-      align-items: start;
+      align-items: stretch;
+      padding: 8px;
+      background: var(--paper-warm);
     }
     .wide-card-images--3 {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
     .wide-card-images img {
       width: 100%; height: auto;
-      object-fit: contain; display: block;
-      background: var(--paper-warm);
-      filter: grayscale(10%); transition: filter 0.3s;
+      aspect-ratio: 4 / 3;
+      object-fit: contain; object-position: center;
+      display: block;
+      border: 1px solid var(--border);
+      padding: 4px; background: white;
     }
-    .wide-card-images img:hover { filter: grayscale(0%); }
     .wide-card-content {
       padding: 36px 32px;
       display: flex; flex-direction: column; gap: 14px;
     }
     .wide-card-campaign .wide-card-images {
-      height: 320px;
-      align-items: stretch;
+      height: 340px;
     }
     .wide-card-campaign .wide-card-images img {
       height: 100%;
+      aspect-ratio: auto;
       object-fit: cover;
-      background: transparent;
+      padding: 0;
+    }
+    .wide-card-issue .wide-card-images {
+      align-items: stretch;
+    }
+    .wide-card-issue .wide-card-images img {
+      aspect-ratio: 9 / 16;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      padding: 0;
+      background: white;
     }
     /* ── FEATURED ── */
     .featured-card {
@@ -300,14 +316,14 @@
     }
     .featured-images {
       display: grid; grid-template-columns: 2fr 1fr;
-      grid-template-rows: 1fr 1fr; gap: 2px; overflow: hidden;
+      grid-template-rows: 1fr 1fr; gap: 8px; overflow: hidden;
+      padding: 8px; background: var(--paper-warm);
     }
     .featured-images img {
       width: 100%; height: 100%; object-fit: cover; display: block;
-      filter: grayscale(15%); transition: filter 0.3s;
+      border: 1px solid var(--border);
     }
     .featured-images img:first-child { grid-row: 1 / 3; }
-    .featured-images img:hover { filter: grayscale(0%); }
     .featured-content {
       padding: 40px; display: flex; flex-direction: column; gap: 16px; background: white;
     }
@@ -322,14 +338,14 @@
     /* ── MAGAZINE GRID ── */
     .magazine-grid {
       display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 1px; background: var(--border); border: 1px solid var(--border);
+      gap: 8px;
     }
-    .mag-item { background: var(--paper); overflow: hidden; aspect-ratio: 3/4; }
+    .mag-item { background: var(--paper); overflow: hidden; aspect-ratio: 3/4; border: 1px solid var(--border); }
     .mag-item img {
       width: 100%; height: 100%; object-fit: cover; display: block;
-      filter: grayscale(20%); transition: all 0.4s;
+      transition: transform 0.25s ease;
     }
-    .mag-item:hover img { filter: grayscale(0%); transform: scale(1.03); }
+    .mag-item:hover img { transform: scale(1.01); }
 
     /* ── CONTACT STRIP ── */
     .contact-strip { background: var(--ink); }
@@ -396,10 +412,13 @@
       .featured-content { padding: 28px 24px; }
       .work-grid { grid-template-columns: 1fr; }
       .wide-card { grid-template-columns: 1fr; }
-      .wide-card-images { min-height: 0; }
+      .card-images.img-2, .card-images.img-3 { grid-template-columns: 1fr; }
+      .wide-card-images, .wide-card-images--3 { grid-template-columns: 1fr; min-height: 0; }
       .wide-card-content { padding: 24px; }
-      .wide-card-campaign .wide-card-images { height: 220px; }
-      .magazine-grid { grid-template-columns: repeat(2, 1fr); }
+      .wide-card-campaign .wide-card-images { height: auto; }
+      .wide-card-campaign .wide-card-images img,
+      .wide-card-issue .wide-card-images img { aspect-ratio: 4 / 3; height: auto; }
+      .magazine-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
       .contact-inner { flex-direction: column; align-items: flex-start; gap: 28px; padding: 48px 24px; }
       footer { padding: 24px; flex-direction: column; align-items: flex-start; }
     }
@@ -636,7 +655,7 @@
           <span class="card-year">2020–2022</span>
         </div>
         <div class="card-title">기획전 페이지 제작</div>
-        <p class="card-desc">라이브커머스 방송과 연동되는 전시 기획전 페이지를 직접 제작했습니다. 작품 해설, 작가 소개, 구매 포인트를 하나의 흐름으로 엮은 구성으로 — 미술 기자 시절의 편집 감각을 콘텐츠 마케팅에 적용한 결과물입니다.</p>
+        <p class="card-desc">라이브커머스 방송과 연동되는 전시 기획전 페이지의 콘텐츠 방향 수립과 문안 작성을 담당했습니다. 작품 해설, 작가 소개, 구매 포인트를 하나의 흐름으로 엮은 구성으로 — 미술 기자 시절의 편집 감각을 콘텐츠 마케팅에 적용한 결과물입니다.</p>
       </div>
     </div>
 
@@ -753,7 +772,7 @@
     </div>
 
     <!-- 이슈앤스토리 와이드카드 -->
-    <div class="wide-card" style="margin-top:1px;">
+    <div class="wide-card wide-card-issue" style="margin-top:1px;">
       <div class="wide-card-images wide-card-images--3">
         <img src="./issue-story-1.jpg" alt="이슈앤스토리 기사 예시 1" />
         <img src="./issue-story-2.jpg" alt="이슈앤스토리 기사 예시 2" />
