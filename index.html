@@ -308,6 +308,20 @@
             background: #fff;
         }
 
+        .project-images.project-images-cover-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .project-images.project-images-cover-grid .project-image {
+            aspect-ratio: 3 / 4;
+            background: #fff;
+        }
+
+        .project-images.project-images-cover-grid .project-image img {
+            object-fit: contain;
+            background: #fff;
+        }
+
         .image-placeholder {
             display: flex;
             align-items: center;
@@ -484,6 +498,10 @@
 
             .project-images.project-images-article-trio {
                 grid-template-columns: 1fr;
+            }
+
+            .project-images.project-images-cover-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
     </style>
@@ -968,9 +986,18 @@
                         <strong>담당 업무:</strong> 취재 및 기사 작성 / 외고 편집 / 교정 교열
                     </p>
 
-                    <div class="project-images">
+                    <div class="project-images project-images-cover-grid">
                         <div class="project-image">
-                            <div class="image-placeholder">잡지 표지</div>
+                            <img src="./article 00.png" alt="경향 아티클 표지 1" loading="lazy">
+                        </div>
+                        <div class="project-image">
+                            <img src="./article 01.jpg" alt="경향 아티클 표지 2" loading="lazy">
+                        </div>
+                        <div class="project-image">
+                            <img src="./article 02.jpg" alt="경향 아티클 표지 3" loading="lazy">
+                        </div>
+                        <div class="project-image">
+                            <img src="./article 03.jpg" alt="경향 아티클 표지 4" loading="lazy">
                         </div>
                     </div>
                 </div>
