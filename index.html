@@ -31,6 +31,35 @@
             border-bottom: 1px solid #e5e5e5;
         }
 
+        .hero-shell {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 156px;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .hero-copy {
+            min-width: 0;
+        }
+
+        .hero-photo {
+            width: 156px;
+            justify-self: end;
+            padding: 8px;
+            background: #fafafa;
+            border: 1px solid #ececec;
+            border-radius: 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .hero-photo img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border-radius: 22px;
+        }
+
         h1 {
             font-size: 48px;
             font-weight: 300;
@@ -480,6 +509,16 @@
                 padding: 30px 20px;
             }
 
+            .hero-shell {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .hero-photo {
+                width: 132px;
+                justify-self: start;
+            }
+
             .projects-mini-grid {
                 grid-template-columns: 1fr;
             }
@@ -518,18 +557,26 @@
 <body>
     <div class="container">
         <header>
-            <h1>주혜진</h1>
-            <div class="subtitle">콘텐츠 크리에이터 & 마케터</div>
-            <p class="intro">
-                미술 전문지 기자로 시작해 라이브커머스, 유튜브, 블로그까지 — 15년간 콘텐츠가 어떻게 사람을 움직이는지를 현장에서 익혔습니다.
-                300여 명의 작가를 인터뷰하며 쌓은 이야기를 발굴하는 눈과, 국내 최초 전시 라이브커머스로 단일 방송 1.2억 원 매출을 만든 기획력이 제 강점입니다.
-            </p>
-            <div class="contact">
-                <a href="mailto:kiwi733@naver.com">kiwi733@naver.com</a>
-                <a href="tel:010-9905-2046">010-9905-2046</a>
-                <a href="https://www.facebook.com/hyejin.joo/" target="_blank" rel="noopener noreferrer">Facebook</a>
-                <a href="https://medium.com/@hyejinjoo" target="_blank" rel="noopener noreferrer">Medium</a>
-                <a href="https://kr.linkedin.com/in/hye-jin-joo-003332219" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <div class="hero-shell">
+                <div class="hero-copy">
+                    <h1>주혜진</h1>
+                    <div class="subtitle">콘텐츠 크리에이터 & 마케터</div>
+                    <p class="intro">
+                        미술 전문지 기자로 시작해 라이브커머스, 유튜브, 블로그까지 — 15년간 콘텐츠가 어떻게 사람을 움직이는지를 현장에서 익혔습니다.
+                        300여 명의 작가를 인터뷰하며 쌓은 이야기를 발굴하는 눈과, 국내 최초 전시 라이브커머스로 단일 방송 1.2억 원 매출을 만든 기획력이 제 강점입니다.
+                    </p>
+                    <div class="contact">
+                        <a href="mailto:kiwi733@naver.com">kiwi733@naver.com</a>
+                        <a href="tel:010-9905-2046">010-9905-2046</a>
+                        <a href="https://www.facebook.com/hyejin.joo/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a href="https://medium.com/@hyejinjoo" target="_blank" rel="noopener noreferrer">Medium</a>
+                        <a href="https://kr.linkedin.com/in/hye-jin-joo-003332219" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="hero-photo">
+                    <img src="./IMG_3822.JPG" alt="주혜진 프로필 사진" loading="lazy">
+                </div>
             </div>
         </header>
 
