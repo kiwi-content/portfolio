@@ -239,7 +239,8 @@
     .card-images.img-2 { grid-template-columns: 1fr 1fr; }
     .card-images.img-3 { grid-template-columns: repeat(3, 1fr); }
     .card-images img {
-      width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
+      width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; display: block;
+      background: var(--paper-warm);
       filter: grayscale(10%); transition: filter 0.3s;
     }
     .card-images img:hover { filter: grayscale(0%); }
@@ -252,6 +253,46 @@
     .card-roles { font-size: 12px; color: var(--ink-muted); line-height: 1.6; }
     .card-roles strong { color: var(--ink-soft); font-weight: 500; }
 
+
+    /* ── WIDE CARD ── */
+    .wide-card {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--paper);
+      transition: background 0.2s;
+    }
+    .wide-card:hover { background: white; }
+    .wide-card-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      overflow: hidden;
+      align-items: start;
+    }
+    .wide-card-images--3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .wide-card-images img {
+      width: 100%; height: auto;
+      object-fit: contain; display: block;
+      background: var(--paper-warm);
+      filter: grayscale(10%); transition: filter 0.3s;
+    }
+    .wide-card-images img:hover { filter: grayscale(0%); }
+    .wide-card-content {
+      padding: 36px 32px;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .wide-card-campaign .wide-card-images {
+      height: 320px;
+      align-items: stretch;
+    }
+    .wide-card-campaign .wide-card-images img {
+      height: 100%;
+      object-fit: cover;
+      background: transparent;
+    }
     /* ── FEATURED ── */
     .featured-card {
       grid-column: 1 / -1; display: grid;
@@ -354,6 +395,10 @@
       .featured-images img:first-child { grid-row: auto; }
       .featured-content { padding: 28px 24px; }
       .work-grid { grid-template-columns: 1fr; }
+      .wide-card { grid-template-columns: 1fr; }
+      .wide-card-images { min-height: 0; }
+      .wide-card-content { padding: 24px; }
+      .wide-card-campaign .wide-card-images { height: 220px; }
       .magazine-grid { grid-template-columns: repeat(2, 1fr); }
       .contact-inner { flex-direction: column; align-items: flex-start; gap: 28px; padding: 48px 24px; }
       footer { padding: 24px; flex-direction: column; align-items: flex-start; }
@@ -414,7 +459,7 @@
       A sharp eye for stories honed through 200+ artist interviews, combined with the strategic planning that <strong>generated ₩120M in a single live commerce broadcast</strong> — Korea's first ever exhibition live commerce.
     </p>
     <div class="hero-links">
-      <a href="mailto:kiwi733@naver.com" class="btn-primary">Get in Touch</a>
+      <a href="/cdn-cgi/l/email-protection#deb5b7a9b7e9eded9eb0bfa8bbacf0bdb1b3" class="btn-primary">Get in Touch</a>
       <a href="https://kr.linkedin.com/in/hye-jin-joo-003332219" target="_blank" class="btn-ghost">LinkedIn →</a>
       <a href="https://medium.com/@hyejinjoo" target="_blank" class="btn-ghost">Medium →</a>
     </div>
@@ -527,8 +572,8 @@
     <div class="section-label">Live Commerce</div>
     <h2>Live Commerce Planning</h2>
     <p class="section-intro">From Korea's first exhibition live commerce to MBTI travel — reading trends, building formats.</p>
-    <div class="work-grid">
 
+    <div class="work-grid">
       <div class="work-card featured-card">
         <div class="featured-images">
           <img src="https://raw.githubusercontent.com/kiwi-content/portfolio/image/suyo1.jpg" alt="Suyo Art Salon broadcast" />
@@ -558,25 +603,8 @@
         </div>
       </div>
 
-      <!-- Campaign page subcard -->
       <div class="work-card">
-        <div class="card-meta">
-          <span class="tag">Campaign Page</span>
-          <span class="card-year">2020–2022</span>
-        </div>
-        <div class="card-title">Campaign Page Production</div>
-        <p class="card-desc">Produced exhibition campaign pages tied to each live commerce broadcast. Combined artwork commentary, artist profiles, and purchase incentives into a single editorial flow — the editorial sensibility from fine arts journalism applied directly to commerce content.</p>
-        <div class="card-images img-2">
-          <img src="./kihwaek1.JPG" alt="Exhibition campaign page — Raoul Dufy" />
-          <img src="./kihwaek.jpg" alt="Exhibition campaign page — Picasso" />
-        </div>
-      </div>
-
-      <div class="work-card">
-        <div class="card-meta">
-          <span class="tag">Tours</span>
-          <span class="card-year">2022</span>
-        </div>
+        <div class="card-meta"><span class="tag">Tours</span><span class="card-year">2022</span></div>
         <div class="card-title">MBTI Lab</div>
         <p class="card-desc">Connected Korea's MBTI craze with travel product sales. Conceived and hosted a live commerce format analyzing travel styles by personality type and curating matching products.</p>
         <div class="card-links">
@@ -586,10 +614,7 @@
       </div>
 
       <div class="work-card">
-        <div class="card-meta">
-          <span class="tag">Tours</span>
-          <span class="card-year">2021</span>
-        </div>
+        <div class="card-meta"><span class="tag">Tours</span><span class="card-year">2021</span></div>
         <div class="card-title">Local LIVE Tour</div>
         <p class="card-desc">With international travel suspended in 2021, created a format connecting viewers in real-time with local guides worldwide — selling virtual travel experiences. Ran 13 episodes in total.</p>
         <div class="card-links">
@@ -597,8 +622,24 @@
           <a href="http://mbiz.heraldcorp.com/view.php?ud=20211005000711" target="_blank" class="card-link">Herald Economy →</a>
         </div>
       </div>
-
     </div>
+
+    <!-- Campaign page wide card -->
+    <div class="wide-card wide-card-campaign" style="margin-top:1px;">
+      <div class="wide-card-images">
+        <img src="./kihwaek1.JPG" alt="Exhibition campaign page — Raoul Dufy" />
+        <img src="./kihwaek.jpg" alt="Exhibition campaign page — Picasso" />
+      </div>
+      <div class="wide-card-content">
+        <div class="card-meta">
+          <span class="tag">Campaign Page</span>
+          <span class="card-year">2020–2022</span>
+        </div>
+        <div class="card-title">Campaign Page Production</div>
+        <p class="card-desc">Produced exhibition campaign pages tied to each live commerce broadcast. Combined artwork commentary, artist profiles, and purchase incentives into a single editorial flow — the editorial sensibility from fine arts journalism applied directly to commerce content.</p>
+      </div>
+    </div>
+
   </section>
 
   <div class="section-divider"></div>
@@ -681,11 +722,11 @@
 
   <!-- Editorial -->
   <section id="editorial" class="reveal">
-    <div class="section-label">Interview & Editorial</div>
-    <h2>Interview & Editorial</h2>
+    <div class="section-label">Interview &amp; Editorial</div>
+    <h2>Interview &amp; Editorial</h2>
     <p class="section-intro">200+ artists interviewed. Depth over breadth, always.</p>
-    <div class="work-grid">
 
+    <div class="work-grid">
       <div class="work-card">
         <div class="card-meta"><span class="tag">Books</span><span class="card-year">2015–2021</span></div>
         <div class="card-title">BookDB Author Interviews</div>
@@ -701,28 +742,31 @@
       </div>
 
       <div class="work-card">
-        <div class="card-meta"><span class="tag">Books</span><span class="card-year">2015–2021</span></div>
-        <div class="card-title">Issue & Story — Trend Features</div>
-        <p class="card-desc">Introduced books through the lens of the day's most current issues. Wrote feature stories that connected books to the topics drawing the strongest attention from contemporary readers.</p>
-        <div class="card-images img-3">
-          <img src="./issue-story-1.jpg" alt="" />
-          <img src="./issue-story-2.jpg" alt="" />
-          <img src="./issue-story-3.jpg" alt="" />
-        </div>
-        <div class="card-roles"><strong>Role:</strong> Topic Selection / Writing</div>
-      </div>
-
-      <div class="work-card">
         <div class="card-meta"><span class="tag">Books</span><span class="card-year">2016–2021</span></div>
         <div class="card-title">Djuna's Genre Fiction Nights</div>
-        <p class="card-desc">Managed every aspect of this genre fiction section for five years — from planning the column and sourcing contributors to editing, proofreading, and publishing.</p>
+        <p class="card-desc">Managed every aspect of this genre fiction column for five years — from finding contributors and defining the concept to editing, proofreading, and publishing.</p>
         <div class="card-images img-1">
           <img src="./djuna.png" alt="Genre Fiction Nights" />
         </div>
         <div class="card-roles"><strong>Role:</strong> Contributor Sourcing / Concept / Copy Editing / Proofreading / Publishing</div>
       </div>
-
     </div>
+
+    <!-- Issue & Story wide card -->
+    <div class="wide-card" style="margin-top:1px;">
+      <div class="wide-card-images wide-card-images--3">
+        <img src="./issue-story-1.jpg" alt="Issue &amp; Story example 1" />
+        <img src="./issue-story-2.jpg" alt="Issue &amp; Story example 2" />
+        <img src="./issue-story-3.jpg" alt="Issue &amp; Story example 3" />
+      </div>
+      <div class="wide-card-content">
+        <div class="card-meta"><span class="tag">Books</span><span class="card-year">2015–2021</span></div>
+        <div class="card-title">Issue &amp; Story — Trend Features</div>
+        <p class="card-desc">BTS RM's reading list, Bill Gates' book picks, MBTI reading guides — six years of trend-reading pieces that connected culture to books.</p>
+        <div class="card-roles"><strong>Role:</strong> Topic Selection / Writing</div>
+      </div>
+    </div>
+
   </section>
 
   <div class="section-divider"></div>
@@ -772,34 +816,28 @@
     <div class="section-label">Magazine</div>
     <h2>Fine Arts Journalist</h2>
     <p class="section-intro">Covering and documenting the fine arts world — 70 issues in total.</p>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="t-date">Feb 2013 – Sep 2014</div>
-        <div class="t-line"></div>
-        <div class="t-content">
-          <div class="t-org">Kyunghyang Article <span style="font-size:13px; font-weight:400; color:var(--ink-muted);">· 20 Issues</span></div>
-          <p class="t-desc">Reporter for fine arts monthly <em>Kyunghyang Article</em> — covered exhibitions firsthand, interviewed artists, and handled editing throughout.</p>
-          <div class="magazine-grid" style="margin-top:20px;">
-            <div class="mag-item"><img src="./article 00.png" alt="Kyunghyang Article cover" /></div>
-            <div class="mag-item"><img src="./article 01.jpg" alt="" /></div>
-            <div class="mag-item"><img src="./article 02.jpg" alt="" /></div>
-            <div class="mag-item"><img src="./article 03.jpg" alt="" /></div>
-          </div>
-        </div>
+    <div style="margin-bottom: 40px;">
+      <div class="card-meta" style="margin-bottom: 12px;">
+        <span class="tag">Kyunghyang Article</span>
+        <span class="card-year">Feb 2013 – Sep 2014 · 20 Issues</span>
       </div>
-      <div class="timeline-item">
-        <div class="t-date">Oct 2008 – Nov 2012</div>
-        <div class="t-line"></div>
-        <div class="t-content">
-          <div class="t-org">Art World <span style="font-size:13px; font-weight:400; color:var(--ink-muted);">· 50 Issues</span></div>
-          <p class="t-desc">Began journalism career at fine arts monthly <em>Art World</em>, learning the full process of reporting, writing, and editing. The place where documenting Korean contemporary art began.</p>
-          <div class="magazine-grid" style="margin-top:20px;">
-            <div class="mag-item"><img src="./misulsegye 00.jpg" alt="Art World cover" /></div>
-            <div class="mag-item"><img src="./misulsegye 01.jpg" alt="" /></div>
-            <div class="mag-item"><img src="./misulsegye 02.jpg" alt="" /></div>
-            <div class="mag-item"><img src="./misulsegye 03.jpg" alt="" /></div>
-          </div>
-        </div>
+      <div class="magazine-grid">
+        <div class="mag-item"><img src="./article 00.png" alt="Kyunghyang Article cover" /></div>
+        <div class="mag-item"><img src="./article 01.jpg" alt="" /></div>
+        <div class="mag-item"><img src="./article 02.jpg" alt="" /></div>
+        <div class="mag-item"><img src="./article 03.jpg" alt="" /></div>
+      </div>
+    </div>
+    <div>
+      <div class="card-meta" style="margin-bottom: 12px;">
+        <span class="tag">Art World</span>
+        <span class="card-year">Oct 2008 – Nov 2012 · 50 Issues</span>
+      </div>
+      <div class="magazine-grid">
+        <div class="mag-item"><img src="./misulsegye 00.jpg" alt="Art World cover" /></div>
+        <div class="mag-item"><img src="./misulsegye 01.jpg" alt="" /></div>
+        <div class="mag-item"><img src="./misulsegye 02.jpg" alt="" /></div>
+        <div class="mag-item"><img src="./misulsegye 03.jpg" alt="" /></div>
       </div>
     </div>
   </section>
@@ -812,7 +850,7 @@
         <p>For content strategy, live commerce, or interview &amp; editorial work,<br>I'd love to hear from you.</p>
       </div>
       <div class="contact-links">
-        <a href="mailto:kiwi733@naver.com" class="contact-btn contact-btn-primary">Send an Email</a>
+        <a href="/cdn-cgi/l/email-protection#3f54564856080c0c7f515e495a4d115c5052" class="contact-btn contact-btn-primary">Send an Email</a>
         <a href="https://kr.linkedin.com/in/hye-jin-joo-003332219" target="_blank" class="contact-btn contact-btn-ghost">LinkedIn</a>
         <a href="https://www.facebook.com/hyejin.joo/" target="_blank" class="contact-btn contact-btn-ghost">Facebook</a>
       </div>
@@ -824,7 +862,7 @@
     <span>Content Planner · Seoul</span>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Sticky nav
     const nav = document.getElementById('mainNav');
     const heroEl = document.querySelector('.hero');
@@ -851,12 +889,12 @@
             navLinks.forEach(l => l.classList.remove('nav-active'));
             const active = document.querySelector(`nav a[data-section="${entry.target.id}"]`);
             if (active) active.classList.add('nav-active');
-          }
-        });
-      },
+           }
+      });
+    },
       { rootMargin: '-30% 0px -60% 0px' }
     );
     document.querySelectorAll('section[id]').forEach(s => activeObs.observe(s));
-</script>
+  </script>
 </body>
 </html>

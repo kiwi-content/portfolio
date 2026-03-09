@@ -239,7 +239,8 @@
     .card-images.img-2 { grid-template-columns: 1fr 1fr; }
     .card-images.img-3 { grid-template-columns: repeat(3, 1fr); }
     .card-images img {
-      width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
+      width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; display: block;
+      background: var(--paper-warm);
       filter: grayscale(10%); transition: filter 0.3s;
     }
     .card-images img:hover { filter: grayscale(0%); }
@@ -252,6 +253,46 @@
     .card-roles { font-size: 12px; color: var(--ink-muted); line-height: 1.6; }
     .card-roles strong { color: var(--ink-soft); font-weight: 500; }
 
+
+    /* ── WIDE CARD ── */
+    .wide-card {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--paper);
+      transition: background 0.2s;
+    }
+    .wide-card:hover { background: white; }
+    .wide-card-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      overflow: hidden;
+      align-items: start;
+    }
+    .wide-card-images--3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .wide-card-images img {
+      width: 100%; height: auto;
+      object-fit: contain; display: block;
+      background: var(--paper-warm);
+      filter: grayscale(10%); transition: filter 0.3s;
+    }
+    .wide-card-images img:hover { filter: grayscale(0%); }
+    .wide-card-content {
+      padding: 36px 32px;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .wide-card-campaign .wide-card-images {
+      height: 320px;
+      align-items: stretch;
+    }
+    .wide-card-campaign .wide-card-images img {
+      height: 100%;
+      object-fit: cover;
+      background: transparent;
+    }
     /* ── FEATURED ── */
     .featured-card {
       grid-column: 1 / -1; display: grid;
@@ -354,6 +395,10 @@
       .featured-images img:first-child { grid-row: auto; }
       .featured-content { padding: 28px 24px; }
       .work-grid { grid-template-columns: 1fr; }
+      .wide-card { grid-template-columns: 1fr; }
+      .wide-card-images { min-height: 0; }
+      .wide-card-content { padding: 24px; }
+      .wide-card-campaign .wide-card-images { height: 220px; }
       .magazine-grid { grid-template-columns: repeat(2, 1fr); }
       .contact-inner { flex-direction: column; align-items: flex-start; gap: 28px; padding: 48px 24px; }
       footer { padding: 24px; flex-direction: column; align-items: flex-start; }
@@ -405,7 +450,7 @@
         <span class="stat-label">단일 방송 최대 매출</span>
       </div>
       <div class="stat">
-        <span class="stat-num">70호</span>
+        <span class="stat-num">70권</span>
         <span class="stat-label">매거진 제작</span>
       </div>
     </div>
@@ -414,7 +459,7 @@
       200여 명의 작가를 인터뷰하며 쌓은 이야기를 발굴하는 눈과, <strong>국내 최초 전시 라이브커머스로 단일 방송 1.2억 원 매출</strong>을 만든 기획력이 제 강점입니다.
     </p>
     <div class="hero-links">
-      <a href="mailto:kiwi733@naver.com" class="btn-primary">이메일 보내기</a>
+      <a href="/cdn-cgi/l/email-protection#553e3c223c626666153b342330277b363a38" class="btn-primary">이메일 보내기</a>
       <a href="https://kr.linkedin.com/in/hye-jin-joo-003332219" target="_blank" class="btn-ghost">LinkedIn →</a>
       <a href="https://medium.com/@hyejinjoo" target="_blank" class="btn-ghost">Medium →</a>
     </div>
@@ -506,7 +551,7 @@
         <div class="t-line"></div>
         <div class="t-content">
           <div class="t-org">경향 아티클 기자</div>
-          <p class="t-desc">미술 전문 월간지 《경향 아티클》에서 전시 현장을 취재하고 작가를 인터뷰하며 편집까지 담당했습니다. 총 20호 제작에 참여했습니다.</p>
+          <p class="t-desc">미술 전문 월간지 《경향 아티클》에서 전시 현장을 취재하고 작가를 인터뷰하며 편집까지 담당했습니다. 총 20권 제작에 참여했습니다.</p>
         </div>
       </div>
       <div class="timeline-item">
@@ -514,7 +559,7 @@
         <div class="t-line"></div>
         <div class="t-content">
           <div class="t-org">미술세계 기자</div>
-          <p class="t-desc">미술 전문 월간지 《미술세계》 기자로 입문해 취재·기사 작성·편집을 익혔습니다. 총 50호 제작에 참여하며 한국 현대미술의 현장을 기록했습니다.</p>
+          <p class="t-desc">미술 전문 월간지 《미술세계》 기자로 입문해 취재·기사 작성·편집을 익혔습니다. 총 50권 제작에 참여하며 한국 현대미술의 현장을 기록했습니다.</p>
         </div>
       </div>
     </div>
@@ -527,8 +572,8 @@
     <div class="section-label">Live Commerce</div>
     <h2>라이브커머스 기획</h2>
     <p class="section-intro">국내 최초 전시 라이브커머스부터 MBTI 여행까지 — 트렌드를 읽고, 포맷을 만들었습니다.</p>
-    <div class="work-grid">
 
+    <div class="work-grid">
       <div class="work-card featured-card">
         <div class="featured-images">
           <img src="https://raw.githubusercontent.com/kiwi-content/portfolio/image/suyo1.jpg" alt="수요아트살롱 방송 현장" />
@@ -558,25 +603,8 @@
         </div>
       </div>
 
-      <!-- 기획전 페이지 서브카드 -->
       <div class="work-card">
-        <div class="card-meta">
-          <span class="tag">기획전 페이지</span>
-          <span class="card-year">2020–2022</span>
-        </div>
-        <div class="card-title">기획전 페이지 제작</div>
-        <p class="card-desc">라이브커머스 방송과 연동되는 전시 기획전 페이지를 직접 제작했습니다. 작품 해설, 작가 소개, 구매 포인트를 하나의 흐름으로 엮은 구성으로 — 미술 기자 시절의 편집 감각을 콘텐츠 마케팅에 적용한 결과물입니다.</p>
-        <div class="card-images img-2">
-          <img src="./kihwaek1.JPG" alt="수요아트살롱 기획전 페이지 — 라울 뒤피" />
-          <img src="./kihwaek.jpg" alt="수요아트살롱 기획전 페이지 — 피카소" />
-        </div>
-      </div>
-
-      <div class="work-card">
-        <div class="card-meta">
-          <span class="tag">투어</span>
-          <span class="card-year">2022</span>
-        </div>
+        <div class="card-meta"><span class="tag">투어</span><span class="card-year">2022</span></div>
         <div class="card-title">MBTI 연구소</div>
         <p class="card-desc">한국 사회의 MBTI 열풍을 여행 상품 판매와 연결했습니다. 유형별 여행 스타일을 분석하고 맞춤 상품을 큐레이션하는 라이브커머스를 기획·진행했습니다.</p>
         <div class="card-links">
@@ -586,10 +614,7 @@
       </div>
 
       <div class="work-card">
-        <div class="card-meta">
-          <span class="tag">투어</span>
-          <span class="card-year">2021</span>
-        </div>
+        <div class="card-meta"><span class="tag">투어</span><span class="card-year">2021</span></div>
         <div class="card-title">현지 LIVE 투어</div>
         <p class="card-desc">해외여행이 막힌 2021년, 전 세계 현지 가이드와 실시간으로 연결해 '랜선 여행'을 판매하는 포맷을 만들었습니다. 총 13회 진행했습니다.</p>
         <div class="card-links">
@@ -597,8 +622,24 @@
           <a href="http://mbiz.heraldcorp.com/view.php?ud=20211005000711" target="_blank" class="card-link">헤럴드경제 →</a>
         </div>
       </div>
-
     </div>
+
+    <!-- 기획전 페이지 와이드카드 -->
+    <div class="wide-card wide-card-campaign" style="margin-top:1px;">
+      <div class="wide-card-images">
+        <img src="./kihwaek1.JPG" alt="수요아트살롱 기획전 페이지 — 라울 뒤피" />
+        <img src="./kihwaek.jpg" alt="수요아트살롱 기획전 페이지 — 피카소" />
+      </div>
+      <div class="wide-card-content">
+        <div class="card-meta">
+          <span class="tag">기획전 페이지</span>
+          <span class="card-year">2020–2022</span>
+        </div>
+        <div class="card-title">기획전 페이지 제작</div>
+        <p class="card-desc">라이브커머스 방송과 연동되는 전시 기획전 페이지를 직접 제작했습니다. 작품 해설, 작가 소개, 구매 포인트를 하나의 흐름으로 엮은 구성으로 — 미술 기자 시절의 편집 감각을 콘텐츠 마케팅에 적용한 결과물입니다.</p>
+      </div>
+    </div>
+
   </section>
 
   <div class="section-divider"></div>
@@ -681,11 +722,11 @@
 
   <!-- Editorial -->
   <section id="editorial" class="reveal">
-    <div class="section-label">Interview & Editorial</div>
-    <h2>인터뷰 & 에디토리얼</h2>
+    <div class="section-label">Interview &amp; Editorial</div>
+    <h2>인터뷰 &amp; 에디토리얼</h2>
     <p class="section-intro">200여 명의 작가를 만나 깊이 있는 이야기를 전했습니다.</p>
-    <div class="work-grid">
 
+    <div class="work-grid">
       <div class="work-card">
         <div class="card-meta"><span class="tag">도서</span><span class="card-year">2015–2021</span></div>
         <div class="card-title">북DB 작가 인터뷰</div>
@@ -701,28 +742,31 @@
       </div>
 
       <div class="work-card">
-        <div class="card-meta"><span class="tag">도서</span><span class="card-year">2015–2021</span></div>
-        <div class="card-title">이슈앤스토리</div>
-        <p class="card-desc">매일의 따끈한 이슈를 책과 연결하여 소개했습니다. 동시대 독자들의 관심이 쏠리는 곳과 관련된 책을 연결하여 소개하는 기획 기사를 썼습니다.</p>
-        <div class="card-images img-3">
-          <img src="./issue-story-1.jpg" alt="" />
-          <img src="./issue-story-2.jpg" alt="" />
-          <img src="./issue-story-3.jpg" alt="" />
-        </div>
-        <div class="card-roles"><strong>담당:</strong> 주제 선정 / 기사 작성</div>
-      </div>
-
-      <div class="work-card">
         <div class="card-meta"><span class="tag">도서</span><span class="card-year">2016–2021</span></div>
         <div class="card-title">듀나의 장르소설 읽는 밤</div>
-        <p class="card-desc">코너 기획부터 필자 섭외, 원고 다듬기, 교열, 발행까지 — 섹션 전체를 5년간 담당했습니다.</p>
+        <p class="card-desc">필자 섭외부터 콘셉트 정의, 원고 다듬기, 교열, 발행까지 — 섹션 전체를 5년간 담당했습니다.</p>
         <div class="card-images img-1">
           <img src="./djuna.png" alt="듀나의 장르소설 읽는 밤" />
         </div>
         <div class="card-roles"><strong>담당:</strong> 필자 섭외 / 콘셉트 기획 / 원고 편집 / 교정 교열 / 발행</div>
       </div>
-
     </div>
+
+    <!-- 이슈앤스토리 와이드카드 -->
+    <div class="wide-card" style="margin-top:1px;">
+      <div class="wide-card-images wide-card-images--3">
+        <img src="./issue-story-1.jpg" alt="이슈앤스토리 기사 예시 1" />
+        <img src="./issue-story-2.jpg" alt="이슈앤스토리 기사 예시 2" />
+        <img src="./issue-story-3.jpg" alt="이슈앤스토리 기사 예시 3" />
+      </div>
+      <div class="wide-card-content">
+        <div class="card-meta"><span class="tag">도서</span><span class="card-year">2015–2021</span></div>
+        <div class="card-title">이슈앤스토리</div>
+        <p class="card-desc">매일의 따끈한 이슈를 책과 연결하여 소개했습니다. 동시대 독자들의 관심이 쏠리는 곳과 관련된 책을 연결하여 소개하는 기획 기사를 썼습니다.</p>
+        <div class="card-roles"><strong>담당:</strong> 주제 선정 / 기사 작성</div>
+      </div>
+    </div>
+
   </section>
 
   <div class="section-divider"></div>
@@ -771,35 +815,29 @@
   <section id="magazines" class="reveal">
     <div class="section-label">Magazine</div>
     <h2>미술 전문지 기자</h2>
-    <p class="section-intro">미술 현장을 취재하고 기록하다 — 총 70호 제작에 참여했습니다.</p>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="t-date">2013.2 – 2014.9</div>
-        <div class="t-line"></div>
-        <div class="t-content">
-          <div class="t-org">경향 아티클 <span style="font-size:13px; font-weight:400; color:var(--ink-muted);">· 20호</span></div>
-          <p class="t-desc">미술 전문 월간지 《경향 아티클》 기자로, 전시 현장을 직접 취재하고 작가를 인터뷰하며 편집까지 담당했습니다.</p>
-          <div class="magazine-grid" style="margin-top:20px;">
-            <div class="mag-item"><img src="./article 00.png" alt="경향 아티클 표지" /></div>
-            <div class="mag-item"><img src="./article 01.jpg" alt="" /></div>
-            <div class="mag-item"><img src="./article 02.jpg" alt="" /></div>
-            <div class="mag-item"><img src="./article 03.jpg" alt="" /></div>
-          </div>
-        </div>
+    <p class="section-intro">미술 현장을 취재하고 기록하다 — 총 70권 제작에 참여했습니다.</p>
+    <div style="margin-bottom: 40px;">
+      <div class="card-meta" style="margin-bottom: 12px;">
+        <span class="tag">경향 아티클</span>
+        <span class="card-year">2013.2 – 2014.9 · 20권</span>
       </div>
-      <div class="timeline-item">
-        <div class="t-date">2008.10 – 2012.11</div>
-        <div class="t-line"></div>
-        <div class="t-content">
-          <div class="t-org">미술세계 <span style="font-size:13px; font-weight:400; color:var(--ink-muted);">· 50호</span></div>
-          <p class="t-desc">미술 전문 월간지 《미술세계》 기자로 입문해 취재·기사 작성·편집을 익혔습니다. 한국 현대미술의 현장을 처음으로 기록하기 시작한 곳입니다.</p>
-          <div class="magazine-grid" style="margin-top:20px;">
-            <div class="mag-item"><img src="./misulsegye 00.jpg" alt="미술세계 표지" /></div>
-            <div class="mag-item"><img src="./misulsegye 01.jpg" alt="" /></div>
-            <div class="mag-item"><img src="./misulsegye 02.jpg" alt="" /></div>
-            <div class="mag-item"><img src="./misulsegye 03.jpg" alt="" /></div>
-          </div>
-        </div>
+      <div class="magazine-grid">
+        <div class="mag-item"><img src="./article 00.png" alt="경향 아티클 표지" /></div>
+        <div class="mag-item"><img src="./article 01.jpg" alt="" /></div>
+        <div class="mag-item"><img src="./article 02.jpg" alt="" /></div>
+        <div class="mag-item"><img src="./article 03.jpg" alt="" /></div>
+      </div>
+    </div>
+    <div>
+      <div class="card-meta" style="margin-bottom: 12px;">
+        <span class="tag">미술세계</span>
+        <span class="card-year">2008.10 – 2012.11 · 50권</span>
+      </div>
+      <div class="magazine-grid">
+        <div class="mag-item"><img src="./misulsegye 00.jpg" alt="미술세계 표지" /></div>
+        <div class="mag-item"><img src="./misulsegye 01.jpg" alt="" /></div>
+        <div class="mag-item"><img src="./misulsegye 02.jpg" alt="" /></div>
+        <div class="mag-item"><img src="./misulsegye 03.jpg" alt="" /></div>
       </div>
     </div>
   </section>
@@ -812,7 +850,7 @@
         <p>콘텐츠 기획, 라이브커머스, 인터뷰 & 에디토리얼 관련해서<br>언제든지 연락 주세요.</p>
       </div>
       <div class="contact-links">
-        <a href="mailto:kiwi733@naver.com" class="contact-btn contact-btn-primary">이메일 보내기</a>
+        <a href="/cdn-cgi/l/email-protection#1f74766876282c2c5f717e697a6d317c7072" class="contact-btn contact-btn-primary">이메일 보내기</a>
         <a href="https://kr.linkedin.com/in/hye-jin-joo-003332219" target="_blank" class="contact-btn contact-btn-ghost">LinkedIn</a>
         <a href="https://www.facebook.com/hyejin.joo/" target="_blank" class="contact-btn contact-btn-ghost">Facebook</a>
       </div>
@@ -824,7 +862,7 @@
     <span>콘텐츠 기획자 · 서울</span>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Sticky nav
     const nav = document.getElementById('mainNav');
     const heroEl = document.querySelector('.hero');
@@ -851,12 +889,12 @@
             navLinks.forEach(l => l.classList.remove('nav-active'));
             const active = document.querySelector(`nav a[data-section="${entry.target.id}"]`);
             if (active) active.classList.add('nav-active');
-          }
-        });
-      },
+           }
+      });
+    },
       { rootMargin: '-30% 0px -60% 0px' }
     );
     document.querySelectorAll('section[id]').forEach(s => activeObs.observe(s));
-</script>
+  </script>
 </body>
 </html>
