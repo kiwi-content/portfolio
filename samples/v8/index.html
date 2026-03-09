@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>주혜진 | 콘텐츠 기획자 포트폴리오</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="주혜진 | 콘텐츠 기획자" />
+  <meta property="og:description" content="15년 경력의 콘텐츠 기획자. 국내 최초 전시 라이브커머스(단일 방송 1.2억), 200+ 작가 인터뷰." />
+  <meta property="og:image" content="https://kiwi-content.github.io/portfolio/IMG_3822.JPG" />
+  <meta property="og:url" content="https://kiwi-content.github.io/portfolio/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #111009;
+      --ink-soft: #3d3930;
+      --ink-muted: #8a8278;
+      --paper: #f7f4ef;
+      --paper-warm: #ede8df;
+      --paper-mid: #e6e0d6;
+      --accent: #b5311e;
+      --accent-warm: #d4491e;
+      --gold: #c4923a;
+      --border: #d8d0c4;
+      --border-light: #ece7de;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', 'Noto Serif KR', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── LANGUAGE TOGGLE ── */
+    .lang-bar {
+      position: fixed; top: 0; right: 0;
+      z-index: 200; padding: 14px 24px;
+      display: flex; gap: 8px; align-items: center;
+    }
+    .lang-bar a {
+      font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; color: var(--ink-muted);
+      padding: 4px 10px; border: 1px solid transparent; transition: all 0.2s;
+    }
+    .lang-bar a.active { color: var(--ink); border-color: var(--border); background: var(--paper); }
+    .lang-bar a:hover { color: var(--ink); border-color: var(--border); }
+    .lang-bar span { color: var(--border); font-size: 10px; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+      background: rgba(247,244,239,0.96); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transform: translateY(-100%); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+    }
+    nav.visible { transform: translateY(0); }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 40px;
+      height: 52px; display: flex; align-items: center; gap: 24px;
+    }
+    .nav-name {
+      font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 14px;
+      letter-spacing: 0.06em; color: var(--ink); text-decoration: none; margin-right: auto;
+    }
+    nav a {
+      font-size: 12px; color: var(--ink-muted); text-decoration: none;
+      letter-spacing: 0.04em; transition: color 0.2s; white-space: nowrap;
+      position: relative; padding-bottom: 2px;
+    }
+    nav a::after {
+      content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px;
+      background: var(--accent); transition: width 0.25s ease;
+    }
+    nav a.nav-active { color: var(--accent); }
+    nav a.nav-active::after, nav a:hover::after { width: 100%; }
+    nav a:hover { color: var(--ink); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100svh; display: flex; flex-direction: column; justify-content: center;
+      max-width: 900px; margin: 0 auto; padding: 100px 40px 80px;
+    }
+    .hero-eyebrow {
+      font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--accent); font-weight: 500; margin-bottom: 20px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block; width: 40px; height: 1px; background: var(--accent);
+    }
+    .hero-name-row {
+      display: flex; align-items: center; gap: 20px; margin-bottom: 10px;
+    }
+    .hero-avatar {
+      width: 72px; height: 72px; border-radius: 50%; overflow: hidden;
+      border: 2px solid var(--border); flex-shrink: 0; background: var(--paper-warm);
+    }
+    .hero-avatar img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top;
+      display: block; filter: grayscale(10%); transition: filter 0.4s;
+    }
+    .hero-avatar:hover img { filter: grayscale(0%); }
+    h1 {
+      font-family: 'Noto Serif KR', serif; font-size: clamp(52px, 6vw, 88px);
+      font-weight: 700; line-height: 1.05; letter-spacing: -0.03em;
+      color: var(--ink);
+    }
+    .hero-subtitle {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: clamp(17px, 2vw, 23px); color: var(--ink-soft);
+      margin-bottom: 32px; line-height: 1.55;
+    }
+    .hero-stats {
+      display: flex; gap: 0;
+      border: 1px solid var(--border); background: var(--paper-warm);
+      width: fit-content; margin-bottom: 36px;
+    }
+    .stat { padding: 18px 28px; text-align: center; border-right: 1px solid var(--border); }
+    .stat:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700;
+      color: var(--accent); line-height: 1; display: block; margin-bottom: 5px;
+    }
+    .stat-label { font-size: 10px; color: var(--ink-muted); line-height: 1.4; letter-spacing: 0.02em; }
+    .hero-desc {
+      font-size: 15px; color: var(--ink-soft); line-height: 1.9;
+      max-width: 680px; margin-bottom: 40px;
+    }
+    .hero-desc strong { color: var(--ink); font-weight: 500; }
+    .hero-links { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+
+    .btn-primary {
+      background: var(--ink); color: var(--paper); padding: 13px 30px;
+      font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none; transition: background 0.25s;
+    }
+    .btn-primary:hover { background: var(--accent); }
+    .btn-ghost {
+      border: 1px solid var(--border); color: var(--ink-soft);
+      padding: 12px 20px; font-size: 12px; letter-spacing: 0.04em;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
+
+    /* ── SKILLS SECTION ── */
+    .skills-section { background: var(--ink); color: white; }
+    .skills-inner { max-width: 1200px; margin: 0 auto; padding: 72px 40px; }
+    .skills-header { margin-bottom: 40px; }
+    .skills-header .section-label { color: rgba(255,255,255,0.35); margin-bottom: 10px; }
+    .skills-header h2 { color: white; margin-bottom: 0; font-size: clamp(24px,3vw,34px); }
+    .skills-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08);
+    }
+    .skill-item { padding: 32px 28px; background: var(--ink); transition: background 0.2s; }
+    .skill-item:hover { background: #1a1815; }
+    .skill-icon {
+      font-size: 22px; margin-bottom: 14px; display: block; opacity: 0.9;
+    }
+    .skill-name {
+      font-family: 'Noto Serif KR', serif; font-size: 16px; font-weight: 700;
+      color: white; margin-bottom: 10px;
+    }
+    .skill-desc { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.75; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+    .skill-tag {
+      font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 3px 9px; border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ── DIVIDER ── */
+    .section-divider { max-width: 1200px; margin: 0 auto; padding: 0 40px; border-top: 1px solid var(--border); }
+
+    /* ── SECTION ── */
+    section { max-width: 1200px; margin: 0 auto; padding: 88px 40px; }
+    .section-label {
+      font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--ink-muted); font-weight: 500; margin-bottom: 10px;
+    }
+    h2 {
+      font-family: 'Noto Serif KR', serif; font-size: clamp(30px, 4vw, 48px);
+      font-weight: 700; line-height: 1.15; margin-bottom: 14px; letter-spacing: -0.02em;
+    }
+    .section-intro {
+      font-size: 16px; color: var(--ink-soft); max-width: 560px; line-height: 1.85;
+      margin-bottom: 56px;
+    }
+
+    /* ── CAREER TIMELINE ── */
+    .timeline { display: flex; flex-direction: column; }
+    .timeline-item {
+      display: grid; grid-template-columns: 180px 1px 1fr; gap: 0 48px;
+    }
+    .t-date {
+      text-align: right; padding: 32px 0; font-size: 12px;
+      color: var(--ink-muted); letter-spacing: 0.05em; font-weight: 500;
+    }
+    .t-line { background: var(--border-light); position: relative; }
+    .t-line::before {
+      content: ''; width: 10px; height: 10px; border-radius: 50%;
+      background: white; border: 2px solid var(--accent);
+      position: absolute; top: 38px; left: 50%; transform: translateX(-50%);
+    }
+    .t-content { padding: 28px 0 48px; }
+    .t-org {
+      font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .t-role {
+      font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 14px; font-weight: 500;
+    }
+    .t-desc { font-size: 15px; color: var(--ink-soft); line-height: 1.85; }
+    .t-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+    .t-tag {
+      font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 3px 10px; background: var(--paper-warm); border: 1px solid var(--border);
+      color: var(--ink-muted);
+    }
+
+    /* ── WORK GRID ── */
+    .work-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1px; background: var(--border); border: 1px solid var(--border);
+    }
+    .work-card {
+      background: var(--paper); padding: 36px 32px;
+      display: flex; flex-direction: column; gap: 14px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .work-card:hover { background: white; }
+    .card-meta { display: flex; gap: 8px; align-items: center; }
+    .tag {
+      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 3px 9px; border: 1px solid var(--border); color: var(--ink-muted);
+    }
+    .tag-accent { border-color: var(--accent); color: var(--accent); background: rgba(181,49,30,0.04); }
+    .card-year { font-size: 11px; color: var(--ink-muted); margin-left: auto; letter-spacing: 0.04em; }
+    .card-title {
+      font-family: 'Noto Serif KR', serif; font-size: 21px; font-weight: 700; line-height: 1.3;
+    }
+    .card-desc { font-size: 14px; color: var(--ink-soft); line-height: 1.8; flex: 1; }
+    .card-highlight {
+      background: var(--paper-warm); border-left: 2px solid var(--accent);
+      padding: 12px 16px; font-size: 13px; font-weight: 500; color: var(--ink-soft);
+    }
+    .card-images { display: grid; gap: 3px; margin: 4px 0; }
+    .card-images.img-1 { grid-template-columns: 1fr; }
+    .card-images.img-2 { grid-template-columns: 1fr 1fr; }
+    .card-images.img-3 { grid-template-columns: repeat(3, 1fr); }
+    .card-images img {
+      width: 100%; height: auto; object-fit: contain; display: block;
+      background: var(--paper-warm);
+      filter: grayscale(12%); transition: filter 0.35s;
+    }
+    .card-images img:hover { filter: grayscale(0%); }
+    .card-links { display: flex; flex-wrap: wrap; gap: 10px; padding-top: 2px; }
+    .card-link {
+      font-size: 11px; letter-spacing: 0.04em; color: var(--ink-soft); text-decoration: none;
+      border-bottom: 1px solid var(--border); padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .card-link:hover { color: var(--accent); border-color: var(--accent); }
+    .card-roles {
+      font-size: 12px; color: var(--ink-muted); line-height: 1.65;
+      padding: 10px 12px; background: var(--paper-warm); border-left: 2px solid var(--border-light);
+    }
+    .card-roles strong { color: var(--ink-soft); font-weight: 500; }
+
+    /* ── WIDE CARD ── */
+    .wide-card {
+      grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr;
+      background: var(--paper); transition: background 0.2s;
+    }
+    .wide-card:hover { background: white; }
+    .wide-card-images {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2px; overflow: hidden; align-items: start;
+    }
+    .wide-card-images--3 { grid-template-columns: repeat(3, 1fr); }
+    .wide-card-images img {
+      width: 100%; height: auto; object-fit: contain; display: block;
+      background: var(--paper-warm); filter: grayscale(12%); transition: filter 0.35s;
+    }
+    .wide-card-images img:hover { filter: grayscale(0%); }
+    .wide-card-content {
+      padding: 40px 36px; display: flex; flex-direction: column; gap: 14px;
+    }
+    .wide-card-campaign .wide-card-images { height: 340px; align-items: stretch; }
+    .wide-card-campaign .wide-card-images img { height: 100%; object-fit: cover; background: transparent; }
+    .wide-card-issue .wide-card-images { align-items: stretch; }
+    .wide-card-issue .wide-card-images img {
+      aspect-ratio: 9/16; height: auto; object-fit: cover;
+      object-position: center top; background: transparent;
+    }
+
+    /* ── FEATURED ── */
+    .featured-card {
+      grid-column: 1 / -1; display: grid;
+      grid-template-columns: 55% 1fr; min-height: 420px;
+    }
+    .featured-images {
+      display: grid; grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr 1fr; gap: 2px; overflow: hidden;
+    }
+    .featured-images img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: grayscale(15%); transition: filter 0.35s;
+    }
+    .featured-images img:first-child { grid-row: 1 / 3; }
+    .featured-images img:hover { filter: grayscale(0%); }
+    .featured-content {
+      padding: 44px 40px; display: flex; flex-direction: column; gap: 16px;
+      background: white; border-left: 1px solid var(--border);
+    }
+    .featured-stats { display: flex; gap: 32px; margin: 6px 0; }
+    .fstat {}
+    .fstat-num {
+      font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700;
+      color: var(--accent); display: block; line-height: 1; margin-bottom: 4px;
+    }
+    .fstat-label { font-size: 11px; color: var(--ink-muted); line-height: 1.4; letter-spacing: 0.02em; }
+
+    /* ── MAGAZINE GRID ── */
+    .magazine-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: var(--border); border: 1px solid var(--border);
+    }
+    .mag-item { background: var(--paper); overflow: hidden; aspect-ratio: 3/4; }
+    .mag-item img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: grayscale(18%); transition: all 0.45s;
+    }
+    .mag-item:hover img { filter: grayscale(0%); transform: scale(1.04); }
+
+    /* ── MAGAZINE SECTION BLOCK ── */
+    .mag-block { margin-bottom: 56px; }
+    .mag-block:last-child { margin-bottom: 0; }
+    .mag-block-header {
+      display: flex; align-items: baseline; gap: 16px;
+      padding: 18px 0 16px; border-bottom: 1px solid var(--border); margin-bottom: 1px;
+    }
+    .mag-block-title {
+      font-family: 'Noto Serif KR', serif; font-size: 18px; font-weight: 700;
+    }
+    .mag-block-meta { font-size: 12px; color: var(--ink-muted); margin-left: auto; letter-spacing: 0.04em; }
+    .mag-block-desc { font-size: 14px; color: var(--ink-soft); line-height: 1.8; margin: 16px 0; }
+
+    /* ── CONTACT STRIP ── */
+    .contact-strip { background: var(--ink); position: relative; overflow: hidden; }
+    .contact-strip::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: repeating-linear-gradient(
+        -45deg, transparent, transparent 40px,
+        rgba(255,255,255,0.012) 40px, rgba(255,255,255,0.012) 41px
+      );
+      pointer-events: none;
+    }
+    .contact-inner {
+      max-width: 1200px; margin: 0 auto; padding: 80px 40px;
+      display: flex; align-items: center; gap: 56px;
+      justify-content: space-between; flex-wrap: wrap;
+      position: relative; z-index: 1;
+    }
+    .contact-text h3 {
+      font-family: 'Noto Serif KR', serif; font-size: 32px; font-weight: 700;
+      color: white; margin-bottom: 10px; line-height: 1.25;
+    }
+    .contact-text p { font-size: 15px; color: rgba(255,255,255,0.45); line-height: 1.75; }
+    .contact-links { display: flex; gap: 12px; flex-wrap: wrap; }
+    .contact-btn {
+      padding: 13px 26px; font-size: 12px; letter-spacing: 0.08em;
+      text-transform: uppercase; text-decoration: none; transition: all 0.2s;
+    }
+    .contact-btn-primary { background: var(--accent); color: white; }
+    .contact-btn-primary:hover { background: var(--accent-warm); }
+    .contact-btn-ghost { border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.65); }
+    .contact-btn-ghost:hover { border-color: rgba(255,255,255,0.5); color: white; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border); padding: 28px 40px;
+      max-width: 1200px; margin: 0 auto; display: flex;
+      justify-content: space-between; align-items: center;
+      font-size: 11px; color: var(--ink-muted); flex-wrap: wrap; gap: 8px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SCROLL ANIMATION ── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── PRINT ── */
+    @media print {
+      nav, .lang-bar, .contact-strip, .reveal { display: block !important; opacity: 1 !important; transform: none !important; }
+      nav, .lang-bar { position: static; }
+      .hero { min-height: auto; page-break-after: always; }
+      .work-grid, .skills-grid { gap: 8px; background: none; }
+      .work-card, .skill-item { border: 1px solid #ddd; break-inside: avoid; }
+      a { color: inherit; }
+      .contact-strip { background: #f5f5f5 !important; }
+      .contact-text h3, .contact-text p { color: var(--ink) !important; }
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .hero { padding: 88px 24px 56px; min-height: auto; }
+      .hero-stats { width: 100%; }
+      .stat { flex: 1; padding: 14px 10px; }
+      .stat-num { font-size: 22px; }
+      .nav-inner { padding: 0 20px; gap: 14px; overflow-x: auto; }
+      nav a { font-size: 11px; }
+      section { padding: 64px 24px; }
+      .section-divider { padding: 0 24px; }
+      .skills-inner { padding: 56px 24px; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 1fr; }
+      .t-date { text-align: left; padding: 28px 0 4px; color: var(--accent); font-weight: 600; }
+      .t-line { display: none; }
+      .t-content { padding: 0 0 36px; }
+      .featured-card { grid-template-columns: 1fr; }
+      .featured-images { height: 240px; }
+      .featured-images img:first-child { grid-row: auto; }
+      .featured-content { padding: 28px 24px; border-left: none; border-top: 1px solid var(--border); }
+      .work-grid { grid-template-columns: 1fr; }
+      .wide-card { grid-template-columns: 1fr; }
+      .wide-card-images { min-height: 0; }
+      .wide-card-content { padding: 28px 24px; }
+      .wide-card-campaign .wide-card-images { height: 240px; }
+      .magazine-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-inner { flex-direction: column; align-items: flex-start; gap: 32px; padding: 56px 24px; }
+      footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 480px) {
+      h1 { font-size: 42px; }
+      .hero-subtitle { font-size: 16px; }
+      .hero-links { flex-direction: column; align-items: flex-start; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-bar">
+    <a href="./index.html" class="active">KR</a>
+    <span>·</span>
+    <a href="./en.html">EN</a>
+  </div>
+
+  <nav id="mainNav">
+    <div class="nav-inner">
+      <a href="#top" class="nav-name">주혜진</a>
+      <a href="#career" data-section="career">Career</a>
+      <a href="#live-commerce" data-section="live-commerce">라이브커머스</a>
+      <a href="#video" data-section="video">유튜브</a>
+      <a href="#editorial" data-section="editorial">인터뷰</a>
+      <a href="#blog-sns" data-section="blog-sns">블로그/SNS</a>
+      <a href="#magazines" data-section="magazines">매거진</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div id="top" class="hero">
+    <div class="hero-eyebrow">Content Planner · 15 Years</div>
+    <div class="hero-name-row">
+      <div class="hero-avatar">
+        <img src="../../IMG_3822.JPG" alt="주혜진 프로필 사진" />
+      </div>
+      <h1>주혜진</h1>
+    </div>
+    <p class="hero-subtitle">인터뷰, 에디토리얼, 라이브커머스로<br>성과를 만든 콘텐츠 기획자</p>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">200+</span>
+        <span class="stat-label">작가 인터뷰</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">1.2억</span>
+        <span class="stat-label">단일 방송 최대 매출</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">70호</span>
+        <span class="stat-label">매거진 제작</span>
+      </div>
+    </div>
+    <p class="hero-desc">
+      미술 전문지 기자로 시작해 라이브커머스, 유튜브, 블로그까지. <strong>15년간 콘텐츠가 어떻게 사람을 움직이는지를 현장에서 익혔습니다.</strong><br><br>
+      200여 명의 작가를 인터뷰하며 쌓은 이야기를 발굴하는 눈과, <strong>국내 최초 전시 라이브커머스로 단일 방송 1.2억 원 매출</strong>을 만든 기획력이 제 강점입니다.
+    </p>
+    <div class="hero-links">
+      <a href="mailto:kiwi733@naver.com" class="btn-primary">이메일 보내기</a>
+      <a href="https://kr.linkedin.com/in/hye-jin-joo-003332219" target="_blank" class="btn-ghost">LinkedIn →</a>
+      <a href="https://medium.com/@hyejinjoo" target="_blank" class="btn-ghost">Medium →</a>
+    </div>
+  </div>
+
+  <!-- Skills -->
+  <div class="skills-section reveal">
+    <div class="skills-inner">
+      <div class="skills-header">
+        <div class="section-label">Core Skills</div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <span class="skill-icon">✦</span>
+          <div class="skill-name">콘텐츠 기획 & 전략</div>
+          <div class="skill-desc">트렌드를 읽어 콘텐츠 포맷으로 구체화하는 기획력. 시리즈 기획부터 단발 캠페인까지, 목적에 맞는 콘텐츠 구조를 설계합니다.</div>
+          <div class="skill-tags">
+            <span class="skill-tag">콘텐츠 전략</span>
+            <span class="skill-tag">포맷 개발</span>
+            <span class="skill-tag">트렌드 분석</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">◉</span>
+          <div class="skill-name">라이브커머스 & 영상</div>
+          <div class="skill-desc">대본 집필, 출연자 섭외, 현장 총괄까지 라이브커머스 전 과정을 담당. 유튜브 시리즈 기획·제작 경험 다수.</div>
+          <div class="skill-tags">
+            <span class="skill-tag">라이브커머스</span>
+            <span class="skill-tag">유튜브 기획</span>
+            <span class="skill-tag">대본 작성</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">◈</span>
+          <div class="skill-name">인터뷰 & 에디토리얼</div>
+          <div class="skill-desc">200+ 인터뷰 경력. 상대방의 이야기를 발굴하고 독자 언어로 번역하는 글쓰기. 편집·교열·발행 전 과정 경험.</div>
+          <div class="skill-tags">
+            <span class="skill-tag">인터뷰</span>
+            <span class="skill-tag">기사 작성</span>
+            <span class="skill-tag">원고 편집</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">◎</span>
+          <div class="skill-name">SEO & 블로그 마케팅</div>
+          <div class="skill-desc">네이버 검색 알고리즘을 분석해 키워드 중심 콘텐츠를 기획·운영. 검색 유입을 상품 전환으로 연결하는 구조 설계.</div>
+          <div class="skill-tags">
+            <span class="skill-tag">SEO</span>
+            <span class="skill-tag">네이버 블로그</span>
+            <span class="skill-tag">키워드 전략</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">◇</span>
+          <div class="skill-name">SNS 캠페인 기획</div>
+          <div class="skill-desc">브랜드 메시지를 참여형 콘텐츠로 풀어내는 SNS 이벤트 기획 및 운영. 인스타그램 캠페인 기획·포스팅 제작 경험.</div>
+          <div class="skill-tags">
+            <span class="skill-tag">인스타그램</span>
+            <span class="skill-tag">이벤트 기획</span>
+            <span class="skill-tag">브랜드 캠페인</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">▲</span>
+          <div class="skill-name">미술 & 문화 전문성</div>
+          <div class="skill-desc">6년간의 미술 전문지 기자 경력. 전시 취재, 작가 인터뷰, 미술 시장 이해를 바탕으로 한 문화 콘텐츠 기획 역량.</div>
+          <div class="skill-tags">
+            <span class="skill-tag">미술 기획</span>
+            <span class="skill-tag">전시 콘텐츠</span>
+            <span class="skill-tag">문화 마케팅</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- Career -->
+  <section id="career" class="reveal">
+    <div class="section-label">Experience</div>
+    <h2>Career</h2>
+    <p class="section-intro">인터파크 8년, 미술 전문지 6년. 콘텐츠와 커머스가 만나는 지점을 누구보다 깊게 파고들었습니다.</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="t-date">2015 – 2023</div>
+        <div class="t-line"></div>
+        <div class="t-content">
+          <div class="t-org">인터파크</div>
+          <div class="t-role">콘텐츠 기획 · 8년</div>
+          <p class="t-desc">도서·투어·티켓 세 부문을 거치며 라이브커머스, 유튜브, 블로그, 웹진 등 다양한 포맷의 콘텐츠를 기획·제작했습니다. 국내 최초 전시 라이브커머스를 선보이고, 단일 방송 1.2억 원 매출을 달성했습니다. 콘텐츠로 판매를 만드는 마케팅을 8년간 실무로 쌓았습니다.</p>
+          <div class="t-tags">
+            <span class="t-tag">라이브커머스</span>
+            <span class="t-tag">유튜브 기획</span>
+            <span class="t-tag">블로그 SEO</span>
+            <span class="t-tag">SNS 마케팅</span>
+            <span class="t-tag">콘텐츠 전략</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="t-date">2013 – 2014</div>
+        <div class="t-line"></div>
+        <div class="t-content">
+          <div class="t-org">경향 아티클</div>
+          <div class="t-role">미술 전문 기자 · 20호</div>
+          <p class="t-desc">미술 전문 월간지 《경향 아티클》에서 전시 현장을 직접 취재하고 작가를 인터뷰하며 편집까지 담당했습니다. 총 20호 제작에 참여하며 미술 현장의 흐름을 독자의 언어로 옮기는 역량을 키웠습니다.</p>
+          <div class="t-tags">
+            <span class="t-tag">취재 · 인터뷰</span>
+            <span class="t-tag">원고 편집</span>
+            <span class="t-tag">교정 교열</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="t-date">2008 – 2012</div>
+        <div class="t-line"></div>
+        <div class="t-content">
+          <div class="t-org">미술세계</div>
+          <div class="t-role">미술 전문 기자 · 50호</div>
+          <p class="t-desc">미술 전문 월간지 《미술세계》 기자로 입문해 취재·기사 작성·편집을 익혔습니다. 총 50호 제작에 참여하며 한국 현대미술의 현장을 기록하고, 이후 콘텐츠 마케팅의 토대가 된 관찰력과 인터뷰 역량을 쌓았습니다.</p>
+          <div class="t-tags">
+            <span class="t-tag">미술 취재</span>
+            <span class="t-tag">작가 인터뷰</span>
+            <span class="t-tag">기사 작성</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Live Commerce -->
+  <section id="live-commerce" class="reveal">
+    <div class="section-label">Live Commerce</div>
+    <h2>라이브커머스 기획</h2>
+    <p class="section-intro">국내 최초 전시 라이브커머스부터 MBTI 여행까지. 트렌드를 읽고 포맷을 만들었습니다.</p>
+
+    <div class="work-grid">
+      <div class="work-card featured-card">
+        <div class="featured-images">
+          <img src="https://raw.githubusercontent.com/kiwi-content/portfolio/image/suyo1.jpg" alt="수요아트살롱 방송 현장" />
+          <img src="https://raw.githubusercontent.com/kiwi-content/portfolio/image/suyo2.jpg" alt="기획전 페이지" />
+          <img src="https://raw.githubusercontent.com/kiwi-content/portfolio/image/suyo3.jpg" alt="전시장" />
+        </div>
+        <div class="featured-content">
+          <div class="card-meta">
+            <span class="tag tag-accent">국내 최초</span>
+            <span class="tag">티켓</span>
+            <span class="card-year">2020–2022</span>
+          </div>
+          <div class="card-title">수요아트살롱</div>
+          <p class="card-desc">전시 도슨트가 작품을 해설하면서 티켓을 파는 라이브커머스입니다. 경쟁사 네이버보다 앞서 국내 최초로 선보인 전시 라이브커머스입니다. 기획전 페이지 제작부터 대본 집필, 도슨트 섭외, 현장 총괄까지 담당했습니다.</p>
+          <div class="featured-stats">
+            <div class="fstat"><span class="fstat-num">3만</span><span class="fstat-label">최대 시청자</span></div>
+            <div class="fstat"><span class="fstat-num">1.2억</span><span class="fstat-label">단일 방송 최대 매출</span></div>
+          </div>
+          <div class="card-roles"><strong>담당:</strong> 기획 / 기획전 페이지 제작 / 대본 작성 / 출연자 섭외 / 방송 송출 / 현장 총괄</div>
+          <div class="card-links">
+            <a href="https://youtu.be/N9RQfU-vHK8" target="_blank" class="card-link">앙리 마티스 →</a>
+            <a href="https://youtu.be/OUHqG_JVBgQ" target="_blank" class="card-link">필립 콜버트 →</a>
+            <a href="https://youtu.be/6GJ9dDI7pLE" target="_blank" class="card-link">무민 원화전 →</a>
+            <a href="https://zdnet.co.kr/view/?no=20210825164545" target="_blank" class="card-link">ZDNet →</a>
+            <a href="https://news.mt.co.kr/mtview.php?no=2021052609333033118" target="_blank" class="card-link">머니투데이 →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="card-meta"><span class="tag">투어</span><span class="card-year">2022</span></div>
+        <div class="card-title">MBTI 연구소</div>
+        <p class="card-desc">한국 사회의 MBTI 열풍을 여행 상품 판매와 연결했습니다. 유형별 여행 스타일을 분석하고 맞춤 상품을 큐레이션하는 라이브커머스를 기획·진행했습니다.</p>
+        <div class="card-links">
+          <a href="https://www.khan.co.kr/life/life-general/article/202201121133001" target="_blank" class="card-link">경향신문 →</a>
+          <a href="https://www.mk.co.kr/news/culture/10181989" target="_blank" class="card-link">매일경제 →</a>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="card-meta"><span class="tag">투어</span><span class="card-year">2021</span></div>
+        <div class="card-title">현지 LIVE 투어</div>
+        <p class="card-desc">해외여행이 막힌 2021년, 전 세계 현지 가이드와 실시간으로 연결해 '랜선 여행'을 판매하는 포맷을 만들었습니다. 총 13회 진행했습니다.</p>
+        <div class="card-links">
+          <a href="http://it.chosun.com/site/data/html_dir/2021/10/08/2021100801915.html" target="_blank" class="card-link">조선일보 IT →</a>
+          <a href="http://mbiz.heraldcorp.com/view.php?ud=20211005000711" target="_blank" class="card-link">헤럴드경제 →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 기획전 페이지 와이드카드 -->
+    <div class="wide-card wide-card-campaign" style="margin-top:1px;">
+      <div class="wide-card-images">
+        <img src="../../kihwaek1.JPG" alt="수요아트살롱 기획전 페이지, 라울 뒤피" />
+        <img src="../../kihwaek2.jpeg" alt="수요아트살롱 기획전 페이지, 피카소" />
+      </div>
+      <div class="wide-card-content">
+        <div class="card-meta">
+          <span class="tag">기획전 페이지</span>
+          <span class="card-year">2020–2022</span>
+        </div>
+        <div class="card-title">기획전 페이지 제작</div>
+        <p class="card-desc">라이브커머스 방송과 연동되는 전시 기획전 페이지의 콘텐츠 방향 수립과 문안 작성을 담당했습니다. 작품 해설, 작가 소개, 구매 포인트를 하나의 흐름으로 엮은 구성으로, 미술 기자 시절의 편집 감각을 콘텐츠 마케팅에 적용한 결과물입니다.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- YouTube -->
+  <section id="video" class="reveal">
+    <div class="section-label">YouTube</div>
+    <h2>유튜브 콘텐츠</h2>
+    <p class="section-intro">기획부터 제작까지, 스토리가 있는 영상 콘텐츠를 만들었습니다.</p>
+    <div class="work-grid">
+
+      <div class="work-card">
+        <div class="card-meta"><span class="tag">투어</span><span class="card-year">2022–2023</span></div>
+        <div class="card-title">로친소</div>
+        <p class="card-desc">현지 친구가 안내하는 여행입니다. 코로나 시기, 터키·대만 현지인을 비대면으로 섭외해 기획부터 편집 지시까지 전 과정을 원격으로 조율했습니다.</p>
+        <div class="card-images img-2">
+          <img src="../../lochinso%2003.jpg" alt="로친소 터키 편" />
+          <img src="../../lochinso%2002.jpg" alt="로친소 대만 편" />
+        </div>
+        <div class="card-roles"><strong>담당:</strong> 기획 / 대본 / 출연자 섭외 / 편집 요청</div>
+        <div class="card-links">
+          <a href="https://youtu.be/EK_9VetmTfs" target="_blank" class="card-link">터키 1화 →</a>
+          <a href="https://youtu.be/2r1_ti4l4ZQ" target="_blank" class="card-link">터키 2화 →</a>
+          <a href="https://youtu.be/6PBGDOp8-go" target="_blank" class="card-link">대만 편 →</a>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="card-meta"><span class="tag">투어</span><span class="card-year">2022</span></div>
+        <div class="card-title">5 vs 50</div>
+        <p class="card-desc">5만 원과 50만 원, 뽑기 한 장으로 예산이 결정되는 여행 콘텐츠. 예산 차이가 만드는 전혀 다른 여행을 직접 촬영했습니다.</p>
+        <div class="card-images img-2">
+          <img src="../../5%20vs%2050%20-%2001.jpg" alt="5 vs 50 강릉" />
+          <img src="../../5%20vs%2050%20-%2002.jpg" alt="5 vs 50 경주" />
+        </div>
+        <div class="card-roles"><strong>담당:</strong> 기획 / 대본 / 촬영 / 편집 요청</div>
+        <div class="card-links">
+          <a href="https://youtu.be/yQgGplT5uuI" target="_blank" class="card-link">강릉 편 →</a>
+          <a href="https://youtu.be/y9YZdSZGL4o" target="_blank" class="card-link">경주 편 →</a>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="card-meta"><span class="tag">도서</span><span class="card-year">2019–2023</span></div>
+        <div class="card-title">작가 유튜브 인터뷰</div>
+        <p class="card-desc">인터파크 유튜브 채널에서 신간 작가들의 영상 인터뷰를 기획·진행했습니다. 책에 담긴 이야기를 영상 언어로 옮겼습니다.</p>
+        <div class="card-images img-1">
+          <img src="../../interview.jpg" alt="작가 인터뷰" />
+        </div>
+        <div class="card-roles"><strong>담당:</strong> 인터뷰 진행 / 편집 요청</div>
+        <div class="card-links">
+          <a href="https://youtu.be/WMHM3uT4Brc" target="_blank" class="card-link">천인우 →</a>
+          <a href="https://youtu.be/sRTH6KUTCNA" target="_blank" class="card-link">설민석 →</a>
+          <a href="https://youtu.be/Jr7SqjzpOus" target="_blank" class="card-link">정종철 →</a>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="card-meta"><span class="tag">도서</span><span class="card-year">2017–2018</span></div>
+        <div class="card-title">책 잡히는 수다</div>
+        <p class="card-desc">책을 친근하게 소개하는 유튜브 시리즈를 기획·제작하고 직접 출연했습니다.</p>
+        <div class="card-images img-1">
+          <img src="../../booksuda.png" alt="책 잡히는 수다" />
+        </div>
+        <div class="card-roles"><strong>담당:</strong> 기획 / 출연 / 영상 제작</div>
+        <div class="card-links">
+          <a href="https://youtu.be/yWvMQx4rFaU" target="_blank" class="card-link">1화 →</a>
+          <a href="https://youtu.be/xelgHhd815Y" target="_blank" class="card-link">2화 →</a>
+          <a href="https://youtu.be/DBzA2QE7PKo" target="_blank" class="card-link">3화 →</a>
+          <a href="https://youtu.be/Prs8Ao6xias" target="_blank" class="card-link">4화 →</a>
+          <a href="https://youtu.be/MPpsQYVCR1M" target="_blank" class="card-link">5화 →</a>
+          <a href="https://www.youtube.com/watch?v=u5xAT0niH5k" target="_blank" class="card-link">6화 →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Editorial -->
+  <section id="editorial" class="reveal">
+    <div class="section-label">Interview &amp; Editorial</div>
+    <h2>인터뷰 &amp; 에디토리얼</h2>
+    <p class="section-intro">200여 명의 작가를 만나 깊이 있는 이야기를 전했습니다.</p>
+
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="card-meta"><span class="tag">도서</span><span class="card-year">2015–2021</span></div>
+        <div class="card-title">북DB 작가 인터뷰</div>
+        <p class="card-desc">6년간 200여 명을 인터뷰했습니다. 김연수, 김영하, 알랭 드 보통, 리처드 도킨스, 강신주, 김미경, 박막례까지, 작가의 생각을 독자의 언어로 옮겼습니다.</p>
+        <div class="card-images img-2">
+          <img src="../../bookdb-interview-1.jpeg" alt="북DB 인터뷰 현장" />
+          <img src="../../bookdb-interview-2.jpeg" alt="리처드 도킨스 인터뷰" />
+        </div>
+        <div class="card-roles"><strong>담당:</strong> 인터뷰이 섭외 / 질문지 작성 / 인터뷰 진행 / 기사 작성</div>
+        <div class="card-links">
+          <a href="https://brunch.co.kr/@heartiste" target="_blank" class="card-link">브런치 아카이브 →</a>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="card-meta"><span class="tag">도서</span><span class="card-year">2016–2021</span></div>
+        <div class="card-title">듀나의 장르소설 읽는 밤</div>
+        <p class="card-desc">필자 섭외부터 콘셉트 정의, 원고 다듬기, 교열, 발행까지 섹션 전체를 5년간 담당했습니다.</p>
+        <div class="card-images img-1">
+          <img src="../../djuna.png" alt="듀나의 장르소설 읽는 밤" />
+        </div>
+        <div class="card-roles"><strong>담당:</strong> 필자 섭외 / 콘셉트 기획 / 원고 편집 / 교정 교열 / 발행</div>
+      </div>
+    </div>
+
+    <!-- 이슈앤스토리 와이드카드 -->
+    <div class="wide-card wide-card-issue" style="margin-top:1px;">
+      <div class="wide-card-images wide-card-images--3">
+        <img src="../../issue-story-1.jpg" alt="이슈앤스토리 기사 예시 1" />
+        <img src="../../issue-story-2.jpg" alt="이슈앤스토리 기사 예시 2" />
+        <img src="../../issue-story-3.jpg" alt="이슈앤스토리 기사 예시 3" />
+      </div>
+      <div class="wide-card-content">
+        <div class="card-meta"><span class="tag">도서</span><span class="card-year">2015–2021</span></div>
+        <div class="card-title">이슈앤스토리</div>
+        <p class="card-desc">매일의 따끈한 이슈를 책과 연결하여 소개했습니다. 동시대 독자들의 관심이 쏠리는 곳과 관련된 책을 연결하여 소개하는 기획 기사를 썼습니다.</p>
+        <div class="card-roles"><strong>담당:</strong> 주제 선정 / 기사 작성</div>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Blog & SNS -->
+  <section id="blog-sns" class="reveal">
+    <div class="section-label">Blog & SNS</div>
+    <h2>블로그 & SNS 마케팅</h2>
+    <p class="section-intro">검색 최적화와 캠페인으로 퍼포먼스를 만들어냈습니다.</p>
+    <div class="work-grid">
+
+      <div class="work-card">
+        <div class="card-meta"><span class="tag">투어</span><span class="card-year">2022–2023</span></div>
+        <div class="card-title">인터파크투어 네이버 공식 블로그</div>
+        <p class="card-desc">키워드 중심의 블로그 콘텐츠를 기획·운영했습니다. 검색 의도를 분석해 주제를 선정하고 네이버 검색 노출에 최적화된 구조로 작성했습니다.</p>
+        <div class="card-images img-2">
+          <img src="../../blog.png" alt="블로그" />
+          <img src="../../blog%2002.png" alt="블로그 2" />
+        </div>
+        <div class="card-links">
+          <a href="http://blog.naver.com/interpark_tour" target="_blank" class="card-link">블로그 방문하기 →</a>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="card-meta"><span class="tag">SNS</span><span class="card-year">2023</span></div>
+        <div class="card-title">인터파크다 챌린지</div>
+        <p class="card-desc">1세대 이커머스 기업 인터파크의 리브랜딩을 알리는 "인터파크다" 브랜드 메시지 속 "크다"를 활용해 이벤트를 진행했습니다. 언어 유희를 통해 고객이 리브랜딩된 인터파크를 쉽게 체감하도록 했습니다.</p>
+        <div class="card-highlight">라운드1: 좋아요 653 / 댓글 660 &nbsp;·&nbsp; 라운드2: 좋아요 886 / 댓글 905</div>
+        <div class="card-images img-2">
+          <img src="../../instagram%2001.png" alt="인스타그램 1" />
+          <img src="../../instagram%2002.png" alt="인스타그램 2" />
+        </div>
+        <div class="card-links">
+          <a href="https://www.instagram.com/p/CtvuoL5J6bh/" target="_blank" class="card-link">챌린지 1 →</a>
+          <a href="https://www.instagram.com/p/CuBgKuwJaw8/" target="_blank" class="card-link">챌린지 2 →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Magazines -->
+  <section id="magazines" class="reveal">
+    <div class="section-label">Magazine</div>
+    <h2>미술 전문지 기자</h2>
+    <p class="section-intro">미술 현장을 취재하고 기록하다. 총 70호 제작에 참여했습니다.</p>
+
+    <div class="mag-block">
+      <div class="mag-block-header">
+        <div class="mag-block-title">《경향 아티클》</div>
+        <div class="mag-block-meta">2013.2 – 2014.9 &nbsp;·&nbsp; 20호 참여</div>
+      </div>
+      <p class="mag-block-desc">미술 전문 월간지에서 취재·인터뷰·외고 편집·교정 교열을 담당했습니다. 전시 현장의 생생한 이야기를 독자의 언어로 전달하는 작업을 했습니다.</p>
+      <div class="magazine-grid">
+        <div class="mag-item"><img src="../../article 00.png" alt="경향 아티클 표지 1" /></div>
+        <div class="mag-item"><img src="../../article 01.jpg" alt="경향 아티클 표지 2" /></div>
+        <div class="mag-item"><img src="../../article 02.jpg" alt="경향 아티클 표지 3" /></div>
+        <div class="mag-item"><img src="../../article 03.jpg" alt="경향 아티클 표지 4" /></div>
+      </div>
+    </div>
+
+    <div class="mag-block">
+      <div class="mag-block-header">
+        <div class="mag-block-title">《미술세계》</div>
+        <div class="mag-block-meta">2008.10 – 2012.11 &nbsp;·&nbsp; 50호 참여</div>
+      </div>
+      <p class="mag-block-desc">미술 전문 기자로 커리어를 시작한 곳입니다. 한국 현대미술의 현장을 처음으로 기록하며 취재·기사 작성·편집의 기초를 다졌습니다.</p>
+      <div class="magazine-grid">
+        <div class="mag-item"><img src="../../misulsegye 00.jpg" alt="미술세계 표지 1" /></div>
+        <div class="mag-item"><img src="../../misulsegye 01.jpg" alt="미술세계 표지 2" /></div>
+        <div class="mag-item"><img src="../../misulsegye 02.jpg" alt="미술세계 표지 3" /></div>
+        <div class="mag-item"><img src="../../misulsegye 03.jpg" alt="미술세계 표지 4" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <div class="contact-strip">
+    <div class="contact-inner">
+      <div class="contact-text">
+        <h3>함께 일하고 싶으신가요?</h3>
+        <p>콘텐츠 기획, 라이브커머스, 인터뷰 & 에디토리얼 관련해서<br>언제든지 연락 주세요.</p>
+      </div>
+      <div class="contact-links">
+        <a href="/cdn-cgi/l/email-protection#6b00021c025c58582b050a1d0e1945080406" class="contact-btn contact-btn-primary">이메일 보내기</a>
+        <a href="https://kr.linkedin.com/in/hye-jin-joo-003332219" target="_blank" class="contact-btn contact-btn-ghost">LinkedIn</a>
+        <a href="https://www.facebook.com/hyejin.joo/" target="_blank" class="contact-btn contact-btn-ghost">Facebook</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>© 2026 Hyejin Joo. All rights reserved.</span>
+    <span>콘텐츠 기획자 · 서울</span>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Sticky nav
+    const nav = document.getElementById('mainNav');
+    const heroEl = document.querySelector('.hero');
+    const heroObs = new IntersectionObserver(
+      ([e]) => nav.classList.toggle('visible', !e.isIntersecting),
+      { threshold: 0.1 }
+    );
+    heroObs.observe(heroEl);
+
+    // Scroll reveal
+    const revealObs = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.08 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    // Active nav highlight
+    const sections = document.querySelectorAll('section[id], div[id="top"]');
+    const navLinks = document.querySelectorAll('nav a[data-section]');
+    const activeObs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(l => l.classList.remove('nav-active'));
+            const active = document.querySelector(`nav a[data-section="${entry.target.id}"]`);
+            if (active) active.classList.add('nav-active');
