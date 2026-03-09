@@ -414,7 +414,7 @@
       A sharp eye for stories honed through 200+ artist interviews, combined with the strategic planning that <strong>generated ₩120M in a single live commerce broadcast</strong> — Korea's first ever exhibition live commerce.
     </p>
     <div class="hero-links">
-      <a href="/cdn-cgi/l/email-protection#deb5b7a9b7e9eded9eb0bfa8bbacf0bdb1b3" class="btn-primary">Get in Touch</a>
+      <a href="mailto:kiwi733@naver.com" class="btn-primary">Get in Touch</a>
       <a href="https://kr.linkedin.com/in/hye-jin-joo-003332219" target="_blank" class="btn-ghost">LinkedIn →</a>
       <a href="https://medium.com/@hyejinjoo" target="_blank" class="btn-ghost">Medium →</a>
     </div>
@@ -812,7 +812,7 @@
         <p>For content strategy, live commerce, or interview &amp; editorial work,<br>I'd love to hear from you.</p>
       </div>
       <div class="contact-links">
-        <a href="/cdn-cgi/l/email-protection#3f54564856080c0c7f515e495a4d115c5052" class="contact-btn contact-btn-primary">Send an Email</a>
+        <a href="mailto:kiwi733@naver.com" class="contact-btn contact-btn-primary">Send an Email</a>
         <a href="https://kr.linkedin.com/in/hye-jin-joo-003332219" target="_blank" class="contact-btn contact-btn-ghost">LinkedIn</a>
         <a href="https://www.facebook.com/hyejin.joo/" target="_blank" class="contact-btn contact-btn-ghost">Facebook</a>
       </div>
@@ -824,7 +824,7 @@
     <span>Content Planner · Seoul</span>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     // Sticky nav
     const nav = document.getElementById('mainNav');
     const heroEl = document.querySelector('.hero');
@@ -851,4 +851,12 @@
             navLinks.forEach(l => l.classList.remove('nav-active'));
             const active = document.querySelector(`nav a[data-section="${entry.target.id}"]`);
             if (active) active.classList.add('nav-active');
-   
+          }
+        });
+      },
+      { rootMargin: '-30% 0px -60% 0px' }
+    );
+    document.querySelectorAll('section[id]').forEach(s => activeObs.observe(s));
+</script>
+</body>
+</html>

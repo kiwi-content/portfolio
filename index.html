@@ -414,7 +414,7 @@
       200여 명의 작가를 인터뷰하며 쌓은 이야기를 발굴하는 눈과, <strong>국내 최초 전시 라이브커머스로 단일 방송 1.2억 원 매출</strong>을 만든 기획력이 제 강점입니다.
     </p>
     <div class="hero-links">
-      <a href="/cdn-cgi/l/email-protection#553e3c223c626666153b342330277b363a38" class="btn-primary">이메일 보내기</a>
+      <a href="mailto:kiwi733@naver.com" class="btn-primary">이메일 보내기</a>
       <a href="https://kr.linkedin.com/in/hye-jin-joo-003332219" target="_blank" class="btn-ghost">LinkedIn →</a>
       <a href="https://medium.com/@hyejinjoo" target="_blank" class="btn-ghost">Medium →</a>
     </div>
@@ -812,7 +812,7 @@
         <p>콘텐츠 기획, 라이브커머스, 인터뷰 & 에디토리얼 관련해서<br>언제든지 연락 주세요.</p>
       </div>
       <div class="contact-links">
-        <a href="/cdn-cgi/l/email-protection#1f74766876282c2c5f717e697a6d317c7072" class="contact-btn contact-btn-primary">이메일 보내기</a>
+        <a href="mailto:kiwi733@naver.com" class="contact-btn contact-btn-primary">이메일 보내기</a>
         <a href="https://kr.linkedin.com/in/hye-jin-joo-003332219" target="_blank" class="contact-btn contact-btn-ghost">LinkedIn</a>
         <a href="https://www.facebook.com/hyejin.joo/" target="_blank" class="contact-btn contact-btn-ghost">Facebook</a>
       </div>
@@ -824,7 +824,7 @@
     <span>콘텐츠 기획자 · 서울</span>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     // Sticky nav
     const nav = document.getElementById('mainNav');
     const heroEl = document.querySelector('.hero');
@@ -851,4 +851,12 @@
             navLinks.forEach(l => l.classList.remove('nav-active'));
             const active = document.querySelector(`nav a[data-section="${entry.target.id}"]`);
             if (active) active.classList.add('nav-active');
-   
+          }
+        });
+      },
+      { rootMargin: '-30% 0px -60% 0px' }
+    );
+    document.querySelectorAll('section[id]').forEach(s => activeObs.observe(s));
+</script>
+</body>
+</html>
