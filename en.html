@@ -4,9 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hyejin Joo | Content Planner Portfolio</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hyejin Joo | Content Planner" />
+  <meta property="og:description" content="Content planner with 15 years of experience. Korea's first exhibition live commerce (₩120M single broadcast), 200+ author interviews." />
+  <meta property="og:image" content="https://kiwi-content.github.io/portfolio/IMG_3822.JPG" />
+  <meta property="og:url" content="https://kiwi-content.github.io/portfolio/en.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --ink: #1a1714;
@@ -15,8 +25,6 @@
       --paper: #faf8f5;
       --paper-warm: #f2ede6;
       --accent: #c0392b;
-      --accent-warm: #d4521e;
-      --gold: #b8973a;
       --border: #e0d8ce;
     }
 
@@ -24,7 +32,7 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'DM Sans', 'Noto Serif KR', sans-serif;
       background: var(--paper);
       color: var(--ink);
       line-height: 1.7;
@@ -33,610 +41,445 @@
 
     /* ── LANGUAGE TOGGLE ── */
     .lang-bar {
-      position: fixed;
-      top: 0; right: 0;
-      z-index: 200;
-      padding: 12px 24px;
-      display: flex;
-      gap: 8px;
-      align-items: center;
+      position: fixed; top: 0; right: 0;
+      z-index: 200; padding: 12px 24px;
+      display: flex; gap: 8px; align-items: center;
     }
     .lang-bar a {
-      font-size: 12px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: var(--ink-muted);
-      padding: 4px 8px;
-      border: 1px solid transparent;
-      transition: all 0.2s;
+      font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; color: var(--ink-muted);
+      padding: 4px 8px; border: 1px solid transparent; transition: all 0.2s;
     }
-    .lang-bar a.active, .lang-bar a:hover {
-      color: var(--ink);
-      border-color: var(--border);
-    }
+    .lang-bar a.active, .lang-bar a:hover { color: var(--ink); border-color: var(--border); }
     .lang-bar span { color: var(--border); font-size: 10px; }
 
     /* ── NAV ── */
     nav {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      z-index: 100;
-      background: rgba(250,248,245,0.92);
-      backdrop-filter: blur(12px);
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+      background: rgba(250,248,245,0.94); backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
-      transform: translateY(-100%);
-      transition: transform 0.4s ease;
+      transform: translateY(-100%); transition: transform 0.4s ease;
     }
     nav.visible { transform: translateY(0); }
     .nav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 40px;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      gap: 32px;
+      max-width: 1100px; margin: 0 auto; padding: 0 40px;
+      height: 56px; display: flex; align-items: center; gap: 28px;
     }
     .nav-name {
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 500;
-      font-size: 15px;
-      letter-spacing: 0.05em;
-      color: var(--ink);
-      text-decoration: none;
-      margin-right: auto;
+      font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 15px;
+      letter-spacing: 0.05em; color: var(--ink); text-decoration: none; margin-right: auto;
     }
     nav a {
-      font-size: 13px;
-      color: var(--ink-soft);
-      text-decoration: none;
-      letter-spacing: 0.03em;
-      transition: color 0.2s;
-      white-space: nowrap;
+      font-size: 13px; color: var(--ink-soft); text-decoration: none;
+      letter-spacing: 0.02em; transition: color 0.2s; white-space: nowrap;
+      position: relative; padding-bottom: 2px;
     }
+    nav a::after {
+      content: ''; position: absolute; bottom: -1px; left: 0; width: 0; height: 1px;
+      background: var(--accent); transition: width 0.25s ease;
+    }
+    nav a.nav-active { color: var(--accent); }
+    nav a.nav-active::after, nav a:hover::after { width: 100%; }
     nav a:hover { color: var(--accent); }
 
     /* ── HERO ── */
     .hero {
-      min-height: 100svh;
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 80px 40px 60px;
-      gap: 80px;
+      min-height: 100svh; display: flex; flex-direction: column; justify-content: center;
+      max-width: 860px; margin: 0 auto; padding: 100px 40px 80px;
     }
-
     .hero-eyebrow {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 500;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent); font-weight: 500; margin-bottom: 20px;
+      display: flex; align-items: center; gap: 12px;
     }
     .hero-eyebrow::before {
-      content: '';
-      display: block;
-      width: 32px;
-      height: 1px;
-      background: var(--accent);
+      content: ''; display: block; width: 32px; height: 1px; background: var(--accent);
     }
-
     h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(48px, 7vw, 80px);
-      font-weight: 700;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      margin-bottom: 8px;
-      color: var(--ink);
+      font-family: 'Playfair Display', serif; font-size: clamp(48px, 7vw, 80px);
+      font-weight: 700; line-height: 1.1; letter-spacing: -0.02em;
+      margin-bottom: 8px; color: var(--ink);
     }
-
     .hero-subtitle {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: clamp(16px, 2.2vw, 21px);
-      color: var(--ink-soft);
-      margin-bottom: 32px;
-      line-height: 1.55;
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: clamp(16px, 2.2vw, 22px); color: var(--ink-soft);
+      margin-bottom: 32px; line-height: 1.5;
     }
-
     .hero-desc {
-      font-size: 16px;
-      color: var(--ink-soft);
-      line-height: 1.85;
-      max-width: 520px;
-      margin-bottom: 40px;
+      font-size: 16px; color: var(--ink-soft); line-height: 1.85;
+      max-width: 680px; margin-bottom: 40px;
     }
     .hero-desc strong { color: var(--ink); font-weight: 500; }
-
-    .hero-links {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
+    .hero-links { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
     .btn-primary {
-      background: var(--ink);
-      color: var(--paper);
-      padding: 12px 28px;
-      font-size: 13px;
-      letter-spacing: 0.05em;
-      text-decoration: none;
+      background: var(--ink); color: var(--paper); padding: 12px 28px;
+      font-size: 13px; letter-spacing: 0.05em; text-decoration: none;
       transition: background 0.2s;
     }
     .btn-primary:hover { background: var(--accent); }
     .btn-ghost {
-      border: 1px solid var(--border);
-      color: var(--ink-soft);
-      padding: 11px 20px;
-      font-size: 13px;
-      letter-spacing: 0.03em;
-      text-decoration: none;
-      transition: all 0.2s;
+      border: 1px solid var(--border); color: var(--ink-soft);
+      padding: 11px 20px; font-size: 13px; text-decoration: none; transition: all 0.2s;
     }
     .btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
 
-    /* ── HERO RIGHT ── */
-    .hero-right { display: flex; flex-direction: column; gap: 24px; }
-
-    .hero-photo-wrap {
-      position: relative;
-      aspect-ratio: 3/4;
-      overflow: hidden;
+    /* ── HERO AVATAR ── */
+    .hero-name-row {
+      display: flex; align-items: center; gap: 20px; margin-bottom: 8px;
+    }
+    .hero-avatar {
+      width: 72px; height: 72px; border-radius: 50%; overflow: hidden;
+      border: 2px solid var(--border); flex-shrink: 0;
       background: var(--paper-warm);
     }
-    .hero-photo-wrap::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border: 1px solid var(--border);
-      z-index: 1;
+    .hero-avatar img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: grayscale(10%); transition: filter 0.4s;
     }
-    .hero-photo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      filter: grayscale(15%);
-      transition: filter 0.4s;
-    }
-    .hero-photo-wrap:hover img { filter: grayscale(0%); }
-
+    .hero-avatar:hover img { filter: grayscale(0%); }
     .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border: 1px solid var(--border);
-      background: white;
+      display: flex; gap: 0;
+      border: 1px solid var(--border); background: white;
+      width: fit-content; margin-bottom: 40px;
     }
-    .stat {
-      padding: 20px 16px;
-      text-align: center;
-      border-right: 1px solid var(--border);
-    }
+    .stat { padding: 18px 28px; text-align: center; border-right: 1px solid var(--border); }
     .stat:last-child { border-right: none; }
     .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 26px;
-      font-weight: 700;
-      color: var(--accent);
-      line-height: 1;
-      display: block;
-      margin-bottom: 6px;
+      font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700;
+      color: var(--accent); line-height: 1; display: block; margin-bottom: 4px;
     }
-    .stat-label {
-      font-size: 11px;
-      color: var(--ink-muted);
-      line-height: 1.4;
-      letter-spacing: 0.02em;
+    .stat-label { font-size: 11px; color: var(--ink-muted); line-height: 1.4; letter-spacing: 0.02em; }
+
+    /* ── SKILLS ── */
+    .skills-section {
+      background: var(--ink); color: white;
+    }
+    .skills-inner {
+      max-width: 1100px; margin: 0 auto; padding: 64px 40px;
+    }
+    .skills-header {
+      display: flex; align-items: baseline; gap: 16px; margin-bottom: 40px;
+    }
+    .skills-header .section-label { color: rgba(255,255,255,0.4); }
+    .skills-header h2 { color: white; margin-bottom: 0; }
+    .skills-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1);
+    }
+    .skill-item {
+      padding: 28px 24px; background: var(--ink);
+    }
+    .skill-name {
+      font-family: 'Noto Serif KR', serif; font-size: 17px; font-weight: 700;
+      color: white; margin-bottom: 10px;
+    }
+    .skill-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.7; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .skill-tag {
+      font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 3px 8px; border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.5);
     }
 
     /* ── DIVIDER ── */
-    .section-divider {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 40px;
-      border-top: 1px solid var(--border);
-    }
+    .section-divider { max-width: 1100px; margin: 0 auto; padding: 0 40px; border-top: 1px solid var(--border); }
 
     /* ── SECTION ── */
-    section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 80px 40px;
-    }
-
+    section { max-width: 1100px; margin: 0 auto; padding: 80px 40px; }
     .section-label {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-      font-weight: 500;
-      margin-bottom: 8px;
+      font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--ink-muted); font-weight: 500; margin-bottom: 8px;
     }
-
     h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(28px, 4vw, 42px);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 16px;
-      letter-spacing: -0.01em;
+      font-family: 'Noto Serif KR', serif; font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.01em;
     }
-
-    .section-intro {
-      font-size: 16px;
-      color: var(--ink-soft);
-      max-width: 560px;
-      line-height: 1.8;
-      margin-bottom: 56px;
-    }
+    .section-intro { font-size: 16px; color: var(--ink-soft); max-width: 560px; line-height: 1.8; margin-bottom: 56px; }
 
     /* ── CAREER TIMELINE ── */
     .timeline { display: flex; flex-direction: column; }
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 160px 1px 1fr;
-      gap: 0 40px;
-    }
+    .timeline-item { display: grid; grid-template-columns: 160px 1px 1fr; gap: 0 40px; }
     .t-date {
-      text-align: right;
-      padding: 28px 0;
-      font-size: 13px;
-      color: var(--ink-muted);
-      letter-spacing: 0.03em;
+      text-align: right; padding: 28px 0; font-size: 13px; color: var(--ink-muted); letter-spacing: 0.03em;
     }
-    .t-line {
-      background: var(--border);
-      position: relative;
-    }
+    .t-line { background: var(--border); position: relative; }
     .t-line::before {
-      content: '';
-      width: 9px; height: 9px;
-      border-radius: 50%;
-      background: var(--accent);
-      position: absolute;
-      top: 34px; left: 50%;
-      transform: translateX(-50%);
+      content: ''; width: 9px; height: 9px; border-radius: 50%; background: var(--accent);
+      position: absolute; top: 34px; left: 50%; transform: translateX(-50%);
     }
     .t-content { padding: 24px 0 40px; }
-    .t-org {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
+    .t-org { font-family: 'Noto Serif KR', serif; font-size: 20px; font-weight: 700; margin-bottom: 8px; }
     .t-desc { font-size: 15px; color: var(--ink-soft); line-height: 1.8; }
 
     /* ── WORK GRID ── */
     .work-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1px; background: var(--border); border: 1px solid var(--border);
     }
-
     .work-card {
-      background: var(--paper);
-      padding: 36px 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      transition: background 0.2s;
+      background: var(--paper); padding: 36px 32px;
+      display: flex; flex-direction: column; gap: 14px; transition: background 0.2s;
     }
     .work-card:hover { background: white; }
-
-    .card-meta {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
+    .card-meta { display: flex; gap: 8px; align-items: center; }
     .tag {
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border: 1px solid var(--border);
-      color: var(--ink-muted);
+      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 3px 8px; border: 1px solid var(--border); color: var(--ink-muted);
     }
     .tag-accent { border-color: var(--accent); color: var(--accent); }
-    .card-year {
-      font-size: 12px;
-      color: var(--ink-muted);
-      margin-left: auto;
-    }
-
-    .card-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 1.3;
-      color: var(--ink);
-    }
-
-    .card-desc {
-      font-size: 14px;
-      color: var(--ink-soft);
-      line-height: 1.75;
-      flex: 1;
-    }
-
+    .card-year { font-size: 12px; color: var(--ink-muted); margin-left: auto; }
+    .card-title { font-family: 'Noto Serif KR', serif; font-size: 20px; font-weight: 700; line-height: 1.3; }
+    .card-desc { font-size: 14px; color: var(--ink-soft); line-height: 1.75; flex: 1; }
     .card-highlight {
-      background: var(--paper-warm);
-      border-left: 3px solid var(--accent);
-      padding: 12px 16px;
-      font-size: 13px;
-      color: var(--ink);
-      font-weight: 500;
+      background: var(--paper-warm); border-left: 3px solid var(--accent);
+      padding: 12px 16px; font-size: 13px; font-weight: 500;
     }
-
-    .card-images {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 4px;
-      margin: 4px 0;
-    }
+    .card-images { display: grid; gap: 4px; margin: 4px 0; }
+    .card-images.img-1 { grid-template-columns: 1fr; }
+    .card-images.img-2 { grid-template-columns: 1fr 1fr; }
+    .card-images.img-3 { grid-template-columns: repeat(3, 1fr); }
     .card-images img {
-      width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-      display: block;
-      filter: grayscale(10%);
-      transition: filter 0.3s;
+      width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
+      filter: grayscale(10%); transition: filter 0.3s;
     }
     .card-images img:hover { filter: grayscale(0%); }
-
-    .card-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+    .card-links { display: flex; flex-wrap: wrap; gap: 8px; }
     .card-link {
-      font-size: 12px;
-      color: var(--ink-soft);
-      text-decoration: none;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 1px;
-      transition: color 0.2s, border-color 0.2s;
+      font-size: 12px; color: var(--ink-soft); text-decoration: none;
+      border-bottom: 1px solid var(--border); padding-bottom: 1px; transition: color 0.2s, border-color 0.2s;
     }
     .card-link:hover { color: var(--accent); border-color: var(--accent); }
-
-    .card-roles {
-      font-size: 12px;
-      color: var(--ink-muted);
-      line-height: 1.6;
-    }
+    .card-roles { font-size: 12px; color: var(--ink-muted); line-height: 1.6; }
     .card-roles strong { color: var(--ink-soft); font-weight: 500; }
 
     /* ── FEATURED ── */
     .featured-card {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 380px;
+      grid-column: 1 / -1; display: grid;
+      grid-template-columns: 1fr 1fr; min-height: 380px;
     }
     .featured-images {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 2px;
-      overflow: hidden;
+      display: grid; grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr 1fr; gap: 2px; overflow: hidden;
     }
     .featured-images img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-      filter: grayscale(15%);
-      transition: filter 0.3s;
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: grayscale(15%); transition: filter 0.3s;
     }
     .featured-images img:first-child { grid-row: 1 / 3; }
     .featured-images img:hover { filter: grayscale(0%); }
     .featured-content {
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      background: white;
+      padding: 40px; display: flex; flex-direction: column; gap: 16px; background: white;
     }
-
     .featured-stats { display: flex; gap: 24px; margin: 8px 0; }
     .fstat { text-align: center; }
     .fstat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--accent);
-      display: block;
-      line-height: 1;
+      font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700;
+      color: var(--accent); display: block; line-height: 1;
     }
     .fstat-label { font-size: 11px; color: var(--ink-muted); margin-top: 4px; line-height: 1.3; }
 
     /* ── MAGAZINE GRID ── */
     .magazine-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: var(--border); border: 1px solid var(--border);
     }
-    .mag-item {
-      background: var(--paper);
-      overflow: hidden;
-      aspect-ratio: 3/4;
-      position: relative;
-    }
+    .mag-item { background: var(--paper); overflow: hidden; aspect-ratio: 3/4; }
     .mag-item img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-      filter: grayscale(20%);
-      transition: all 0.4s;
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: grayscale(20%); transition: all 0.4s;
     }
     .mag-item:hover img { filter: grayscale(0%); transform: scale(1.03); }
 
     /* ── CONTACT STRIP ── */
-    .contact-strip { background: var(--ink); color: var(--paper); }
+    .contact-strip { background: var(--ink); }
     .contact-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 64px 40px;
-      display: flex;
-      align-items: center;
-      gap: 48px;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      max-width: 1100px; margin: 0 auto; padding: 64px 40px;
+      display: flex; align-items: center; gap: 48px;
+      justify-content: space-between; flex-wrap: wrap;
     }
     .contact-text h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 8px;
+      font-family: 'Noto Serif KR', serif; font-size: 28px; font-weight: 700;
+      color: white; margin-bottom: 8px;
     }
-    .contact-text p { font-size: 15px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+    .contact-text p { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.7; }
     .contact-links { display: flex; gap: 12px; flex-wrap: wrap; }
-    .contact-btn {
-      padding: 12px 24px;
-      font-size: 13px;
-      letter-spacing: 0.05em;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
+    .contact-btn { padding: 12px 24px; font-size: 13px; letter-spacing: 0.05em; text-decoration: none; transition: all 0.2s; }
     .contact-btn-primary { background: var(--accent); color: white; }
     .contact-btn-primary:hover { background: #a93226; }
-    .contact-btn-ghost { border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); }
+    .contact-btn-ghost { border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.75); }
     .contact-btn-ghost:hover { border-color: white; color: white; }
 
     /* ── FOOTER ── */
     footer {
-      border-top: 1px solid var(--border);
-      padding: 24px 40px;
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 12px;
-      color: var(--ink-muted);
-      flex-wrap: wrap;
-      gap: 8px;
+      border-top: 1px solid var(--border); padding: 24px 40px;
+      max-width: 1100px; margin: 0 auto; display: flex;
+      justify-content: space-between; align-items: center;
+      font-size: 12px; color: var(--ink-muted); flex-wrap: wrap; gap: 8px;
     }
 
     /* ── SCROLL ANIMATION ── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── PRINT ── */
+    @media print {
+      nav, .lang-bar, .contact-strip, .reveal { display: block !important; opacity: 1 !important; transform: none !important; }
+      nav, .lang-bar { position: static; }
+      .hero { min-height: auto; page-break-after: always; }
+      .work-grid, .skills-grid { gap: 8px; background: none; }
+      .work-card, .skill-item { border: 1px solid #ddd; break-inside: avoid; }
+      a { color: inherit; }
+      .contact-strip { background: #f5f5f5 !important; }
+      .contact-text h3, .contact-text p { color: var(--ink) !important; }
+    }
 
     /* ── MOBILE ── */
     @media (max-width: 768px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 80px 24px 48px;
-        gap: 48px;
-        min-height: auto;
-      }
-      .hero-right { order: -1; }
-      .hero-photo-wrap { aspect-ratio: 4/3; max-height: 280px; }
-      .hero-stats { grid-template-columns: repeat(3, 1fr); }
-      .stat { padding: 16px 10px; }
+      .hero { padding: 80px 24px 48px; min-height: auto; }
+      .hero-stats { width: 100%; }
+      .stat { flex: 1; padding: 14px 10px; }
       .stat-num { font-size: 20px; }
-
       .nav-inner { padding: 0 20px; gap: 16px; overflow-x: auto; }
       nav a { font-size: 12px; }
-
       section { padding: 56px 24px; }
       .section-divider { padding: 0 24px; }
-
+      .skills-inner { padding: 48px 24px; }
+      .skills-grid { grid-template-columns: 1fr; }
       .timeline-item { grid-template-columns: 1fr; }
       .t-date { text-align: left; padding: 24px 0 4px; color: var(--accent); font-weight: 500; }
       .t-line { display: none; }
       .t-content { padding: 0 0 32px; }
-
       .featured-card { grid-template-columns: 1fr; }
-      .featured-images { grid-template-columns: 1fr 1fr; grid-template-rows: auto; height: 220px; }
+      .featured-images { height: 220px; }
       .featured-images img:first-child { grid-row: auto; }
       .featured-content { padding: 28px 24px; }
-
       .work-grid { grid-template-columns: 1fr; }
       .magazine-grid { grid-template-columns: repeat(2, 1fr); }
-
       .contact-inner { flex-direction: column; align-items: flex-start; gap: 28px; padding: 48px 24px; }
       footer { padding: 24px; flex-direction: column; align-items: flex-start; }
     }
-
     @media (max-width: 480px) {
       h1 { font-size: 40px; }
       .hero-subtitle { font-size: 16px; }
       .hero-links { flex-direction: column; align-items: flex-start; }
-      .magazine-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
 <body>
 
-  <!-- Language -->
   <div class="lang-bar">
     <a href="./index.html">KR</a>
     <span>·</span>
     <a href="./en.html" class="active">EN</a>
   </div>
 
-  <!-- Sticky Nav -->
   <nav id="mainNav">
     <div class="nav-inner">
       <a href="#top" class="nav-name">Hyejin Joo</a>
-      <a href="#career">Career</a>
-      <a href="#live-commerce">Live Commerce</a>
-      <a href="#video">YouTube</a>
-      <a href="#editorial">Editorial</a>
-      <a href="#blog-sns">Blog / SNS</a>
-      <a href="#magazines">Magazine</a>
+      <a href="#career" data-section="career">Career</a>
+      <a href="#live-commerce" data-section="live-commerce">Live Commerce</a>
+      <a href="#video" data-section="video">YouTube</a>
+      <a href="#editorial" data-section="editorial">Editorial</a>
+      <a href="#blog-sns" data-section="blog-sns">Blog / SNS</a>
+      <a href="#magazines" data-section="magazines">Magazine</a>
     </div>
   </nav>
 
   <!-- Hero -->
   <div id="top" class="hero">
-    <div class="hero-left">
-      <div class="hero-eyebrow">Content Planner · 15 Years</div>
-      <h1>Hyejin Joo</h1>
-      <p class="hero-subtitle">A content strategist who drives results<br>through interviews, editorial, and live commerce.</p>
-      <p class="hero-desc">
-        Starting as a fine arts journalist and expanding into live commerce, YouTube, and blog — <strong>15 years of hands-on experience in making content move people.</strong><br><br>
-        A sharp eye for stories honed through 300+ artist interviews, combined with the strategic planning that <strong>generated ₩120M in a single live commerce broadcast</strong> — Korea's first ever exhibition live commerce.
-      </p>
-      <div class="hero-links">
-        <a href="mailto:kiwi733@naver.com" class="btn-primary">Get in Touch</a>
-        <a href="https://kr.linkedin.com/in/hye-jin-joo-003332219" target="_blank" class="btn-ghost">LinkedIn →</a>
-        <a href="https://medium.com/@hyejinjoo" target="_blank" class="btn-ghost">Medium →</a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="hero-photo-wrap">
+    <div class="hero-eyebrow">Content Planner · 15 Years</div>
+    <div class="hero-name-row">
+      <div class="hero-avatar">
         <img src="./IMG_3822.JPG" alt="Hyejin Joo" />
       </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-num">300+</span>
-          <span class="stat-label">Artist Interviews</span>
+      <h1>Hyejin Joo</h1>
+    </div>
+    <p class="hero-subtitle">A content strategist who drives results<br>through interviews, editorial, and live commerce.</p>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">200+</span>
+        <span class="stat-label">Artist Interviews</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">₩120M</span>
+        <span class="stat-label">Peak Broadcast Revenue</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">70</span>
+        <span class="stat-label">Magazine Issues</span>
+      </div>
+    </div>
+    <p class="hero-desc">
+      Starting as a fine arts journalist and expanding into live commerce, YouTube, and blog — <strong>15 years of hands-on experience in making content move people.</strong><br><br>
+      A sharp eye for stories honed through 200+ artist interviews, combined with the strategic planning that <strong>generated ₩120M in a single live commerce broadcast</strong> — Korea's first ever exhibition live commerce.
+    </p>
+    <div class="hero-links">
+      <a href="mailto:kiwi733@naver.com" class="btn-primary">Get in Touch</a>
+      <a href="https://kr.linkedin.com/in/hye-jin-joo-003332219" target="_blank" class="btn-ghost">LinkedIn →</a>
+      <a href="https://medium.com/@hyejinjoo" target="_blank" class="btn-ghost">Medium →</a>
+    </div>
+  </div>
+
+  <!-- Skills -->
+  <div class="skills-section reveal">
+    <div class="skills-inner">
+      <div class="skills-header">
+        <div class="section-label">Core Skills</div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <div class="skill-name">Content Strategy & Planning</div>
+          <div class="skill-desc">Translating trends into actionable content formats. Designs content architecture for everything from long-running series to one-off campaigns.</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Content Strategy</span>
+            <span class="skill-tag">Format Development</span>
+            <span class="skill-tag">Trend Analysis</span>
+          </div>
         </div>
-        <div class="stat">
-          <span class="stat-num">₩120M</span>
-          <span class="stat-label">Peak Single Broadcast Revenue</span>
+        <div class="skill-item">
+          <div class="skill-name">Live Commerce & Video</div>
+          <div class="skill-desc">End-to-end live commerce ownership: scriptwriting, talent casting, and on-site direction. Multiple YouTube series planned and produced.</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Live Commerce</span>
+            <span class="skill-tag">YouTube Planning</span>
+            <span class="skill-tag">Scriptwriting</span>
+          </div>
         </div>
-        <div class="stat">
-          <span class="stat-num">70</span>
-          <span class="stat-label">Magazine Issues</span>
+        <div class="skill-item">
+          <div class="skill-name">Interview & Editorial</div>
+          <div class="skill-desc">200+ interviews conducted. Skilled at uncovering stories and translating them into reader-friendly writing. Full editorial pipeline from commissioning to publishing.</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Interviewing</span>
+            <span class="skill-tag">Feature Writing</span>
+            <span class="skill-tag">Copy Editing</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">SEO & Blog Marketing</div>
+          <div class="skill-desc">Keyword-driven content planning based on Naver search algorithm analysis. Structures content to convert search traffic into product sales.</div>
+          <div class="skill-tags">
+            <span class="skill-tag">SEO</span>
+            <span class="skill-tag">Naver Blog</span>
+            <span class="skill-tag">Keyword Strategy</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">SNS Campaign Planning</div>
+          <div class="skill-desc">Turning brand messages into participatory social campaigns. Hands-on experience planning and running Instagram events from concept to winner announcement.</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Instagram</span>
+            <span class="skill-tag">Campaign Planning</span>
+            <span class="skill-tag">Brand Campaigns</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">Fine Arts & Culture</div>
+          <div class="skill-desc">6 years as a fine arts journalist. Deep knowledge of exhibitions, the art market, and cultural trends — a rare foundation for arts content strategy.</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Arts Programming</span>
+            <span class="skill-tag">Exhibition Content</span>
+            <span class="skill-tag">Cultural Marketing</span>
+          </div>
         </div>
       </div>
     </div>
@@ -663,7 +506,7 @@
         <div class="t-line"></div>
         <div class="t-content">
           <div class="t-org">Fine Arts Journalist</div>
-          <p class="t-desc">Covered exhibitions and interviewed artists for fine arts monthlies <em>Art World</em> and <em>Kyunghyang Article</em> over six years. The observational skills and interview techniques developed here became the foundation for all subsequent content marketing work.</p>
+          <p class="t-desc">Covered exhibitions and interviewed artists for fine arts monthlies <em>Art World</em> and <em>Kyunghyang Article</em>. The observational skills and interview techniques developed here became the foundation for all subsequent content marketing work.</p>
         </div>
       </div>
     </div>
@@ -676,9 +519,8 @@
     <div class="section-label">Live Commerce</div>
     <h2>Live Commerce Planning</h2>
     <p class="section-intro">From Korea's first exhibition live commerce to MBTI travel — reading trends, building formats.</p>
-
     <div class="work-grid">
-      <!-- Featured -->
+
       <div class="work-card featured-card">
         <div class="featured-images">
           <img src="https://raw.githubusercontent.com/kiwi-content/portfolio/image/suyo1.jpg" alt="Suyo Art Salon broadcast" />
@@ -692,16 +534,10 @@
             <span class="card-year">2020–2022</span>
           </div>
           <div class="card-title">Suyo Art Salon</div>
-          <p class="card-desc">Could a docent explain artwork while selling tickets live? That question gave birth to Suyo Art Salon — Korea's first exhibition live commerce, launched ahead of competitor Naver. Responsibilities spanned campaign page production, scriptwriting, docent casting, and on-site direction.</p>
+          <p class="card-desc">Could a docent explain artwork while selling tickets live? This question led to Suyo Art Salon — Korea's first exhibition live commerce, launched ahead of competitor Naver. Responsibilities spanned campaign page production, scriptwriting, docent casting, and on-site direction.</p>
           <div class="featured-stats">
-            <div class="fstat">
-              <span class="fstat-num">30K</span>
-              <span class="fstat-label">Peak Live Viewers</span>
-            </div>
-            <div class="fstat">
-              <span class="fstat-num">₩120M</span>
-              <span class="fstat-label">Peak Single Broadcast Revenue</span>
-            </div>
+            <div class="fstat"><span class="fstat-num">30K</span><span class="fstat-label">Peak Live Viewers</span></div>
+            <div class="fstat"><span class="fstat-num">₩120M</span><span class="fstat-label">Peak Broadcast Revenue</span></div>
           </div>
           <div class="card-roles"><strong>Role:</strong> Concept &amp; Planning / Campaign Page / Script / Talent Casting / Broadcast / On-site Direction</div>
           <div class="card-links">
@@ -714,33 +550,46 @@
         </div>
       </div>
 
-      <!-- MBTI -->
+      <!-- Campaign page subcard -->
+      <div class="work-card">
+        <div class="card-meta">
+          <span class="tag">Campaign Page</span>
+          <span class="card-year">2020–2022</span>
+        </div>
+        <div class="card-title">Campaign Page Production</div>
+        <p class="card-desc">Produced exhibition campaign pages tied to each live commerce broadcast. Combined artwork commentary, artist profiles, and purchase incentives into a single editorial flow — the editorial sensibility from fine arts journalism applied directly to commerce content.</p>
+        <div class="card-images img-2">
+          <img src="./kihwaek1.JPG" alt="Exhibition campaign page — Raoul Dufy" />
+          <img src="./kihwaek.jpg" alt="Exhibition campaign page — Picasso" />
+        </div>
+      </div>
+
       <div class="work-card">
         <div class="card-meta">
           <span class="tag">Tours</span>
           <span class="card-year">2022</span>
         </div>
         <div class="card-title">MBTI Lab</div>
-        <p class="card-desc">Connected Korea's MBTI craze with travel product sales. Conceived and hosted a live commerce format that analyzed travel styles by personality type and curated matching products.</p>
+        <p class="card-desc">Connected Korea's MBTI craze with travel product sales. Conceived and hosted a live commerce format analyzing travel styles by personality type and curating matching products.</p>
         <div class="card-links">
           <a href="https://www.khan.co.kr/life/life-general/article/202201121133001" target="_blank" class="card-link">Kyunghyang Shinmun →</a>
           <a href="https://www.mk.co.kr/news/culture/10181989" target="_blank" class="card-link">Maeil Business →</a>
         </div>
       </div>
 
-      <!-- 현지 LIVE -->
       <div class="work-card">
         <div class="card-meta">
           <span class="tag">Tours</span>
           <span class="card-year">2021</span>
         </div>
         <div class="card-title">Local LIVE Tour</div>
-        <p class="card-desc">With international travel suspended in 2021, created a format connecting viewers in real-time with local guides worldwide — selling "couch travel" experiences. Ran 13 episodes in total.</p>
+        <p class="card-desc">With international travel suspended in 2021, created a format connecting viewers in real-time with local guides worldwide — selling virtual travel experiences. Ran 13 episodes in total.</p>
         <div class="card-links">
           <a href="http://it.chosun.com/site/data/html_dir/2021/10/08/2021100801915.html" target="_blank" class="card-link">Chosun IT →</a>
           <a href="http://mbiz.heraldcorp.com/view.php?ud=20211005000711" target="_blank" class="card-link">Herald Economy →</a>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -754,13 +603,10 @@
     <div class="work-grid">
 
       <div class="work-card">
-        <div class="card-meta">
-          <span class="tag">Tours</span>
-          <span class="card-year">2022–2023</span>
-        </div>
+        <div class="card-meta"><span class="tag">Tours</span><span class="card-year">2022–2023</span></div>
         <div class="card-title">Local Friend Guide</div>
-        <p class="card-desc">Travel guided by a local friend — during COVID, remotely recruited local hosts in Turkey and Taiwan and coordinated the entire process from scripting to editing direction.</p>
-        <div class="card-images">
+        <p class="card-desc">Travel guided by a local friend — during COVID, remotely recruited hosts in Turkey and Taiwan and coordinated the entire process from scripting to edit direction.</p>
+        <div class="card-images img-2">
           <img src="./lochinso 03.jpg" alt="Turkey episode" />
           <img src="./lochinso 02.jpg" alt="Taiwan episode" />
         </div>
@@ -773,13 +619,10 @@
       </div>
 
       <div class="work-card">
-        <div class="card-meta">
-          <span class="tag">Tours</span>
-          <span class="card-year">2022</span>
-        </div>
+        <div class="card-meta"><span class="tag">Tours</span><span class="card-year">2022</span></div>
         <div class="card-title">5 vs 50</div>
-        <p class="card-desc">A travel series where a single lottery draw decides your budget — ₩50K or ₩500K. Conceived the format to show how radically different a trip can be based on budget alone. Filmed personally on location.</p>
-        <div class="card-images">
+        <p class="card-desc">A travel series where a single lottery draw decides your budget — ₩50K or ₩500K. Conceived the format and filmed on location personally.</p>
+        <div class="card-images img-2">
           <img src="./5 vs 50 - 01.jpg" alt="Gangneung episode" />
           <img src="./5 vs 50 - 02.jpg" alt="Gyeongju episode" />
         </div>
@@ -791,13 +634,10 @@
       </div>
 
       <div class="work-card">
-        <div class="card-meta">
-          <span class="tag">Books</span>
-          <span class="card-year">2019–2023</span>
-        </div>
+        <div class="card-meta"><span class="tag">Books</span><span class="card-year">2019–2023</span></div>
         <div class="card-title">Author Video Interviews</div>
-        <p class="card-desc">Planned and hosted video interviews with debut authors for Interpark's YouTube channel — translating each book's story into the language of video so readers could meet the author before turning the first page.</p>
-        <div class="card-images">
+        <p class="card-desc">Planned and hosted video interviews with new authors for Interpark's YouTube channel — bringing books to life before readers even turned the first page.</p>
+        <div class="card-images img-1">
           <img src="./interview.jpg" alt="Author interview" />
         </div>
         <div class="card-roles"><strong>Role:</strong> Interview Host / Edit Direction</div>
@@ -809,13 +649,10 @@
       </div>
 
       <div class="work-card">
-        <div class="card-meta">
-          <span class="tag">Books</span>
-          <span class="card-year">2017–2018</span>
-        </div>
+        <div class="card-meta"><span class="tag">Books</span><span class="card-year">2017–2018</span></div>
         <div class="card-title">Book Chat</div>
-        <p class="card-desc">How do you make books genuinely entertaining on screen? That question led to this YouTube series — which I conceived, produced, and appeared in personally.</p>
-        <div class="card-images">
+        <p class="card-desc">How do you make books genuinely entertaining on screen? A YouTube series conceived, produced, and hosted personally.</p>
+        <div class="card-images img-1">
           <img src="./booksuda.png" alt="Book Chat" />
         </div>
         <div class="card-roles"><strong>Role:</strong> Concept / On-camera Host / Production</div>
@@ -838,17 +675,14 @@
   <section id="editorial" class="reveal">
     <div class="section-label">Interview & Editorial</div>
     <h2>Interview & Editorial</h2>
-    <p class="section-intro">300+ artists interviewed. Depth over breadth, always.</p>
+    <p class="section-intro">200+ artists interviewed. Depth over breadth, always.</p>
     <div class="work-grid">
 
       <div class="work-card">
-        <div class="card-meta">
-          <span class="tag">Books</span>
-          <span class="card-year">2015–2021</span>
-        </div>
+        <div class="card-meta"><span class="tag">Books</span><span class="card-year">2015–2021</span></div>
         <div class="card-title">BookDB Author Interviews</div>
-        <p class="card-desc">Over six years, interviewed 300+ authors — from Kim Yeonsu and Kim Young-ha to Alain de Botton, Richard Dawkins, and more. The work: translating each author's thinking into the language of their readers.</p>
-        <div class="card-images">
+        <p class="card-desc">Over six years, interviewed 200+ authors — from Kim Yeonsu and Kim Young-ha to Alain de Botton, Richard Dawkins, and more. Translating each author's thinking into the language of their readers.</p>
+        <div class="card-images img-2">
           <img src="./bookdb-interview-1.jpeg" alt="Interview in progress" />
           <img src="./bookdb-interview-2.jpeg" alt="Richard Dawkins interview" />
         </div>
@@ -859,13 +693,10 @@
       </div>
 
       <div class="work-card">
-        <div class="card-meta">
-          <span class="tag">Books</span>
-          <span class="card-year">2015–2021</span>
-        </div>
+        <div class="card-meta"><span class="tag">Books</span><span class="card-year">2015–2021</span></div>
         <div class="card-title">Issue & Story — Trend Features</div>
-        <p class="card-desc">Six years of asking: what are people paying attention to right now? BTS RM's reading list, Bill Gates' book picks, MBTI reading guides, the Bohemian Rhapsody deep-dive — trend-reading pieces that connected culture to books.</p>
-        <div class="card-images">
+        <p class="card-desc">BTS RM's reading list, Bill Gates' book picks, MBTI reading guides — six years of trend-reading pieces that connected culture to books.</p>
+        <div class="card-images img-3">
           <img src="./issue-story-1.jpg" alt="" />
           <img src="./issue-story-2.jpg" alt="" />
           <img src="./issue-story-3.jpg" alt="" />
@@ -874,14 +705,11 @@
       </div>
 
       <div class="work-card">
-        <div class="card-meta">
-          <span class="tag">Books</span>
-          <span class="card-year">2016–2021</span>
-        </div>
+        <div class="card-meta"><span class="tag">Books</span><span class="card-year">2016–2021</span></div>
         <div class="card-title">Djuna's Genre Fiction Nights</div>
-        <p class="card-desc">Managed every aspect of this genre fiction column for five years — from finding contributors and defining the concept to editing copy, proofreading, and publishing.</p>
-        <div class="card-images">
-          <img src="./djuna.png" alt="Djuna's Genre Fiction" />
+        <p class="card-desc">Managed every aspect of this genre fiction column for five years — from finding contributors and defining the concept to editing, proofreading, and publishing.</p>
+        <div class="card-images img-1">
+          <img src="./djuna.png" alt="Genre Fiction Nights" />
         </div>
         <div class="card-roles"><strong>Role:</strong> Contributor Sourcing / Concept / Copy Editing / Proofreading / Publishing</div>
       </div>
@@ -899,13 +727,10 @@
     <div class="work-grid">
 
       <div class="work-card">
-        <div class="card-meta">
-          <span class="tag">Tours</span>
-          <span class="card-year">2022–2023</span>
-        </div>
+        <div class="card-meta"><span class="tag">Tours</span><span class="card-year">2022–2023</span></div>
         <div class="card-title">Interpark Tour — Naver Official Blog</div>
-        <p class="card-desc">Planned and operated keyword-driven blog content designed to naturally guide travel searchers toward product pages. Analyzed search intent to set topics and wrote content structured for Naver search visibility.</p>
-        <div class="card-images">
+        <p class="card-desc">Planned and operated keyword-driven blog content to guide travel searchers toward product pages. Analyzed search intent and wrote content structured for Naver search visibility.</p>
+        <div class="card-images img-2">
           <img src="./blog.png" alt="Blog" />
           <img src="./blog 02.png" alt="Blog 2" />
         </div>
@@ -915,16 +740,13 @@
       </div>
 
       <div class="work-card">
-        <div class="card-meta">
-          <span class="tag">SNS</span>
-          <span class="card-year">2023</span>
-        </div>
+        <div class="card-meta"><span class="tag">SNS</span><span class="card-year">2023</span></div>
         <div class="card-title">Interpark-DA Challenge</div>
-        <p class="card-desc">Conceived an Instagram campaign to announce Interpark's new identity after its merger with Yanolja. The "Interpark-DA Challenge" connected the Korean word for "big" with Interpark's "Park" — turning a brand message into a participatory campaign.</p>
+        <p class="card-desc">A rebranding Instagram event connecting the Korean word for 'big' with Interpark's 'Park' — turning a brand message into a participatory campaign.</p>
         <div class="card-highlight">Round 1: 653 Likes / 660 Comments &nbsp;·&nbsp; Round 2: 886 Likes / 905 Comments</div>
-        <div class="card-images">
-          <img src="./instagram 01.png" alt="Instagram 1" />
-          <img src="./instagram 02.png" alt="Instagram 2" />
+        <div class="card-images img-2">
+          <img src="./instagram 01.png" alt="Instagram campaign 1" />
+          <img src="./instagram 02.png" alt="Instagram campaign 2" />
         </div>
         <div class="card-links">
           <a href="https://www.instagram.com/p/CtvuoL5J6bh/" target="_blank" class="card-link">Challenge 1 →</a>
@@ -942,27 +764,25 @@
     <div class="section-label">Magazine</div>
     <h2>Fine Arts Journalist</h2>
     <p class="section-intro">Covering and documenting the fine arts world — 70 issues in total.</p>
-
     <div style="margin-bottom: 40px;">
       <div class="card-meta" style="margin-bottom: 12px;">
         <span class="tag">Kyunghyang Article</span>
         <span class="card-year">Feb 2013 – Sep 2014 · 20 Issues</span>
       </div>
       <div class="magazine-grid">
-        <div class="mag-item"><img src="./article 00.png" alt="" /></div>
+        <div class="mag-item"><img src="./article 00.png" alt="Kyunghyang Article cover" /></div>
         <div class="mag-item"><img src="./article 01.jpg" alt="" /></div>
         <div class="mag-item"><img src="./article 02.jpg" alt="" /></div>
         <div class="mag-item"><img src="./article 03.jpg" alt="" /></div>
       </div>
     </div>
-
     <div>
       <div class="card-meta" style="margin-bottom: 12px;">
         <span class="tag">Art World</span>
         <span class="card-year">Oct 2008 – Nov 2012 · 50 Issues</span>
       </div>
       <div class="magazine-grid">
-        <div class="mag-item"><img src="./misulsegye 00.jpg" alt="" /></div>
+        <div class="mag-item"><img src="./misulsegye 00.jpg" alt="Art World cover" /></div>
         <div class="mag-item"><img src="./misulsegye 01.jpg" alt="" /></div>
         <div class="mag-item"><img src="./misulsegye 02.jpg" alt="" /></div>
         <div class="mag-item"><img src="./misulsegye 03.jpg" alt="" /></div>
@@ -975,7 +795,7 @@
     <div class="contact-inner">
       <div class="contact-text">
         <h3>Interested in working together?</h3>
-        <p>For content strategy, live commerce, or interview & editorial work,<br>I'd love to hear from you.</p>
+        <p>For content strategy, live commerce, or interview &amp; editorial work,<br>I'd love to hear from you.</p>
       </div>
       <div class="contact-links">
         <a href="mailto:kiwi733@naver.com" class="contact-btn contact-btn-primary">Send an Email</a>
@@ -991,21 +811,38 @@
   </footer>
 
   <script>
+    // Sticky nav
     const nav = document.getElementById('mainNav');
-    const observer = new IntersectionObserver(
-      ([entry]) => { nav.classList.toggle('visible', !entry.isIntersecting); },
+    const heroEl = document.querySelector('.hero');
+    const heroObs = new IntersectionObserver(
+      ([e]) => nav.classList.toggle('visible', !e.isIntersecting),
       { threshold: 0.1 }
     );
-    observer.observe(document.querySelector('.hero'));
+    heroObs.observe(heroEl);
 
-    const reveals = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-      },
+    // Scroll reveal
+    const revealObs = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
       { threshold: 0.08 }
     );
-    reveals.forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    // Active nav highlight
+    const sections = document.querySelectorAll('section[id], div[id="top"]');
+    const navLinks = document.querySelectorAll('nav a[data-section]');
+    const activeObs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(l => l.classList.remove('nav-active'));
+            const active = document.querySelector(`nav a[data-section="${entry.target.id}"]`);
+            if (active) active.classList.add('nav-active');
+          }
+        });
+      },
+      { rootMargin: '-30% 0px -60% 0px' }
+    );
+    document.querySelectorAll('section[id]').forEach(s => activeObs.observe(s));
   </script>
 </body>
 </html>
