@@ -386,6 +386,18 @@
     /* ── SCROLL ANIMATION ── */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal .work-grid .work-card,
+    .reveal .wide-card {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      transition-delay: var(--stagger-delay, 0ms);
+    }
+    .reveal.visible .work-grid .work-card,
+    .reveal.visible .wide-card {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* ── PRINT ── */
     @media print {
@@ -394,6 +406,7 @@
       .hero { min-height: auto; page-break-after: always; }
       .work-grid, .skills-grid { gap: 8px; background: none; }
       .work-card, .skill-item { border: 1px solid #ddd; break-inside: avoid; }
+      .reveal .work-grid .work-card, .reveal .wide-card { opacity: 1 !important; transform: none !important; }
       a { color: inherit; }
       .contact-strip { background: #f5f5f5 !important; }
       .contact-text h3, .contact-text p { color: var(--ink) !important; }
@@ -405,7 +418,15 @@
       .hero-stats { width: 100%; }
       .stat { flex: 1; padding: 14px 10px; }
       .stat-num { font-size: 20px; }
-      .nav-inner { padding: 0 20px; gap: 16px; overflow-x: auto; }
+      .nav-inner {
+        padding: 10px 20px;
+        min-height: 56px;
+        height: auto;
+        gap: 12px 14px;
+        flex-wrap: wrap;
+        overflow-x: visible;
+      }
+      .nav-name { width: 100%; margin-right: 0; }
       nav a { font-size: 12px; }
       section { padding: 56px 24px; }
       .section-divider { padding: 0 24px; }
@@ -445,7 +466,8 @@
       .hero-desc { font-size: 14px; line-height: 1.75; margin-bottom: 28px; }
       .hero-stats { flex-wrap: wrap; }
       .stat { min-width: 50%; padding: 12px 8px; }
-      .nav-inner { padding: 0 14px; gap: 12px; }
+      .nav-inner { padding: 8px 14px; gap: 8px 10px; }
+      .nav-name { font-size: 14px; }
       nav a { font-size: 11px; }
       section { padding: 44px 16px; }
       .section-divider { padding: 0 16px; }
@@ -509,7 +531,7 @@
       200여 명의 작가를 인터뷰하며 쌓은 이야기를 발굴하는 눈과, <strong>국내 최초 전시 라이브커머스로 단일 방송 1.2억 원 매출</strong>을 만든 기획력이 제 강점입니다.
     </p>
     <div class="hero-links">
-      <a href="/cdn-cgi/l/email-protection#553e3c223c626666153b342330277b363a38" class="btn-primary">이메일 보내기</a>
+      <a href="mailto:kiwi733@naver.com" class="btn-primary">이메일 보내기</a>
       <a href="https://kr.linkedin.com/in/hye-jin-joo-003332219" target="_blank" class="btn-ghost">LinkedIn →</a>
       <a href="https://medium.com/@hyejinjoo" target="_blank" class="btn-ghost">Medium →</a>
     </div>
@@ -626,7 +648,7 @@
     <div class="work-grid">
       <div class="work-card featured-card">
         <div class="featured-images">
-          <img src="./suyo-art-salon-01.png" alt="수요아트살롱 방송 현장" />
+          <img src="https://kiwi-content.github.io/portfolio/suyo-art-salon-01.png" alt="수요아트살롱 방송 현장" />
           <img src="https://raw.githubusercontent.com/kiwi-content/portfolio/image/suyo2.jpg" alt="기획전 페이지" />
           <img src="https://raw.githubusercontent.com/kiwi-content/portfolio/image/suyo3.jpg" alt="전시장" />
         </div>
@@ -663,6 +685,9 @@
         <div class="card-meta"><span class="tag">투어</span><span class="card-year">2022</span></div>
         <div class="card-title">MBTI 연구소</div>
         <p class="card-desc">한국 사회의 MBTI 열풍을 여행 상품 판매와 연결했습니다. 유형별 여행 스타일을 분석하고 맞춤 상품을 큐레이션하는 라이브커머스를 기획·진행했습니다.</p>
+        <div class="card-images img-1">
+          <img src="./mbti-lab.jpg" alt="MBTI 연구소 라이브커머스" />
+        </div>
         <div class="card-links">
           <a href="https://www.khan.co.kr/life/life-general/article/202201121133001" target="_blank" class="card-link">경향신문 →</a>
           <a href="https://www.mk.co.kr/news/culture/10181989" target="_blank" class="card-link">매일경제 →</a>
@@ -673,6 +698,9 @@
         <div class="card-meta"><span class="tag">투어</span><span class="card-year">2021</span></div>
         <div class="card-title">현지 LIVE 투어</div>
         <p class="card-desc">해외여행이 막힌 2021년, 전 세계 현지 가이드와 실시간으로 연결해 '랜선 여행'을 판매하는 포맷을 만들었습니다. 총 13회 진행했습니다.</p>
+        <div class="card-images img-1">
+          <img src="./local-live-tour.jpg" alt="현지 LIVE 투어" />
+        </div>
         <div class="card-links">
           <a href="http://it.chosun.com/site/data/html_dir/2021/10/08/2021100801915.html" target="_blank" class="card-link">조선일보 IT →</a>
           <a href="http://mbiz.heraldcorp.com/view.php?ud=20211005000711" target="_blank" class="card-link">헤럴드경제 →</a>
@@ -688,11 +716,11 @@
       </div>
       <div class="wide-card-content">
         <div class="card-meta">
-          <span class="tag">기획전 페이지</span>
+          <span class="tag">핵심 업무</span>
           <span class="card-year">2020–2022</span>
         </div>
-        <div class="card-title">기획전 페이지 제작</div>
-        <p class="card-desc">라이브커머스 방송과 연동되는 전시 기획전 페이지의 콘텐츠 방향 수립과 문안 작성을 담당했습니다. 작품 해설, 작가 소개, 구매 포인트를 하나의 흐름으로 엮은 구성으로 - 미술 기자 시절의 편집 감각을 콘텐츠 마케팅에 적용한 결과물입니다.</p>
+        <div class="card-title">기획전 페이지 제작 (수요아트살롱)</div>
+        <p class="card-desc">수요아트살롱에서 맡은 다양한 업무 중, 특히 강점이 드러난 영역이 기획전 페이지 제작이었습니다. 라이브커머스 방송과 연동되는 전시 페이지의 콘텐츠 방향과 문안을 설계해 작품 해설, 작가 소개, 구매 포인트를 하나의 흐름으로 구성했습니다. 미술 기자 시절의 편집 감각을 콘텐츠 마케팅에 적용한 결과물입니다.</p>
       </div>
     </div>
 
@@ -907,7 +935,7 @@
         <p>콘텐츠 기획, 라이브커머스, 인터뷰 & 에디토리얼 관련해서<br>언제든지 연락 주세요.</p>
       </div>
       <div class="contact-links">
-        <a href="/cdn-cgi/l/email-protection#1f74766876282c2c5f717e697a6d317c7072" class="contact-btn contact-btn-primary">이메일 보내기</a>
+        <a href="mailto:kiwi733@naver.com" class="contact-btn contact-btn-primary">이메일 보내기</a>
         <a href="https://kr.linkedin.com/in/hye-jin-joo-003332219" target="_blank" class="contact-btn contact-btn-ghost">LinkedIn</a>
         <a href="https://www.facebook.com/hyejin.joo/" target="_blank" class="contact-btn contact-btn-ghost">Facebook</a>
       </div>
@@ -919,7 +947,7 @@
     <span>콘텐츠 기획자 · 서울</span>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     // Sticky nav
     const nav = document.getElementById('mainNav');
     const heroEl = document.querySelector('.hero');
@@ -934,7 +962,11 @@
       (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
       { threshold: 0.08 }
     );
-    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+    document.querySelectorAll('.reveal').forEach(section => {
+      const cards = section.querySelectorAll('.work-grid .work-card, .wide-card');
+      cards.forEach((card, idx) => card.style.setProperty('--stagger-delay', `${Math.min(idx, 9) * 70}ms`));
+      revealObs.observe(section);
+    });
 
     // Active nav highlight
     const sections = document.querySelectorAll('section[id], div[id="top"]');
