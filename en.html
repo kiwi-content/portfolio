@@ -319,6 +319,37 @@
       padding: 0;
       background: white;
     }
+    /* ── INTERVIEW STRIP ── */
+    .interview-strip {
+      display: grid; grid-template-columns: repeat(8, 1fr);
+      gap: 1px; background: var(--border); border: 1px solid var(--border);
+      margin-top: 1px; text-decoration: none; color: inherit;
+    }
+    .strip-item { position: relative; overflow: hidden; background: var(--paper-warm); }
+    .strip-item img {
+      width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top;
+      display: block; transition: transform 0.4s ease;
+    }
+    .interview-strip:hover .strip-item img { transform: scale(1.04); }
+    .strip-name {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(26,23,20,0.82));
+      color: white; font-family: 'Noto Serif KR', serif;
+      font-size: 10px; font-weight: 600; padding: 20px 7px 7px; line-height: 1.35;
+    }
+    .strip-name small { font-weight: 400; font-size: 9px; opacity: .85; display: block; }
+    .strip-cta {
+      grid-column: 1/-1; background: var(--paper); padding: 13px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .strip-cta-text { font-size: 13px; color: var(--ink-soft); }
+    .strip-cta-link {
+      font-size: 12px; color: var(--accent); letter-spacing: .02em;
+      border-bottom: 1px solid var(--accent); padding-bottom: 1px;
+    }
+    @media(max-width:760px){.interview-strip{grid-template-columns:repeat(4,1fr);}}
+    @media(max-width:480px){.interview-strip{grid-template-columns:repeat(4,1fr);}}
+
     /* ── FEATURED ── */
     .featured-card {
       grid-column: 1 / -1; display: grid;
@@ -838,6 +869,46 @@
         <div class="card-roles"><strong>Role:</strong> Contributor Sourcing · Concept · Copy Editing · Proofreading · Publishing</div>
       </div>
     </div>
+
+    <!-- Interview photo strip -->
+    <a href="./interviews.html" class="interview-strip" aria-label="Full interview archive">
+      <div class="strip-item">
+        <img src="./assets/interviews/img-38-1.jpg" alt="알랭 드 보통" loading="lazy">
+        <div class="strip-name">알랭 드 보통<small>Alain de Botton</small></div>
+      </div>
+      <div class="strip-item">
+        <img src="./assets/interviews/img-59-1.jpg" alt="리처드 도킨스" loading="lazy">
+        <div class="strip-name">리처드 도킨스<small>Richard Dawkins</small></div>
+      </div>
+      <div class="strip-item">
+        <img src="./assets/interviews/img-41-1.jpg" alt="베르나르 베르베르" loading="lazy">
+        <div class="strip-name">베르나르 베르베르<small>Bernard Werber</small></div>
+      </div>
+      <div class="strip-item">
+        <img src="./assets/interviews/img-71-1.jpg" alt="김영하" loading="lazy">
+        <div class="strip-name">김영하</div>
+      </div>
+      <div class="strip-item">
+        <img src="./assets/interviews/img-72-1.jpg" alt="황석영" loading="lazy">
+        <div class="strip-name">황석영</div>
+      </div>
+      <div class="strip-item">
+        <img src="./assets/interviews/img-88-1.jpg" alt="정재승" loading="lazy">
+        <div class="strip-name">정재승</div>
+      </div>
+      <div class="strip-item">
+        <img src="./assets/interviews/img-101-1.jpg" alt="재레드 다이아몬드" loading="lazy">
+        <div class="strip-name">재레드 다이아몬드<small>Jared Diamond</small></div>
+      </div>
+      <div class="strip-item">
+        <img src="./assets/interviews/img-103-1.jpg" alt="나태주" loading="lazy">
+        <div class="strip-name">나태주</div>
+      </div>
+      <div class="strip-cta">
+        <span class="strip-cta-text">200+ authors interviewed over 6 years · 2015–2021</span>
+        <span class="strip-cta-link">Full Archive (119 pieces) →</span>
+      </div>
+    </a>
 
     <!-- Issue & Story wide card -->
     <div class="wide-card wide-card-issue" style="margin-top:1px;">

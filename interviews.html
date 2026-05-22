@@ -66,10 +66,12 @@
     footer{border-top:1px solid var(--border);padding:40px;text-align:center;font-size:12px;color:var(--ink-muted);letter-spacing:.05em;}
     footer a{color:var(--ink-muted);text-decoration:none;}
     footer a:hover{color:var(--accent);}
+    .ic-thumb{float:right;width:80px;height:104px;object-fit:cover;object-position:top;margin:0 0 10px 16px;border:1px solid var(--border);display:block;}
     @media(max-width:640px){
       .top-bar{padding:0 20px;gap:12px;}.top-bar-title{display:none;}.search-wrap{flex:1;}.result-count{display:none;}
       .page-header{padding:40px 20px 28px;}.article-list{padding:0 20px 60px;}
       .ic-header{padding:20px;}.ic-full-content{padding:20px 20px 0;}.ic-source{margin:16px 20px 20px;}
+      .ic-thumb{width:60px;height:78px;margin-left:12px;}
     }
 </style>
 </head>
@@ -1896,6 +1898,14 @@
     const si=document.getElementById('searchInput'),rc=document.getElementById('resultCount'),nr=document.getElementById('noResults'),cards=document.querySelectorAll('.interview-card');
     si.addEventListener('input',function(){const q=this.value.toLowerCase().trim();let v=0;cards.forEach((c,i)=>{const m=!q||searchData[i].search.includes(q);c.classList.toggle('hidden',!m);if(m)v++;});rc.textContent=v+'개';nr.classList.toggle('visible',v===0);});
     document.querySelectorAll('.ic-preview p:nth-child(2)').forEach(p=>{if(p.textContent.trim().length>30)p.style.display='none';});
+    document.querySelectorAll('.interview-card').forEach(card=>{
+      const img=card.querySelector('.ic-full-content img');
+      if(!img)return;
+      const thumb=document.createElement('img');
+      thumb.src=img.src;thumb.alt='';thumb.className='ic-thumb';thumb.loading='lazy';
+      const h=card.querySelector('.ic-header');
+      h.insertBefore(thumb,h.firstChild);
+    });
   </script>
 </body>
 </html>
